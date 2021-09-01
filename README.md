@@ -1,3 +1,3 @@
-# veronica320.github.io
+# YueYANG1996.github.io
 Personal Academic Website
 
