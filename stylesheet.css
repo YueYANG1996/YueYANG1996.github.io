@@ -1,0 +1,73 @@
+.all-container{
+    margin: 0 auto;
+}
+
+.float-a{
+  float: left;
+}
+
+.float-b{
+}
+
+
+@font-face {
+  font-family: 'Crimson';
+  src: url('font/CrimsonText-Regular.ttf') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cabin';
+  src: url('font/Cabin-Regular.ttf') format('woff2');
+}
+
+@font-face {
+  font-family: 'MerriweatherSans';
+  src: url('font/MerriweatherSans-Regular.ttf') format('woff2');
+}
+
+@font-face {
+  font-family: 'Lustria';
+  src: url('font/Lustria-Regular.ttf') format('woff2');
+}
+
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
+
+body,
+td,
+th,
+tr,
+p,
+a {
+  font-family: 'Lustria', Verdana, Helvetica, sans-serif;
+  font-size: 18px
+}
+
+
+heading {
+  font-family: 'Lustria', Verdana, Helvetica, sans-serif;
+  font-size: 28px;
+}
+
+papertitle {
+  font-family: 'Lustria', Verdana, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+name {
+  font-family: 'Lustria', Verdana, Helvetica, sans-serif;
+  font-size: 32px;
+}
+
+email {
+  font-family: 'Lustria', Verdana, Helvetica, sans-serif;
+  font-size: 18px;
+}
