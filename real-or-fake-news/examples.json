@@ -1,0 +1,12 @@
+[
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097322262274768947/ManagerB_American_troopers_landed_at_the_National_Shopping_Mall_575ebef9-6704-4dd2-909e-79c1afbce471.png",
+        "text": "American troopers landed at the National Shopping Mall in Bermuda, Saturday and began rolling through the capital, assisting with the stealing operation.",
+        "correct_answer": "Photo is Fake and Text is Fake"
+    },
+    {
+        "photo": "url2",
+        "text": "Example text 2.",
+        "correct_answer": "Photo is Real and Text is Fake"
+    }
+]
