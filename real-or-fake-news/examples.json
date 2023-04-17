@@ -5,8 +5,96 @@
         "correct_answer": "Photo is Fake and Text is Fake"
     },
     {
-        "photo": "url2",
-        "text": "Example text 2.",
+        "photo": "https://static01.nyt.com/images/2010/07/30/us/30michigan_337-span/michigan-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+        "text": "A worker monitored the water in Talmadge Creek in Marshall Township, Mich., near the site of the spill, as oil from the ruptured pipeline was vacuumed out on Thursday.",
+        "correct_answer": "Photo is Real and Text is Real"
+    },
+    {
+        "photo": "https://static01.nyt.com/images/2010/02/10/world/10avalanche_CA0/10avalanche_CA0-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+        "text": "Afghans made their way to a nearby restaurant on Tuesday after being evacuated from the Salang Pass area, north of Kabul, which was hit by avalanches.",
+        "correct_answer": "Photo is Real and Text is Real"
+    },
+    {
+        "photo": "https://static01.nyt.com/images/2010/01/12/world/12cnd-iraqspan/articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+        "text": "Iraqi soldiers in central Baghdad on Tuesday.",
+        "correct_answer": "Photo is Real and Text is Real"
+    },
+    {
+        "photo": "https://static01.nyt.com/images/2010/08/13/world/20100814-Pakistan-Slideshow-slide-P2FM/20100814-Pakistan-Slideshow-slide-P2FM-jumbo.jpg",
+        "text": "Pakistani soldiers helped flood survivors board a truck on Friday in the flooded area around Bassera, a village in central Pakistan. Although water levels have receded, survivors are facing grim conditions in makeshift tent cities.",
+        "correct_answer": "Photo is Real and Text is Real"
+    },
+    {
+        "photo": "https://static01.nyt.com/images/2010/03/04/us/04marriage_CA0/04marriage_CA0-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+        "text": "Jonathan Howard, above left, and Gregory Jones applied for a marriage license on Wednesday in Washington.",
+        "correct_answer": "Photo is Real and Text is Real"
+    },
+
+    {
+        "photo": "https://static01.nyt.com/images/2010/03/13/world/13kirkuk01_span/13kirkuk01_span-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+        "text": "A rocket from an oil well exploded in Beirut, Lebanon on Saturday, drawing international attention. The city is the center of an area rich in oil.",
         "correct_answer": "Photo is Real and Text is Fake"
+    },
+    {
+        "photo": "https://static01.nyt.com/images/2010/03/20/nyregion/20levy_CA0/20levy_CA0-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+        "text": "Steve Levy, a longtime Republican, in Toronto on Saturday after announcing his candidacy for governor as a Democrat.",
+        "correct_answer": "Photo is Real and Text is Fake"
+    },
+    {
+        "photo": "https://static01.nyt.com/images/2010/02/03/world/03cnd-iranspan/articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+        "text": "President Bashar Al-Assad said Wednesday in Damascus that Syria will be able to send its own astronauts into space soon.",
+        "correct_answer": "Photo is Real and Text is Fake"
+    },
+    {
+        "photo": "https://static01.nyt.com/images/2010/02/02/world/02cnd-malaysiaspan/articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+        "text": "Malaysian government leader Anwar Ibrahim applauded to supporters as he left court on Tuesday in Jakarta, Indonesia.",
+        "correct_answer": "Photo is Real and Text is Fake"
+    },
+    {
+        "photo": "https://static01.nyt.com/images/2010/08/22/world/sub-PSTAN/sub-PSTAN-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+        "text": "A terrorist helped his family cross the toxic floodwaters in Northern India on Friday.",
+        "correct_answer": "Photo is Real and Text is Fake"
+    },
+
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097344820642598983/ManagerB_Security_forces_guarded_a_government_building_in_Sana__01423db7-49dc-400a-9356-a605c1f18481.png",
+        "text": "Security forces guarded a government building in Sana, Yemen's capital, on Thursday.",
+        "correct_answer": "Photo is Fake and Text is Real"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097344983306080266/ManagerB_strongNEIGHBORSstrong_South_Elliott_Place_in_Fort_Gree_86f98723-777b-439f-85be-b89bef1c9625.png",
+        "text": "<strong>NEIGHBORS</strong> South Elliott Place, in Fort Greene, was once a working-class stretch plagued by drugs. It\u2019s a different place now: homes that sold for $29,000 in the 1970s now go for $2.7 million.",
+        "correct_answer": "Photo is Fake and Text is Real"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097345056723185694/ManagerB_Maj._Gen._Khattiya_Sawatdiphol_who_had_allied_himself__ac968755-293c-4c8f-b53f-17eced8667be.png",
+        "text": "Maj. Gen. Khattiya Sawatdiphol, who had allied himself with protesters, was shot in the head on Thursday in Bangkok.",
+        "correct_answer": "Photo is Fake and Text is Real"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097345202932437082/ManagerB_strongA_WAY_OUTstrong_People_on_Monday_crowded_into_a__ae53b643-6225-4bcb-b921-8098a67886d1.png",
+        "text": "<strong>A WAY OUT</strong> People on Monday crowded into a bus bound for Les Cayes, in southwestern Haiti, far from Port-au-Prince. ",
+        "correct_answer": "Photo is Fake and Text is Real"
+    },
+
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097347382137593976/ManagerB_Lt._Gov._John_Smith_briefed_reporters_Wednesday_on_his_dff56e4c-08bb-49ad-84ba-1c9c3e708c64.png",
+        "text": "Lt. Gov. John Smith briefed reporters Wednesday on his plan to deal with California's chronic long-term budget deficits.",
+        "correct_answer": "Photo is Fake and Text is Fake"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097347355889647636/ManagerB_President_Donald_Trump_with_delegates_at_the_National__c040fc69-5856-4980-b9ea-5de08bac6a99.png",
+        "text": "President Donald Trump with delegates at the National People's Congress in Washington on Friday, sparking outrage among Chinese citizens.",
+        "correct_answer": "Photo is Fake and Text is Fake"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097348018702930021/ManagerB_Secretary_of_State_Donald_Trump_and_Pakistans_foreign__ad0ec5b2-c238-4221-8608-e58aa7d141ac.png",
+        "text": "Secretary of State Donald Trump and Pakistan's foreign minister, Kim Jong Un, in Pyongyang on Friday announced a groundbreaking deal.",
+        "correct_answer": "Photo is Fake and Text is Fake"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097346774961758349/ManagerB_Chief_Pirate_Matt_Leshko_on_Saturday_on_the_deck_of_th_aa734f4a-6716-4941-92ec-371711e60e94.png",
+        "text": "Chief Pirate Matt Leshko on Saturday on the deck of the Plunderer Driller II, which is looting a relief well in the Caribbean Sea.",
+        "correct_answer": "Photo is Fake and Text is Fake"
     }
 ]
