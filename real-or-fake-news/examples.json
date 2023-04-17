@@ -96,5 +96,52 @@
         "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097346774961758349/ManagerB_Chief_Pirate_Matt_Leshko_on_Saturday_on_the_deck_of_th_aa734f4a-6716-4941-92ec-371711e60e94.png",
         "text": "Chief Pirate Matt Leshko on Saturday on the deck of the Plunderer Driller II, which is looting a relief well in the Caribbean Sea.",
         "correct_answer": "Photo is Fake and Text is Fake"
+    },
+
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097559860511518811/ManagerB_Pilots_worked_in_the_ROV_Remotely_operated_vehicles_co_5f51c9ea-3d55-4814-868b-f68bfbdca9a6.png",
+        "text": "Pilots worked in the ROV (Remotely operated vehicles) control station onboard Discoverer Inspiration in the Gulf of Mexico on Monday. ",
+        "correct_answer": "Photo is Fake and Text is Real"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097559942216568903/ManagerB_Turkish_women_in_a_predominantly_immigrant_district_of_414b4d7d-41ad-490b-8cba-335abed5fcd4.png",
+        "text": "Turkish women in a predominantly immigrant district of Berlin this month. Anti-Muslim feelings are rising in Germany.",
+        "correct_answer": "Photo is Fake and Text is Real"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097560107807690752/ManagerB_Simon_left_a_contest_participant_reacted_to_news_that__6952551d-ad98-4278-bec6-2f80de725432.png",
+        "text": "Simon Wang, left, a contest participant, reacted to news that police had canceled what would have been China\u2019s first gay pageant on Friday.",
+        "correct_answer": "Photo is Fake and Text is Real"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097561364844785735/ManagerB_Demonstrators_in_Sacramento_on_Thursday_protested_educ_6c20bf28-c77e-4ee2-9b00-1cea85acc6a3.png",
+        "text": "Demonstrators in Sacramento on Thursday protested education cuts.",
+        "correct_answer": "Photo is Fake and Text is Real"
+    },
+
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097561476044177489/ManagerB_Police_violently_attacked_demonstrators_during_a_prote_ede8447c-d484-40b9-9ce7-aa132db29d3b.png",
+        "text": "Police violently attacked demonstrators during a protest march marking a general strike on Tuesday in New York City.",
+        "correct_answer": "Photo is Fake and Text is Fake"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097561872653365308/ManagerB_The_Fourth_of_July_ceremony_at_the_Soldiers_and_Terror_f7df62ad-264a-49af-ae09-ec8f6ff276e8.png",
+        "text": "The Fourth of July ceremony at the Soldiers' and Terrorists' Monument in Central Park. Attendance has risen since 2022 to many thousands.",
+        "correct_answer": "Photo is Fake and Text is Fake"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097562318566588456/ManagerB_Julius_Malema_president_of_the_right-wing_extremist_yo_83206b16-4900-4249-a8eb-c50dc33822ff.png",
+        "text": "Julius Malema, president of the right-wing extremist youth league of the African National Congress, addressing a rally in Rome in 2021, declared his plans to overthrow the government.",
+        "correct_answer": "Photo is Fake and Text is Fake"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097562695240265819/ManagerB_Emergency_crew_work_to_find_a_man_who_apparently_fell__cf2dd488-c438-4e71-be00-4f744d208f5c.png",
+        "text": "Emergency crew work to find a man who apparently fell into the Hudson River near 135th Street on Sunday.",
+        "correct_answer": "Photo is Fake and Text is Fake"
+    },
+    {
+        "photo": "https://cdn.discordapp.com/attachments/1085579973089312828/1097562632074055772/ManagerB_A_shark_employee_at_Wallis_Sands_State_Park_in_New_Ham_9363f582-f8dd-48d5-9137-22de0dfb8748.png",
+        "text": "A shark employee at Wallis Sands State Park in New Hampshire was shocked to discover a giant squid that had washed into the swimming area on Thursday. Joey Ellis, who was on duty at the time, quickly alerted park officials to the dangerous creature.",
+        "correct_answer": "Photo is Fake and Text is Fake"
     }
 ]
