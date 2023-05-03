@@ -1,0 +1,22 @@
+{
+  "pub1": {
+    "alias": "pub1",
+    "title": "I Spy a Metaphor: Large Language Models and Diffusion Models Co-Create Visual Metaphors",
+    "authors": "Tuhin Chakrabarty, Arkady Saakyan, Olivia Winn, Artemis Panagopoulou, Yue Yang, Marianna Apidianaki, Smaranda Muresan",
+    "venue": "Preprint, 2023",
+    "image": "images/metaphor.jpg",
+    "pdf": "papers/labo.pdf",
+    "link": "https://arxiv.org/abs/2211.11158",
+    "summary": "TL;DR: We propose a method to generate visual metaphors from linguistic metaphors using a collaboration between Large Language Models (LLMs) and Diffusion Models. We use Instruct GPT-3 with Chain-of-Thought prompting to generate text that represents a visual elaboration of the linguistic metaphor, containing the implicit meaning and relevant objects, which is then used as input to the diffusion-based text-to-image models. We end up creating 6,476 visual metaphors and associated visual elaborations."
+  },
+  "pub2": {
+    "alias": "pub2",
+    "title": "Example Publication 2",
+    "authors": "Author 1, Author 2, Author 3",
+    "venue": "Conference, 2023",
+    "image": "images/example2.jpg",
+    "pdf": "papers/example2.pdf",
+    "link": "https://example.com/abs/1234",
+    "summary": "TL;DR: This is an example summary for the second publication."
+  }
+}
