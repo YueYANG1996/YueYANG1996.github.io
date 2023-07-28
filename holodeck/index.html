@@ -25,9 +25,21 @@
             max-width: 1200px;
         }
 
+        .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 80px; /* adjust as needed */
+            width: auto;
+        }
+
         .media-display {
             display: flex;
-            justify-content: center; /* Added this line */
+            justify-content: center;
             gap: 2rem;
         }
 
@@ -55,7 +67,7 @@
         }
 
         img {
-            width: 550px;  /* Updated to match the video width */
+            width: 550px;
             height: auto;
             object-fit: contain;
         }
@@ -88,7 +100,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Holodeck: Large Langauge Model Guided Scene Generation</h1>
+        <div class="title-container">
+            <img class="logo" src="logo.png" alt="Logo">
+            <h1>Holodeck: Large Language Model Guided Scene Generation</h1>
+        </div>
         <div class="media-display">
             <div class="media-item">
                 <h2 class="subtitle">360 Degree Video</h2>
