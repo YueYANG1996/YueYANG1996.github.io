@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .video-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f4f4f4;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e9e9e9;
+        }
+
+        video {
+            width: 600px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .options button {
+            font-family: Georgia, serif;
+            font-size: 18px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Video Player</h1>
+        <div class="video-list">
+            <video id="video-player" src="" controls autoplay></video>
+        </div>
+        <div class="options" id="options">
+        </div>
+    </div>
+    <script>
+        const videoPlayer = document.getElementById('video-player');
+        const options = document.getElementById('options');
+
+        let videos = [
+            // Replace these with your actual video URLs
+            '',
+            'https://example.com/video2.mp4',
+            'https://example.com/video3.mp4',
+        ];
+
+        function displayVideos() {
+            videos.forEach(video => {
+                const videoOption = document.createElement('button');
+                videoOption.textContent = video;
+                videoOption.addEventListener('click', () => {
+                    videoPlayer.src = video;
+                });
+                options.appendChild(videoOption);
+            });
+        }
+
+        displayVideos();
+    </script>
+</body>
+</html>
