@@ -78,7 +78,7 @@
     <div class="container">
         <h1>Video Player</h1>
         <div class="video-list">
-            <video id="video-player" src="" controls autoplay></video>
+            <video id="video-player" src="" controls autoplay loop></video>
         </div>
         <div class="options" id="options">
         </div>
@@ -87,25 +87,22 @@
         const videoPlayer = document.getElementById('video-player');
         const options = document.getElementById('options');
 
-        let videos = [
-            // Replace these with your actual video URLs
-            '',
-            'https://example.com/video2.mp4',
-            'https://example.com/video3.mp4',
-        ];
-
-        function displayVideos() {
-            videos.forEach(video => {
+        function displayVideos(videoNames) {
+            videoNames.forEach(videoName => {
                 const videoOption = document.createElement('button');
-                videoOption.textContent = video;
+                videoOption.textContent = videoName;
                 videoOption.addEventListener('click', () => {
-                    videoPlayer.src = video;
+                    videoPlayer.src = `https://yueyang1996.github.io/holodeck/videos/${videoName}`;
                 });
                 options.appendChild(videoOption);
             });
         }
 
-        displayVideos();
+        // Fetch the list of video names from videos.json
+        fetch('https://yueyang1996.github.io/holodeck/videos.json')
+            .then(response => response.json())
+            .then(data => displayVideos(data.videoNames))
+            .catch(error => console.error('Failed to load video names:', error));
     </script>
 </body>
 </html>
