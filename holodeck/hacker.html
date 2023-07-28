@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player</title>
+    <title>HOLODECK</title>
     <style>
         body {
             font-family: Georgia, serif;
@@ -22,38 +22,39 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 800px;
+            max-width: 1200px;
         }
 
-        .video-list {
+        .media-display {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .media-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1rem;
         }
 
-        .options {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        button {
+        select {
             padding: 0.5rem 1rem;
             border-radius: 5px;
             border: 1px solid #ccc;
             background-color: #f4f4f4;
             cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #e9e9e9;
+            font-family: Georgia, serif;
+            font-size: 18px;
         }
 
         video {
-            width: 600px;
+            width: 500px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        img {
+            width: 300px;
             height: auto;
             object-fit: contain;
         }
@@ -62,47 +63,88 @@
             text-align: center;
         }
 
-        .options button {
-            font-family: Georgia, serif;
-            font-size: 18px;
-        }
-
         .button-container {
             display: flex;
             justify-content: center;
             margin-top: 2rem;
         }
+
+        .random-button {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f4f4f4;
+            cursor: pointer;
+            font-family: Georgia, serif;
+            font-size: 18px;
+        }
+
+        .random-button:hover {
+            background-color: #e9e9e9;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Video Player</h1>
-        <div class="video-list">
-            <video id="video-player" src="" controls autoplay loop></video>
+        <h1>Holodeck</h1>
+        <div class="media-display">
+            <div class="media-item">
+                <video id="video-player" src="" controls autoplay loop></video>
+            </div>
+            <div class="media-item">
+                <img id="image-display" src="" alt="Top View Image">
+            </div>
         </div>
-        <div class="options" id="options">
+        <div class="button-container">
+            <select id="example-selector"></select>
+        </div>
+        <div class="button-container">
+            <button id="random-button" class="random-button">Random Example</button>
         </div>
     </div>
     <script>
         const videoPlayer = document.getElementById('video-player');
-        const options = document.getElementById('options');
+        const imageDisplay = document.getElementById('image-display');
+        const exampleSelector = document.getElementById('example-selector');
+        const randomButton = document.getElementById('random-button');
 
-        function displayVideos(videoNames) {
-            videoNames.forEach(videoName => {
-                const videoOption = document.createElement('button');
-                videoOption.textContent = videoName;
-                videoOption.addEventListener('click', () => {
-                    videoPlayer.src = `https://yueyang1996.github.io/holodeck/videos/${videoName}`;
-                });
-                options.appendChild(videoOption);
-            });
+        let examples = [];
+
+        function loadExamples() {
+            fetch('https://yueyang1996.github.io/holodeck/examples.json')
+                .then(response => response.json())
+                .then(data => {
+                    examples = data.examples;
+                    examples.forEach((example, index) => {
+                        const option = document.createElement('option');
+                        option.value = index;
+                        option.textContent = example.name;
+                        exampleSelector.appendChild(option);
+                    });
+                    displayExample(0);
+                })
+                .catch(error => console.error('Failed to load examples:', error));
         }
 
-        // Fetch the list of video names from videos.json
-        fetch('https://yueyang1996.github.io/holodeck/videos.json')
-            .then(response => response.json())
-            .then(data => displayVideos(data.videoNames))
-            .catch(error => console.error('Failed to load video names:', error));
+        function displayExample(index) {
+            const example = examples[index];
+            videoPlayer.src = `https://yueyang1996.github.io/holodeck/${example.video}`;
+            imageDisplay.src = `https://yueyang1996.github.io/holodeck/${example.image}`;
+        }
+
+        function displayRandomExample() {
+            const randomIndex = Math.floor(Math.random() * examples.length);
+            exampleSelector.value = randomIndex;
+            displayExample(randomIndex);
+        }
+
+        exampleSelector.addEventListener('change', (event) => {
+            displayExample(event.target.value);
+        });
+
+        randomButton.addEventListener('click', displayRandomExample);
+
+        loadExamples();
     </script>
 </body>
 </html>
