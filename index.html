@@ -12,22 +12,63 @@
       gtag('js', new Date());
       gtag('config', 'UA-111341597-1');
     </script>
+
+    <style>
+      .container {
+          display: flex;
+          align-items: center;
+      }
+      .container img {
+          height: 40px; /* Adjust as needed */
+          margin-right: 10px; /* Space between text and image */
+      }
+      .text {
+          line-height: 20px; /* Adjust based on text size */
+      }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Crimson+Text|Noto+Sans+SC"
+    rel="stylesheet">
+
+    <script>
+      function toggleLists() {
+        var shortList = document.getElementById("shortList");
+        var fullList = document.getElementById("fullList");
+
+        if (shortList.style.display === "none") {
+            shortList.style.display = "block";
+            fullList.style.display = "none";
+        } else {
+            shortList.style.display = "none";
+            fullList.style.display = "block";
+        }
+      }
+      function showFullList() {
+          document.getElementById("shortList").style.display = "none";
+          document.getElementById("fullList").style.display = "block";
+      }
+
+      function showShortList() {
+          document.getElementById("fullList").style.display = "none";
+          document.getElementById("shortList").style.display = "block";
+      }
+    </script>
   </head>
   <body>
-    <table width="820" border="0" align="center" cellspacing="0" cellpadding="0">
+    <table width="880" border="0" align="center" cellspacing="0" cellpadding="0">
       <tr>
         <td>
           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
           <tr>
             <td width="65%" valign="middle">
-              <name>Yue Yang (杨樾)</name><br>
+              <name>Yue Yang</name><br>
               pronounced as <i>yoo-eh</i><br><br>
               220 South 33rd Street, Towne 299<br>Philadelphia, PA 19104, USA<br>
               Email: yueyang1 [at] seas.upenn.edu<br><br>
               <a href="https://scholar.google.com/citations?user=uvyYzagAAAAJ&hl=en&authuser=1">Google Scholar</a> &nbsp; / &nbsp; <a href="https://github.com/YueYANG1996">GitHub</a> &nbsp; / &nbsp; <a href="https://www.linkedin.com/in/yue-yang-4b2075174">LinkedIn</a> &nbsp; / &nbsp; <a href="https://www.youtube.com/channel/UCRV7M6KW5BZptw_aP0A-JuA">Youtube</a> &nbsp; / &nbsp; <a href="https://www.pixiv.net/users/14283763">pixiv</a> &nbsp; / &nbsp; <a href="cv.pdf">CV</a>
             </td>
             <td width="35%">
-              <img src="images/cherry.jpeg" width="100%">
+              <img src="images/cancun.png" width="100%">
             </td>
           </tr>
           </table>
@@ -38,57 +79,61 @@
           <tr>
             <td width="100%" valign="middle">
               <heading>About me</heading><br><br>
-                <p class="light">Hi! My name is Yue Yang (杨樾). I am a third-year Ph.D. student in Computer and Information Science at the University of Pennsylvania, affiliated with <a href="https://nlp.cis.upenn.edu">Penn NLP</a>. I am grateful to be advised by <a href="https://www.cis.upenn.edu/~ccb/">Prof. Chris Callison-Burch</a> and <a href="http://markyatskar.com">Prof. Mark Yatskar</a>. 
+                <p class="light">Hi! My name is Yue Yang (杨樾). I am a fourth-year Ph.D. student in Computer and Information Science at the University of Pennsylvania, affiliated with <a href="https://nlp.cis.upenn.edu">Penn NLP</a>. I am grateful to be advised by <a href="https://www.cis.upenn.edu/~ccb/">Prof. Chris Callison-Burch</a> and <a href="http://markyatskar.com">Prof. Mark Yatskar</a>. I am interested in the intersection area of Natural Language Processing (NLP) and Computer Vision (CV).
                 </p>
-                <p> I am interested in the intersection area of Natural Language Processing (NLP) and Computer Vision (CV), aka <a href="https://en.wikipedia.org/wiki/Multimodality">Multimodal</a>. My current research focuses on two directions to marry vision and language:
-                </p>
-                <ul>
-                  <li>Vision helps Language: Leverage visual knowledge to alleviate the reporting bias of language models.</li>
-                  <li>Language helps Vision: Language as intermediate, explicit representation to improve explainability on vision tasks.</li>
-                </ul>
-                <img src="images/research_direction.png" width="80%">
                 <p>
+                  My current research focuses on applying the knowledge priors of large language models (LLMs) to various domains (images, videos, healthcare, Embodied AI, etc) to improve different aspects of AI systems, including:
+                </p>
+                <div class="container">
+                  <img src="images/interpretability.png">
+                  <div class="text">
+                      <span><strong>Interpretability.</strong> LLMs aid in constructing human-readable intermediate representations, such as concept bottlenecks, enabling the design of inherently interpretable models, thereby mitigating the black-box nature of deep learning.</span><br>
+                  </div>
+                </div>
+                <br>
+                <div class="container">
+                  <img src="images/robustness.png">
+                  <div class="text">
+                      <span><strong>Robustness.</strong> By utilizing sparse natural language representations as input, models are less prone to overfitting on the spurious cues of in-domain training data, enhancing their robustness and out-of-domain generalization.</span><br>
+                  </div>
+                </div>
+                <br>
+                <div class="container">
+                  <img src="images/creativity.png">
+                  <div class="text">
+                      <span><strong>Controllability & Creativity.</strong> Language interfaces in generative systems enables easier control over generation process. Leveraging the extensive world knowledge of LLMs, these systems can produce customized and diverse outputs. </span><br>
+                  </div>
+                </div>
+
+                <!-- <img src="images/research_direction.png" width="80%"> -->
+                <!-- <p>
                   Before Penn, I was an undergrad in Mechanical Engineering at the <a href="http://www.doe.zju.edu.cn/doeen/">College of Energy Engineering</a> at Zhejiang University. I worked with <a href="https://person.zju.edu.cn/en/0010729"> Prof. Yuqi Huang</a> to study Computational Fluid Dynamics (CFD) during undergrads.
                 </p>
                 <p>
                   Penn initially admitted me as a master's student in <a href="https://www.grasp.upenn.edu/academics/masters-degree-program/"> Robotics</a> in 2018. Now I switch to Artificial Intelligence and temporarily farewell to the hardware (Not wholly True. I designed a sensor pack for R2D2, which students of <a href="https://artificial-intelligence-class.org/r2d2_assignments/22fall/hw0/hw0.html"> CIS-521</a> will use).
-                </p>
+                </p> -->
             </td>
           </tr>
           </table>
 
           <!-- Publications & Manuscripts -->
-            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
             <tr>
               <td width="30%" valign="middle">
-                <heading>Publications</heading>
+                <heading>Recent Preprints</heading>
               </td>
             </tr>
+          </table>
 
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" id="shortList">
+            <!-- Your selected publications rows here -->
             <tr>
-              <td width="30%" style="text-align:center;">
-                <img src="images/metaphor.jpg" width="80%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="https://arxiv.org/pdf/2305.14724.pdf"><b>I Spy a Metaphor: Large Language Models and Diffusion Models Co-Create Visual Metaphors</b></a>
-                </div>
-                <div class="authors">
-                    Tuhin Chakrabarty, Arkady Saakyan, Olivia Winn, Artemis Panagopoulou, <strong>Yue Yang</strong>, Marianna Apidianaki, Smaranda Muresan
-                </div>
-                <div class="venue">
-                   <i>Findings of the Association for Computational Linguistics (<b>ACL</b>)</i>, 2023
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/pdf/2305.14724">arxiv</a> /
-                  <a href="https://github.com/tuhinjubcse/VisualMetaphors">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: We propose a method to generate visual metaphors from linguistic metaphors using a collaboration between Large Language Models (LLMs) and Diffusion Models. We use Instruct GPT-3 with Chain-of-Thought prompting to generate text that represents a visual elaboration of the linguistic metaphor, containing the implicit meaning and relevant objects, which is then used as input to the diffusion-based text-to-image models. We end up creating 6,476 visual metaphors and associated visual elaborations.
-                </div>
+              <td width="30%" valign="middle">
+                <heading>Selected Publications</heading> <a href="javascript:void(0);" onclick="showFullList()">Full List of Publications</a>
               </td>
             </tr>
-
+            
             <tr>
               <td width="30%">
                 <img src="images/labo.png" width="100%">
@@ -109,30 +154,6 @@
                 </div>
                 <div align="justify">
                   TL;DR: Concept Bottleneck Models are interpretable models that factor in human-readable concepts to explain model decisions. However, CBMs often under-perform their black box counterparts and require manual specification of concepts. Our method, LaBo, leverages large language models (GPT-3) to automatically construct bottlenecks for any image classification tasks.
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%" style="text-align:center;">
-                <img src="images/crepe.png" width="80%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/crepe.pdf"><b>Causal Reasoning About Entities and Events in Procedural Texts</b></a>
-                </div>
-                <div class="authors">
-                    Li Zhang, Hainiu Xu, <strong>Yue Yang</strong>, Shuyan Zhou, Weiqiu You, Manni Arora, Chris Callison-Burch
-                </div>
-                <div class="venue">
-                   <i>Findings of the European Chapter of the ACL (<b>EACL</b>)</i>, 2023
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2301.10896">arxiv</a> /
-                  <a href="https://github.com/zharry29/causal_reasoning_of_entities_and_events">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: We introduces CREPE, a benchmark for causal reasoning about event plausibility based on entity states, it shows that current large language models including GPT-3 perform poorly on this task. To improve the performance, we inject the causal relations between entities and events through structured representations such as programming languages which results in a significant improvement in performance.
                 </div>
               </td>
             </tr>
@@ -180,7 +201,162 @@
                   <a href="https://github.com/artemisp/semantic-norms">code</a>
                 </div>
                 <div align="justify">
-                  TL;DR: We propose to extract properties of nouns from images, which can then be used to complement information from language models to mitigate the reporting bias problem. Results show that the proposed combination of text and images greatly improves noun property prediction compared to powerful text-based language models. 
+                  TL;DR: We propose to extract properties of nouns from images, which can then be used to complement information from language models to mitigate the reporting bias problem. Results show that the proposed combination of text and images greatly improves noun property prediction compared to powerful language models. 
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="30%">
+                <img src="images/VGSI.png" width="100%">
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="papers/VGSI.pdf"><b>Visual Goal-Step Inference using wikiHow</b></a>
+                </div>
+                <div class="authors">
+                    <strong>Yue Yang</strong>, Artemis Panagopoulou, Qing Lyu, Li Zhang, Mark Yatskar and Chris Callison-Burch
+                </div>
+                <div class="venue">
+                  <i>Conference on Empirical Methods in Natural Language Processing (<b>EMNLP</b>)</i>, 2021
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/abs/2104.05845">arxiv</a> / 
+                  <a href="bib/yang2021visual.bib">bibtex</a> /
+                  <a href="https://www.youtube.com/watch?v=V3Y_56ykG54&t=11s">talk</a> /
+                  <a href="https://github.com/YueYANG1996/wikiHow-VGSI">github</a>
+                </div>
+                <div align="justify">
+                  TL;DR: This work proposes the Visual Goal-Step Inference (VGSI) task where a model is given a textual goal and must choose a plausible step towards that goal from among four candidate images. We construct a VGSI dataset from wikiHow and show that SOTA multimodal models struggle on it. 
+                </div>
+              </td>
+            </tr>
+          </table>          
+
+          <!-- Full List (initially hidden) -->
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" id="fullList" style="display: none;">
+            <!-- Your full list of publications rows here -->
+            <tr>
+              <td width="30%" valign="middle">
+                <heading>Publications</heading> <br> <a href="javascript:void(0);" onclick="showShortList()">Selected Publications</a>
+              </td>
+            </tr>
+            <tr>
+              <td width="30%" style="text-align:center;">
+                <img src="images/metaphor.jpg" width="80%">
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="https://arxiv.org/pdf/2305.14724.pdf"><b>I Spy a Metaphor: Large Language Models and Diffusion Models Co-Create Visual Metaphors</b></a>
+                </div>
+                <div class="authors">
+                    Tuhin Chakrabarty, Arkady Saakyan, Olivia Winn, Artemis Panagopoulou, <strong>Yue Yang</strong>, Marianna Apidianaki, Smaranda Muresan
+                </div>
+                <div class="venue">
+                   <i>Findings of the Association for Computational Linguistics (<b>ACL</b>)</i>, 2023
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/pdf/2305.14724">arxiv</a> /
+                  <a href="https://github.com/tuhinjubcse/VisualMetaphors">code</a>
+                </div>
+                <div align="justify">
+                  TL;DR: We propose a method to generate visual metaphors from linguistic metaphors using a collaboration between Large Language Models (LLMs) and Diffusion Models. We use GPT-3 with Chain-of-Thought prompting to generate text that represents a visual elaboration of the linguistic metaphor, containing the implicit meaning and relevant objects, which is then used as input to the diffusion-based text-to-image models. We end up creating 6,476 visual metaphors and associated visual elaborations.
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="30%">
+                <img src="images/labo.png" width="100%">
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="papers/labo.pdf"><b>Language in a Bottle: Language Model Guided Concept Bottlenecks for Interpretable Image Classification</b></a>
+                </div>
+                <div class="authors">
+                    <strong>Yue Yang</strong>, Artemis Panagopoulou, Shenghao Zhou, Daniel Jin, Chris Callison-Burch, Mark Yatskar
+                </div>
+                <div class="venue">
+                   <i>Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>)</i>, 2023
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/abs/2211.11158">arxiv</a> /
+                  <a href="https://github.com/YueYANG1996/LaBo">code</a>
+                </div>
+                <div align="justify">
+                  TL;DR: Concept Bottleneck Models are interpretable models that factor in human-readable concepts to explain model decisions. However, CBMs often under-perform their black box counterparts and require manual specification of concepts. Our method, LaBo, leverages large language models (GPT-3) to automatically construct bottlenecks for any image classification tasks.
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="30%" style="text-align:center;">
+                <img src="images/crepe.png" width="80%">
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="papers/crepe.pdf"><b>Causal Reasoning About Entities and Events in Procedural Texts</b></a>
+                </div>
+                <div class="authors">
+                    Li Zhang, Hainiu Xu, <strong>Yue Yang</strong>, Shuyan Zhou, Weiqiu You, Manni Arora, Chris Callison-Burch
+                </div>
+                <div class="venue">
+                   <i>Findings of the European Chapter of the ACL (<b>EACL</b>)</i>, 2023
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/abs/2301.10896">arxiv</a> /
+                  <a href="https://github.com/zharry29/causal_reasoning_of_entities_and_events">code</a>
+                </div>
+                <div align="justify">
+                  TL;DR: We introduces CREPE, a benchmark for causal reasoning about event plausibility based on entity states, it shows that current large language models including GPT-3 perform poorly on this task. To improve the performance, we inject the causal relations between entities and events through structured representations such as programming languages which results in a significant increase in performance.
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="30%">
+                <img src="images/zlavi.png" width="100%">
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="papers/Z-LaVI.pdf"><b>Z-LaVI: Zero-Shot Language Solver Fueled by Visual Imagination</b></a>
+                </div>
+                <div class="authors">
+                    <strong>Yue Yang</strong>, Wenlin Yao, Hongming Zhang, Xiaoyang Wang, Dong Yu, Jianshu Chen
+                </div>
+                <div class="venue">
+                   <i>Conference on Empirical Methods in Natural Language Processing (<b>EMNLP</b>)</i>, 2022
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/abs/2210.12261">arxiv</a> /
+                  <a href="https://github.com/YueYANG1996/Z-LaVI">code</a>
+                </div>
+                <div align="justify">
+                  TL;DR: We develop a novel approach to endow language models with visual imagination capabilities. We leverage two complementary types of "imaginations": (I) recalling existing images through retrieval and (ii) synthesizing nonexistent images via text-to-image generation. Jointly exploiting the language inputs and the imagination, a pretrained vision-language model (e.g., CLIP) eventually composes a zero-shot solution to the original language tasks.
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="30%">
+                <img src="images/property.png" width="100%">
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="papers/property.pdf"><b>Visualizing the Obvious: A Concreteness-based Ensemble Model for Noun Property Prediction</b></a>
+                </div>
+                <div class="authors">
+                    <strong>Yue Yang</strong>*, Artemis Panagopoulou*, Marianna Apidianaki, Mark Yatskar, Chris Callison-Burch (*equal contribution)
+                </div>
+                <div class="venue">
+                   <i>Findings of the Empirical Methods in Natural Language Processing (<b>EMNLP</b>)</i>, 2022
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/abs/2210.12905">arxiv</a> /
+                  <a href="https://github.com/artemisp/semantic-norms">code</a>
+                </div>
+                <div align="justify">
+                  TL;DR: We propose to extract properties of nouns from images, which can then be used to complement information from language models to mitigate the reporting bias problem. Results show that the proposed combination of text and images greatly improves noun property prediction compared to powerful language models. 
                 </div>
               </td>
             </tr>
@@ -260,57 +436,10 @@
                 </div>
               </td>
             </tr>
+          </table>
 
-            <!--
-            <tr>
-              <td width="30%">
-                <img src="images/defog.gif" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/defog.pdf"><b>Optimization of the automotive air conditioning strategy based on the study of dewing phenomenon and defogging progress</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>, Yuqi Huang and Jisheng Zhao
-                </div>
-                <div class="venue">
-                  <i>Applied Thermal Engineering 169 (2020): 114932.</i>
-                </div>
-                <div class="tags">
-                  <a href="https://www.sciencedirect.com/science/article/pii/S1359431119360338">paper</a> / 
-                  <a href="bib/yang2020optimization.bib">bibtex</a>
-                </div>
-                <div align="justify">
-                  TL;DR: Numerically studied the dewing and defogging progress of a truck cabin; The external flow field was analyzed to get convective heat transfer coefficient; Effect of air velocity, temperature and humidity was considered and compared; Optimal control strategy of air conditioner was concluded based on these studies.
-                </div>
-              </td>
-            </tr>
-            -->
-            <!--
-            <tr>
-              <td width="30%">
-                <img src="images/gap_flow.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/gap_flow.pdf"><b>Analysis on the influence of gap flow around a tractor-trailer</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>, Jinxing Chen, Yuqi Huang*, Jiangang Chen and Yuan Ji
-                </div>
-                <div class="venue">
-                  <i>13th International Conference on Heat Transfer, Fluid Mechanics and Thermodynamics</i>
-                </div>
-                <div class="tags">
-                  <a href="https://repository.up.ac.za/bitstream/handle/2263/62360/Yang_Analysis_2017.pdf?sequence=1">paper</a> / 
-                  <a href="bib/yang2017analysis.bib">bibtex </a>
-                </div>
-                <div align="justify">
-                  TL;DR: This paper aims to explore the optimum gap of tractor-trailers to reduce the aerodynamic drag by analyzing the mechanisms and laws of the flow which will decrease their energy consumption.
-                </div>
-              </td>
-            </tr>
-            -->
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+            
           </table>
 
           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
@@ -357,14 +486,14 @@
                     <img src="images/ai2.png" width="100%" style="display: block; margin-left: auto; margin-right: auto;">
                   </td>
                 </tr>
-
+                <br>
                 <tr>
                   <td width="85%">
                     <a href="https://ai.tencent.com/ailab/nlp/en/index.html"><b>Tencent AI Lab</b></a>, Seattle, WA, USA<br>
                     <i>Research Scientist Intern</i> (May. 2022 to Sept. 2022)
                   </td>
                   <td width="15%">
-                    <img src="images/tencent-logo.png" width="100%" style="display: block; margin-left: auto; margin-right: auto;">
+                    <img src="images/tencent-logo.webp" width="100%" style="display: block; margin-left: auto; margin-right: auto;">
                   </td>
                 </tr>
                 <!--
@@ -429,7 +558,6 @@
         </td>
       </tr>
     </table>
-  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=QLmiHQflxIRMm2ULgewSTH1RI_kP-_LEhBP5p6IrxxE&cl=ffffff&w=a"></script>
+  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=QLmiHQflxIRMm2ULgewSTH1RI_kP-_LEhBP5p6IrxxE&cl=ffffff&w=300"></script>
   </body>
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh-oh'},{'server':'p3plzcpnl472835'},{'id':'7914943'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script></html>
-
