@@ -73,3 +73,13 @@ span.highlight {
 .underscored {
   text-decoration: underline;
 }
+
+a img {
+  height: 30px; /* adjust the size as needed */
+  margin-right: 10px; /* space between icons */
+}
+
+.small-caps {
+  font-variant: small-caps;
+  /* Additional styling as needed */
+}
