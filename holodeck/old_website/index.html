@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOLODECK</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 80px; /* adjust as needed */
+            width: auto;
+        }
+
+        .media-display {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .media-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        select {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f4f4f4;
+            cursor: pointer;
+            font-family: Georgia, serif;
+            font-size: 18px;
+        }
+
+        video {
+            width: 550px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        img {
+            width: 550px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .random-button {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f4f4f4;
+            cursor: pointer;
+            font-family: Georgia, serif;
+            font-size: 18px;
+        }
+
+        .random-button:hover {
+            background-color: #e9e9e9;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="title-container">
+            <img class="logo" src="logo.png" alt="Logo">
+            <h1>Holodeck: Large Language Model Guided Scene Generation</h1>
+        </div>
+        <div class="media-display">
+            <div class="media-item">
+                <h2 class="subtitle">360 Degree Video</h2>
+                <video id="video-player" src="" controls autoplay loop></video>
+            </div>
+            <div class="media-item">
+                <h2 class="subtitle">Top View Photo</h2>
+                <img id="image-display" src="" alt="Top View Image">
+            </div>
+        </div>
+        <div class="button-container">
+            <select id="example-selector"></select>
+        </div>
+        <div class="button-container">
+            <button id="random-button" class="random-button">Random Example</button>
+        </div>
+    </div>
+    <script>
+        const videoPlayer = document.getElementById('video-player');
+        const imageDisplay = document.getElementById('image-display');
+        const exampleSelector = document.getElementById('example-selector');
+        const randomButton = document.getElementById('random-button');
+
+        let examples = [];
+
+        function loadExamples() {
+            fetch('https://visual-bottleneck-demo-data.s3.amazonaws.com/holodeck/examples.json')
+                .then(response => response.json())
+                .then(data => {
+                    examples = data.examples;
+                    examples.forEach((example, index) => {
+                        const option = document.createElement('option');
+                        option.value = index;
+                        option.textContent = example.name;
+                        exampleSelector.appendChild(option);
+                    });
+                    displayExample(0);
+                })
+                .catch(error => console.error('Failed to load examples:', error));
+        }
+
+        function displayExample(index) {
+            const example = examples[index];
+            videoPlayer.src = `https://visual-bottleneck-demo-data.s3.amazonaws.com/holodeck/videos/${example.video}`;
+            imageDisplay.src = `https://visual-bottleneck-demo-data.s3.amazonaws.com/holodeck/images/${example.image}`;
+        }
+
+        function displayRandomExample() {
+            const randomIndex = Math.floor(Math.random() * examples.length);
+            exampleSelector.value = randomIndex;
+            displayExample(randomIndex);
+        }
+
+        exampleSelector.addEventListener('change', (event) => {
+            displayExample(event.target.value);
+        });
+
+        randomButton.addEventListener('click', displayRandomExample);
+
+        loadExamples();
+    </script>
+</body>
+</html>
