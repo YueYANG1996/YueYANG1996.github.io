@@ -103,7 +103,7 @@
           <!-- About me -->
           <tr>
             <td width="100%" valign="middle">
-              <heading>About me</heading><br><br>
+              <heading>About me</heading>
                 <p class="light">Hi! My name is Yue Yang (杨樾). I am a fourth-year Ph.D. student in Computer and Information Science at the University of Pennsylvania, affiliated with <a href="https://nlp.cis.upenn.edu">Penn NLP</a>. I am grateful to be advised by <a href="https://www.cis.upenn.edu/~ccb/">Prof. Chris Callison-Burch</a> and <a href="http://markyatskar.com">Prof. Mark Yatskar</a>. I am interested in the intersection area of Natural Language Processing (NLP) and Computer Vision (CV).
                 </p>
                 <p>
@@ -130,9 +130,9 @@
                   </div>
                 </div>
                 <br>
-                <p>
+                <!-- p>
                   <b style="color: #ac530f">I am looking for research intern opportunities in Summer 2024. Please reach out if you are interested in working with me!</b>
-                </p>
+                </p> -->
                 <!-- <img src="images/research_direction.png" width="80%"> -->
                 <!-- <p>
                   Before Penn, I was an undergrad in Mechanical Engineering at the <a href="http://www.doe.zju.edu.cn/doeen/">College of Energy Engineering</a> at Zhejiang University. I worked with <a href="https://person.zju.edu.cn/en/0010729"> Prof. Yuqi Huang</a> to study Computational Fluid Dynamics (CFD) during undergrads.
@@ -152,37 +152,6 @@
                 <heading>Recent Preprints</heading>
               </td>
             </tr>
-
-            <tr>
-              <td width="30%">
-                <div class="caption" style="font-size: 12px;">
-                  <center>
-                    a 1b1b apartment of a researcher who has a cat
-                  </center>  
-                </div>
-                <video poster="" autoplay="" muted loop="" style="pointer-events: none; width: 220px;">
-                  <source src="images/a_1b1b_apartment_of_a_researcher_who_has_a_cat_0_0_sunny_vondelpark_4k_1.0_100.0_360_16.0_30_10_CYCLES_video.mp4" type="video/mp4">
-                </video>
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/holodeck.pdf"><b><span class="small-caps">Holodeck</span>: Language Guided Generation of 3D Embodied AI Environments</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>, Fan-Yun Sun, Luca Weihs, Eli VanderBilt, Alvaro Herrasti, Winson Han, Jiajun Wu, Nick Haber, Ranjay Krishna, Lingjie Liu, Chris Callison-Burch, Mark Yatskar, Aniruddha Kembhavi, Christopher Clark
-                </div>
-                <div class="venue">
-                    arxiv, 2023
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2312.09067">arxiv</a> / <a href="https://yueyang1996.github.io/holodeck/">website</a> / <a href="https://github.com/allenai/Holodeck">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: <span class="small-caps">Holodeck</span> is an automated system for generating diverse 3D environments in Embodied AI, using a large language model (GPT-4) and a vast collection of 3D assets from Objaverse. It can create complex scenes based on user prompts, adjusting for styles and specific details, like "a 1b1b apartment of a researcher who has a cat".
-                </div>
-              </td>
-            </tr>
-
             <tr>
               <td width="30%">
                 <img src="images/TBM.png" width="100%">
@@ -217,6 +186,36 @@
               <td width="70%" valign="right">
                 <div align="right">
                   <a href="javascript:void(0);" onclick="showFullList()">Full List of Publications</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="30%">
+                <div class="caption" style="font-size: 12px;">
+                  <center>
+                    a 1b1b apartment of a researcher who has a cat
+                  </center>  
+                </div>
+                <video poster="" autoplay="" muted loop="" style="pointer-events: none; width: 220px;">
+                  <source src="images/a_1b1b_apartment_of_a_researcher_who_has_a_cat_0_0_sunny_vondelpark_4k_1.0_100.0_360_16.0_30_10_CYCLES_video.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="papers/holodeck.pdf"><b><span class="small-caps">Holodeck</span>: Language Guided Generation of 3D Embodied AI Environments</b></a>
+                </div>
+                <div class="authors">
+                    <strong>Yue Yang</strong>*, Fan-Yun Sun*, Luca Weihs*, Eli VanderBilt, Alvaro Herrasti, Winson Han, Jiajun Wu, Nick Haber, Ranjay Krishna, Lingjie Liu, Chris Callison-Burch, Mark Yatskar, Aniruddha Kembhavi, Christopher Clark
+                </div>
+                <div class="venue">
+                    <i>Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>)</i>, 2024
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/abs/2312.09067">arxiv</a> / <a href="https://yueyang1996.github.io/holodeck/">website</a> / <a href="https://github.com/allenai/Holodeck">code</a>
+                </div>
+                <div align="justify">
+                  TL;DR: <span class="small-caps">Holodeck</span> is an automated system for generating diverse 3D environments in Embodied AI, using a large language model (GPT-4) and a vast collection of 3D assets from Objaverse. It can create complex scenes based on user prompts, adjusting for styles and specific details, like "a 1b1b apartment of a researcher who has a cat".
                 </div>
               </td>
             </tr>
@@ -271,30 +270,6 @@
 
             <tr>
               <td width="30%">
-                <img src="images/property.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/property.pdf"><b>Visualizing the Obvious: A Concreteness-based Ensemble Model for Noun Property Prediction</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>*, Artemis Panagopoulou*, Marianna Apidianaki, Mark Yatskar, Chris Callison-Burch (*equal contribution)
-                </div>
-                <div class="venue">
-                   <i>Findings of the Empirical Methods in Natural Language Processing (<b>EMNLP</b>)</i>, 2022
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2210.12905">arxiv</a> /
-                  <a href="https://github.com/artemisp/semantic-norms">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: We propose to extract properties of nouns from images, which can then be used to complement information from language models to mitigate the reporting bias problem. Results show that the proposed combination of text and images greatly improves noun property prediction compared to powerful language models. 
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
                 <img src="images/VGSI.png" width="100%">
               </td>
               <td width="70%" valign="middle">
@@ -334,6 +309,37 @@
                 </div>
               </td>
             </tr>
+
+            <tr>
+              <td width="30%">
+                <div class="caption" style="font-size: 12px;">
+                  <center>
+                    a 1b1b apartment of a researcher who has a cat
+                  </center>  
+                </div>
+                <video poster="" autoplay="" muted loop="" style="pointer-events: none; width: 220px;">
+                  <source src="images/a_1b1b_apartment_of_a_researcher_who_has_a_cat_0_0_sunny_vondelpark_4k_1.0_100.0_360_16.0_30_10_CYCLES_video.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="papers/holodeck.pdf"><b><span class="small-caps">Holodeck</span>: Language Guided Generation of 3D Embodied AI Environments</b></a>
+                </div>
+                <div class="authors">
+                    <strong>Yue Yang</strong>*, Fan-Yun Sun*, Luca Weihs*, Eli VanderBilt, Alvaro Herrasti, Winson Han, Jiajun Wu, Nick Haber, Ranjay Krishna, Lingjie Liu, Chris Callison-Burch, Mark Yatskar, Aniruddha Kembhavi, Christopher Clark
+                </div>
+                <div class="venue">
+                    <i>Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>)</i>, 2024
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/abs/2312.09067">arxiv</a> / <a href="https://yueyang1996.github.io/holodeck/">website</a> / <a href="https://github.com/allenai/Holodeck">code</a>
+                </div>
+                <div align="justify">
+                  TL;DR: <span class="small-caps">Holodeck</span> is an automated system for generating diverse 3D environments in Embodied AI, using a large language model (GPT-4) and a vast collection of 3D assets from Objaverse. It can create complex scenes based on user prompts, adjusting for styles and specific details, like "a 1b1b apartment of a researcher who has a cat".
+                </div>
+              </td>
+            </tr>
+
             <tr>
               <td width="30%" style="text-align:center;">
                 <img src="images/metaphor.png" width="100%">
