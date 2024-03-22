@@ -56,7 +56,7 @@
     </script>
   </head>
   <body>
-    <table width="880" border="0" align="center" cellspacing="0" cellpadding="0">
+    <table width="930" border="0" align="center" cellspacing="0" cellpadding="0">
       <tr>
         <td>
           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
@@ -104,29 +104,33 @@
           <tr>
             <td width="100%" valign="middle">
               <heading>About me</heading>
-                <p class="light">Hi! My name is Yue Yang (杨樾). I am a fourth-year Ph.D. student in Computer and Information Science at the University of Pennsylvania, affiliated with <a href="https://nlp.cis.upenn.edu">Penn NLP</a>. I am grateful to be advised by <a href="https://www.cis.upenn.edu/~ccb/">Prof. Chris Callison-Burch</a> and <a href="http://markyatskar.com">Prof. Mark Yatskar</a>. I am interested in the intersection area of Natural Language Processing (NLP) and Computer Vision (CV).
-                </p>
-                <p>
-                  My current research focuses on applying the knowledge priors of large language models (LLMs) to various domains (images, videos, healthcare, Embodied AI, etc) to improve different aspects of AI systems, including:
-                </p>
+                <div class="text" align="justify">
+                  <p class="light">Hi! My name is Yue Yang (杨樾). I am a fourth-year Ph.D. student in Computer and Information Science at the University of Pennsylvania, affiliated with <a href="https://nlp.cis.upenn.edu">Penn NLP</a>. I am grateful to be advised by <a href="https://www.cis.upenn.edu/~ccb/">Prof. Chris Callison-Burch</a> and <a href="http://markyatskar.com">Prof. Mark Yatskar</a>. I am interested in the intersection area of Natural Language Processing (NLP) and Computer Vision (CV).
+                  </p>
+                </div>
+                <div class="text" align="justify">
+                  <p>
+                    My current research focuses on applying the knowledge priors of large language models (LLMs) to various domains (images, videos, healthcare, Embodied AI, etc) to improve different aspects of AI systems, including:
+                  </p>
+                </div>
                 <div class="container">
                   <img src="images/interpretability.png">
-                  <div class="text">
+                  <div class="text" align="justify">
                       <span><strong>Interpretability.</strong> LLMs aid in constructing human-readable intermediate representations, such as concept bottlenecks, enabling the design of inherently interpretable models, thereby mitigating the black-box nature of deep learning.</span><br>
                   </div>
                 </div>
                 <br>
                 <div class="container">
                   <img src="images/robustness.png">
-                  <div class="text">
+                  <div class="text" align="justify">
                       <span><strong>Robustness.</strong> By utilizing sparse natural language representations as input, models are less prone to overfitting on the spurious cues of in-domain training data, enhancing their robustness and out-of-domain generalization.</span><br>
                   </div>
                 </div>
                 <br>
                 <div class="container">
                   <img src="images/creativity.png">
-                  <div class="text">
-                      <span><strong>Controllability & Creativity.</strong> Language interfaces in generative systems enables easier control over generation process. Leveraging the extensive world knowledge of LLMs, these systems can produce customized and diverse outputs. </span><br>
+                  <div class="text" align="justify">
+                      <span><strong>Controllability & Creativity.</strong> Language interfaces in generative systems enables easier control over the generation process. Leveraging the extensive world knowledge of LLMs, these systems can produce customized and diverse outputs. </span><br>
                   </div>
                 </div>
                 <br>
@@ -152,6 +156,56 @@
                 <heading>Recent Preprints</heading>
               </td>
             </tr>
+            <tr>
+              <td width="30%">
+                <video poster="" autoplay="" muted loop="" style="pointer-events: none; width: 220px;">
+                  <source src="images/como_demo.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="papers/como.pdf"><b>CoMo: Controllable Motion Generation through Language Guided Pose Code Editing</b></a>
+                </div>
+                <div class="authors">
+                  Yiming Huang, Weilin Wan, <strong>Yue Yang</strong>, Chris Callison-Burch, Mark Yatskar, Lingjie Liu
+                </div>
+                <div class="venue">
+                    arxiv, 2024
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/abs/2403.13900">arxiv</a> /
+                  <a href="https://yh2371.github.io/como/">website</a>
+                </div>
+                <div align="justify">
+                  TL;DR: CoMo is a controllable human motion generation model that encodes motion into interpretable pose codes representing body part semantics. Leveraging pose codes as interpretable representations, an LLM can directly intervene in motion editing by adjusting the pose codes according to editing instructions.
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="30%">
+                <img src="images/retina-teaser.png" width="100%">
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="papers/retina.pdf"><b>A Concept-based Interpretable Model for the Diagnosis of Choroid Neoplasias using Multimodal Data</b></a>
+                </div>
+                <div class="authors">
+                  Yifan Wu, Yang Liu, <strong>Yue Yang</strong>, Michael S. Yao, Wenli Yang, Xuehui Shi, Lihong Yang, Dongjun Li, Yueming Liu, James C. Gee, Xuan Yang, Wen-bin Wei, Shi Gu
+                </div>
+                <div class="venue">
+                    arxiv, 2024
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/abs/2403.05606">arxiv</a> /
+                  <a href="https://mmcbm.liuy.site/">demo</a>
+                </div>
+                <div align="justify">
+                  <!-- TL;DR: Text Bottleneck Model (TBM) is an inheretly interpretable text classification framework that offers both global and local explanations by iteratively constructing concept bottlenecks. TBM can rival the performance of established black-box baselines such as GPT-4 fewshot and finetuned DeBERTa. -->
+                </div>
+              </td>
+            </tr>
+
             <tr>
               <td width="30%">
                 <img src="images/TBM.png" width="100%">
@@ -579,8 +633,8 @@
                 <tr>
                   <td width="85%">
                     <a href="https://prior.allenai.org"><b>Allen Institute for AI</b></a>, Seattle, WA, USA<br>
-                    <i>Research Intern</i> (May. 2023 to Sept. 2023) <br>
-                    <b style="color: #ac530f">Outstanding Intern of the Year Award</b> <br>
+                    <i>Research Intern</i> (May. 2023 to Sept. 2023, May. 2024 to Sept. 2024)<br>
+                    <b style="color: #ac530f">Outstanding Intern of the Year Award (2023)</b> <br>
                   </td>
                   <td width="15%">
                     <img src="images/ai2.png" height=50px style="display: block; margin-left: auto; margin-right: auto;">
@@ -619,7 +673,7 @@
             <tr>
               <td width="100%" valign="middle">
                 <heading>Academic Service</heading><br><br>
-                <strong>Reviewer</strong>: ACL, EMNLP, NAACL, EACL, CVPR.
+                <strong>Reviewer</strong>: CVPR, ECCV, ACL, EMNLP, NAACL, EACL, COLM, TMLR.
               </td>
             </tr>
             </table>
