@@ -105,7 +105,7 @@
             <td width="100%" valign="middle">
               <heading>About me</heading>
                 <div class="text" align="justify">
-                  <p class="light">Hi! My name is Yue Yang (杨樾). I am a fourth-year Ph.D. student in Computer and Information Science at the University of Pennsylvania, affiliated with <a href="https://nlp.cis.upenn.edu">Penn NLP</a>. I am grateful to be advised by <a href="https://www.cis.upenn.edu/~ccb/">Prof. Chris Callison-Burch</a> and <a href="http://markyatskar.com">Prof. Mark Yatskar</a>. I am interested in the intersection area of Natural Language Processing (NLP) and Computer Vision (CV).
+                  <p class="light">Hi! My name is Yue Yang (杨樾). I am a final-year Ph.D. student in Computer and Information Science at the University of Pennsylvania, affiliated with <a href="https://nlp.cis.upenn.edu">Penn NLP</a>. I am grateful to be advised by <a href="https://www.cis.upenn.edu/~ccb/">Prof. Chris Callison-Burch</a> and <a href="https://www.cis.upenn.edu/~myatskar/">Prof. Mark Yatskar</a>. I am interested in the intersection area of Natural Language Processing (NLP) and Computer Vision (CV).
                   </p>
                 </div>
                 <div class="text" align="justify">
@@ -150,35 +150,10 @@
 
           <!-- Publications & Manuscripts -->
 
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
             <tr>
               <td width="30%" valign="middle">
                 <heading>Recent Preprints</heading>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/knobo-teaser.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/knobo.pdf"><b>A Textbook Remedy for Domain Shifts: Knowledge Priors for Medical Image Analysis</b></a>
-                </div>
-                <div class="authors">
-                  <strong>Yue Yang</strong>, Mona Gandhi, Yufei Wang, Yifan Wu, Michael S. Yao, Chris Callison-Burch, James C. Gee, Mark Yatskar
-                </div>
-                <div class="venue">
-                    arxiv, 2024
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2405.14839">arxiv</a> /
-                  <a href="https://yueyang1996.github.io/knobo/">website</a> /
-                  <a href="https://github.com/YueYANG1996/KnoBo">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: We introduce Knowledge Bottlenecks (KnoBo) that incorporate priors from medical documents, such as PubMed, through inherently interpretable models. KnoBo is robust to domain shifts in medical images, e.g., data sampled from different hospitals or data confounded by demographic variables such as sex, race, etc. Overall, our work demonstrates that a key missing ingredient for robustness to distribution shift in medical imaging models is a prior rooted in knowledge.
-                </div>
               </td>
             </tr>
 
@@ -202,7 +177,7 @@
                 </div>
                 <div align="justify">
                   <!-- TL;DR: Text Bottleneck Model (TBM) is an inheretly interpretable text classification framework that offers both global and local explanations by iteratively constructing concept bottlenecks. TBM can rival the performance of established black-box baselines such as GPT-4 fewshot and finetuned DeBERTa. -->
-                </div>
+                <!-- </div>
               </td>
             </tr>
 
@@ -229,17 +204,62 @@
                 </div>
               </td>
             </tr>
-          </table>
+          </table> -->
 
           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" id="shortList">
             <!-- Your selected publications rows here -->
             <tr>
               <td width="30%" valign="middle">
-                <heading>Selected Publications</heading>
+                <heading>Selected Works</heading>
               </td>
               <td width="70%" valign="right">
                 <div align="right">
                   <a href="javascript:void(0);" onclick="showFullList()">Full List of Publications</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="30%">
+                <img src="images/molmo.png" width="100%">
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="https://molmo.allenai.org/blog"><b>Open Weights and Open Data for State-of-the-Art Multimodal Models</b></a>
+                </div>
+                <div class="authors">
+                  Matt Deitke*, Christopher Clark*, Sangho Lee, Rohun Tripathi, <strong>Yue Yang</strong>, Jae Sung Park, Mohammadreza Salehi, Niklas Muennighoff, Kyle Lo, et al. (51 authors in total)
+                </div>
+                <div class="tags">
+                  <a href="https://molmo.allenai.org/blog">blog</a> /
+                  <a href="https://molmo.allenai.org">demo</a> /
+                  <a href="https://molmo.allenai.org/paper.pdf">report</a> /
+                  <a href="https://huggingface.co/collections/allenai/molmo-66f379e6fe3b8ef090a8ca19">models</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="30%">
+                <img src="images/knobo-teaser.png" width="100%">
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="papers/knobo.pdf"><b>A Textbook Remedy for Domain Shifts: Knowledge Priors for Medical Image Analysis</b></a>
+                </div>
+                <div class="authors">
+                  <strong>Yue Yang</strong>, Mona Gandhi, Yufei Wang, Yifan Wu, Michael S. Yao, Chris Callison-Burch, James C. Gee, Mark Yatskar
+                </div>
+                <div class="venue">
+                  <i>Conference on Neural Information Processing Systems (<b>NeurIPS</b>)</i>, 2024 <b style="color: #ac530f">(Spotlight)</b>
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/abs/2405.14839">arxiv</a> /
+                  <a href="https://yueyang1996.github.io/knobo/">website</a> /
+                  <a href="https://github.com/YueYANG1996/KnoBo">code</a>
+                </div>
+                <div align="justify">
+                  TL;DR: We introduce Knowledge Bottlenecks (KnoBo) that incorporate priors from medical documents, such as PubMed, through inherently interpretable models. KnoBo is robust to domain shifts in medical images, e.g., data sampled from different hospitals or data confounded by demographic variables such as sex, race, etc. Overall, our work demonstrates that a key missing ingredient for robustness to distribution shift in medical imaging models is a prior rooted in knowledge.
                 </div>
               </td>
             </tr>
@@ -266,7 +286,7 @@
                     <i>Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>)</i>, 2024
                 </div>
                 <div class="tags">
-                  <a href="https://arxiv.org/abs/2312.09067">arxiv</a> / <a href="https://yueyang1996.github.io/holodeck/">website</a> / <a href="https://github.com/allenai/Holodeck">code</a>
+                  <a href="https://arxiv.org/abs/2312.09067">arxiv</a> / <a href="https://yueyang1996.github.io/holodeck/">website</a> / <a href="https://github.com/allenai/Holodeck">code</a> / <a href="https://ai.seas.upenn.edu/news/penn-engineers-recreate-star-treks-holodeck-using-chatgpt-and-video-game-assets/">press</a>
                 </div>
                 <div align="justify">
                   TL;DR: <span class="small-caps">Holodeck</span> is an automated system for generating diverse 3D environments in Embodied AI, using a large language model (GPT-4) and a vast collection of 3D assets from Objaverse. It can create complex scenes based on user prompts, adjusting for styles and specific details, like "a 1b1b apartment of a researcher who has a cat".
@@ -297,56 +317,6 @@
                 </div>
               </td>
             </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/zlavi.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/Z-LaVI.pdf"><b>Z-LaVI: Zero-Shot Language Solver Fueled by Visual Imagination</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>, Wenlin Yao, Hongming Zhang, Xiaoyang Wang, Dong Yu, Jianshu Chen
-                </div>
-                <div class="venue">
-                   <i>Conference on Empirical Methods in Natural Language Processing (<b>EMNLP</b>)</i>, 2022
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2210.12261">arxiv</a> /
-                  <a href="https://github.com/YueYANG1996/Z-LaVI">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: We endow language models with visual imagination capabilities with two complementary methods: (I) recalling existing images through retrieval and (ii) synthesizing nonexistent images via text-to-image generation. Jointly exploiting the language inputs and the imagination, a pretrained vision-language model (e.g., CLIP) eventually composes a zero-shot solution to the originallanguage tasks.
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/VGSI.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/VGSI.pdf"><b>Visual Goal-Step Inference using wikiHow</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>, Artemis Panagopoulou, Qing Lyu, Li Zhang, Mark Yatskar and Chris Callison-Burch
-                </div>
-                <div class="venue">
-                  <i>Conference on Empirical Methods in Natural Language Processing (<b>EMNLP</b>)</i>, 2021
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2104.05845">arxiv</a> / 
-                  <a href="bib/yang2021visual.bib">bibtex</a> /
-                  <a href="https://www.youtube.com/watch?v=V3Y_56ykG54&t=11s">talk</a> /
-                  <a href="https://github.com/YueYANG1996/wikiHow-VGSI">github</a>
-                </div>
-                <div align="justify">
-                  TL;DR: This work proposes the Visual Goal-Step Inference (VGSI) task where a model is given a textual goal and must choose a plausible step towards that goal from among four candidate images. We construct a VGSI dataset from wikiHow and show that SOTA multimodal models struggle on it. 
-                </div>
-              </td>
-            </tr>
           </table>          
 
           <!-- Full List (initially hidden) -->
@@ -361,6 +331,55 @@
                 <div align="right">
                   <a href="javascript:void(0);" onclick="showShortList()">Selected Publications</a>
                 </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="30%">
+                <img src="images/knobo-teaser.png" width="100%">
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="papers/knobo.pdf"><b>A Textbook Remedy for Domain Shifts: Knowledge Priors for Medical Image Analysis</b></a>
+                </div>
+                <div class="authors">
+                  <strong>Yue Yang</strong>, Mona Gandhi, Yufei Wang, Yifan Wu, Michael S. Yao, Chris Callison-Burch, James C. Gee, Mark Yatskar
+                </div>
+                <div class="venue">
+                  <i>Conference on Neural Information Processing Systems (<b>NeurIPS</b>)</i>, 2024 <b style="color: #ac530f">(Spotlight)</b>
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/abs/2405.14839">arxiv</a> /
+                  <a href="https://yueyang1996.github.io/knobo/">website</a> /
+                  <a href="https://github.com/YueYANG1996/KnoBo">code</a>
+                </div>
+                <div align="justify">
+                  TL;DR: We introduce Knowledge Bottlenecks (KnoBo) that incorporate priors from medical documents, such as PubMed, through inherently interpretable models. KnoBo is robust to domain shifts in medical images, e.g., data sampled from different hospitals or data confounded by demographic variables such as sex, race, etc. Overall, our work demonstrates that a key missing ingredient for robustness to distribution shift in medical imaging models is a prior rooted in knowledge.
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="30%">
+                <img src="images/news.png" width="100%">
+              </td>
+              <td width="70%" valign="middle">
+                <div class="title">
+                  <a href="papers/knobo.pdf"><b>MiRAGeNews: Multimodal Realistic AI-Generated News Detection</b></a>
+                </div>
+                <div class="authors">
+                  Runsheng Huang, Liam Dugan, Yue Yang, Chris Callison-Burch.
+                </div>
+                <div class="venue">
+                  <i>Findings of the Empirical Methods in Natural Language Processing (<b>EMNLP</b>)</i>, 2024
+                </div>
+                <div class="tags">
+                  <a href="https://arxiv.org/abs/2405.14839">arxiv</a> /
+                  <a href="https://yueyang1996.github.io/knobo/">website</a> /
+                  <a href="https://github.com/YueYANG1996/KnoBo">code</a>
+                </div>
+                <div align="justify">
+                  TL;DR: We propose a multimodal fake news dataset for detecting AI-generated content.
               </td>
             </tr>
 
@@ -439,7 +458,7 @@
                   <a href="https://github.com/tuhinjubcse/VisualMetaphors">code</a>
                 </div>
                 <div align="justify">
-                  TL;DR: We generate visual metaphors from linguistic metaphors using a collaboration between LLMs and Diffusion Models. We use GPT-3 with Chain-of-Thought prompting to generate text that represents a visual elaboration of the linguistic metaphor, which is then used as input to the diffusion-based text-to-image models. We end up creating 6,476 visual metaphors and associated visual elaborations.
+                  TL;DR: We generate visual metaphors from linguistic metaphors using a collaboration between LLMs and Diffusion Models. We use GPT-3 with Chain-of-Thought prompting to generate text that represents a visual elaboration of the linguistic metaphor, which is then used as input to the diffusion-based text-to-image models to create 6,476 visual metaphors.
                 </div>
               </td>
             </tr>
@@ -561,7 +580,7 @@
                   <a href="https://wikihow-hierarchy.github.io/?task_id=104796">website</a>
                 </div>
                 <div align="justify">
-                  TL;DR: Procedures are inherently hierarchical. To "host a party", one may need to "clean the house", which in turn may require "putting away the clothes". We develop a simple and efficient method that links steps (e.g. "clean the house") in an article to other articles with similar intents (e.g. "how to deep lean your house"), which proceeds recursively to form the KB. 
+                  TL;DR: Procedures are inherently hierarchical. To "host a party", one may need to "clean the house", which in turn may require "putting away the clothes". We develop an efficient method that links steps (e.g. "clean the house") in an article to other articles with similar intents (e.g. "how to deep lean your house"), which proceeds recursively to form the KB. 
                 </div>
               </td>
             </tr>
@@ -702,7 +721,7 @@
                 <strong>Reviewer</strong>: <br>
                 Computer Vision: CVPR, ECCV, SIGGRAPH Asia. <br>
                 Natural Language Processing: ACL, EMNLP, NAACL, EACL, COLM. <br>
-                Machine Learning: NeurIPS, TMLR.
+                Machine Learning: NeurIPS, TMLR, ICLR. <br>
               </td>
             </tr>
             </table>
