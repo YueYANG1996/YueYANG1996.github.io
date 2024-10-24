@@ -83,3 +83,49 @@ a img {
   font-variant: small-caps;
   /* Additional styling as needed */
 }
+
+.sidebar {
+  width: 250px;
+  height: 100vh; /* Full height */
+  background-color: rgba(135, 206, 235, 0.4); /* Light Sky Blue with transparency */
+  padding-top: 20px;
+  position: fixed;
+  transition: background-color 0.3s ease, opacity 0.3s ease; /* Transition for dissolve effect */
+  opacity: 0.9; /* Initial transparency */
+  left: 0;
+}
+
+.sidebar:hover {
+  background-color: rgba(135, 206, 235, 1); /* Full light sky blue on hover */
+  opacity: 1; /* Full opacity on hover */
+}
+
+.sidebar a {
+  padding: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #1E3050;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.5); /* Hover effect on links */
+}
+
+/* Right Sidebar (same as left sidebar) */
+.right-sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(135, 206, 235, 0.4); /* Light Sky Blue */
+  position: fixed;
+  right: 0;
+  top: 0;
+  opacity: 0.9; /* Initial transparency */
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.right-sidebar:hover {
+  background-color: rgba(135, 206, 235, 1); /* Full opacity on hover */
+  opacity: 1;
+}
