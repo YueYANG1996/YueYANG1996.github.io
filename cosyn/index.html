@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Code Guided Synthetic Text-rich Image Generation">
+  <meta name="keywords" content="Vision-language Model, Synthetic Data">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scaling Text-Rich Image Understanding via Code-Guided Synthetic Multimodal Data Generation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Crimson+Text"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/programming.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    .image-container img {
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    /* Modal Styling */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        max-width: 80%;
+        max-height: 80%;
+    }
+
+    .modal img {
+        width: auto;
+        height: 100%;
+    }
+
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero" style="padding-bottom: 0;">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <!-- <span class="book-svg"></span> -->
+            <span class="small-caps">Scaling Text-Rich Image Understanding <br>
+              via Code-Guided Synthetic <br> Multimodal Data Generation</span>
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://yueyang1996.github.io">Yue Yang</a><sup>*</sup><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ajayp.app/">Ajay Patel</a><sup>*</sup><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://mattdeitke.com/">Matt Deitke</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://tanmaygupta.info/">Tanmay Gupta</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://lucaweihs.github.io/">Luca Weihs</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://andrewhead.info/">Andrew Head</a><sup>1</sup>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://www.cis.upenn.edu/~myatskar/">Mark Yatskar</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cis.upenn.edu/~ccb/">Chris Callison-Burch</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ranjaykrishna.com/index.html">Ranjay Krishna</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://anikem.github.io/">Aniruddha Kembhavi</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://chrisc36.github.io/">Christopher Clark</a><sup>2</sup>
+            </span>
+            <br>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup></span></sup>University of Pennsylvania,</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup></span></sup>Allen Institute for Artificial Intelligence</span><br>
+            <span class="author-block"><sup>*</sup></span></sup>Equal Contribution</span>
+          </div>
+
+          <div class="is-size-5 emails">
+            <span class="emails">
+              <a href="mailto: yueyang1@seas.upenn.edu">yueyang1@seas.upenn.edu</a>&nbsp;&nbsp;
+            </span>
+            <span class="emails">
+              <a href="mailto: ajayp@seas.upenn.edu">ajayp@seas.upenn.edu</a>
+            </span>
+          </div>
+
+          <!-- </div> -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="../papers/cosyn.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arxiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2405.14839"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/allenai/pixmo-docs"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Data Link. -->
+              <span class="link-block">
+                <a href="https://github.com/allenai/pixmo-docs"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-database"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://x.com/YueYangAI/status/1794031734775820432"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>Tweet</span>
+                  </a>
+              </span>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="demo" style="padding-top: 0px;">
+  <div class="container is-max-desktop has-text-centered">
+    <video id="teaser" autoplay="" loop="" muted="" playsinline="" style="width: 100%; height: auto; margin-top: 0;">
+      <source src="./static/videos/dataset.mp4" type="video/mp4">
+    </video>    
+
+    <p class="has-text-centered">
+      Our CoSyn-400K dataset contains 9 categories of synthetc text-rich images with 2.7M instruction-tuning data.
+    </p>
+    
+    <br>
+
+    <div style="width: 100%; margin: 20px auto;">
+      <canvas id="barChart"></canvas>
+    </div>
+
+    <h2 class="subtitle" style="font-size: medium; text-align: right; margin-bottom: 10px; padding-bottom: 0;">
+      [Average performance on 7 text-rich benchmarks: ChartQA, DocVQA, InfoVQA, TableVQA, AI2D, TextVQA, ScreenQA. <br> Our zero-shot model does not expose to any training instances from the evaluation benchmarks.]
+    </h2>
+
+    <p class="has-text-centered">
+      Our models trained on synthetic data achieves competitive performance on text-rich benchmarks.
+    </p>
+
+    <!-- Add Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Add the script for creating the chart -->
+    <script>
+      const ctx = document.getElementById('barChart').getContext('2d');
+      
+      // Define model categories
+      const openSource = ['Cambrian-8B', 'Pixtral-12B', 'LLaVA-Onevision-7B', 'Llama 3.2 11B'];
+      const proprietary = ['Claude-3 Opus', 'GPT-4V', 'Gemini 1.5 Flash'];
+      const ours = ['Ours-7B (Zero-shot)', 'Ours-7B'];
+    
+      // Function to get color and border width based on model type
+      function getModelStyle(modelName) {
+        if (ours.includes(modelName)) {
+          return {
+            backgroundColor: '#d4a373',
+            borderColor: '#000000',
+            borderWidth: 2
+          };
+        } else if (proprietary.includes(modelName)) {
+          return {
+            backgroundColor: '#ccd5ae',
+            borderColor: '#ccd5ae',
+            borderWidth: 1
+          };
+        } else {
+          return {
+            backgroundColor: '#e9edc9',
+            borderColor: '#e9edc9',
+            borderWidth: 1
+          };
+        }
+      }
+    
+      const labels = ['Cambrian-8B', 'Pixtral-12B', 'LLaVA-Onevision-7B', 'Llama 3.2 11B', 
+                     'Claude-3 Opus', 'GPT-4V', 'Gemini 1.5 Flash', 
+                     'Ours-7B (Zero-shot)', 'Ours-7B'];
+      const data = [64.2, 69.2, 72.4, 77.0, 70.2, 72.8, 76.2, 74.7, 80.9];
+    
+      // Add this before the chart
+      const chartContainer = document.createElement('div');
+      chartContainer.style.height = '300px'; // Adjust this value as needed
+      document.getElementById('barChart').parentNode.insertBefore(chartContainer, document.getElementById('barChart'));
+      chartContainer.appendChild(document.getElementById('barChart'));
+    
+      new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Performance',
+          data: data,
+          backgroundColor: labels.map(label => getModelStyle(label).backgroundColor),
+          borderColor: labels.map(label => getModelStyle(label).borderColor),
+          borderWidth: labels.map(label => getModelStyle(label).borderWidth)
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        scales: {
+            x: {
+              min: 60,
+              max: 83,
+              ticks: {
+                stepSize: 5,
+                font: {
+                  family: "'Crimson Text', sans-serif",
+                  size: 18
+                }
+              }
+            },
+            y: {
+              ticks: {
+                callback: function(value, index) {
+                  const label = this.getLabelForValue(index);
+                  if (ours.includes(label)) {
+                    return `${label}`;
+                  }
+                  return label;
+                },
+                font: function(context) {
+                  const label = context.tick.label;
+                  if (ours.includes(label)) {
+                    return {
+                      family: "'Crimson Text', sans-serif", size: 18, weight: 'bold'
+                    };
+                  }
+                  return {family: "'Crimson Text', sans-serif", size: 18};
+                },
+                autoSkip: false, // Prevent automatic label skipping
+                maxRotation: 0,
+                minRotation: 0
+              }
+            }
+          },
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+            labels: {
+              usePointStyle: false,
+              padding: 20,
+              font: {
+                family: "'Crimson Text', sans-serif",
+                size: 18
+              },
+              generateLabels: function(chart) {
+                return [
+                  {
+                    text: 'Open Source Models',
+                    fillStyle: '#e9edc9',
+                    strokeStyle: '#e9edc9',
+                    lineWidth: 1
+                  },
+                  {
+                    text: 'Proprietary Models',
+                    fillStyle: '#ccd5ae',
+                    strokeStyle: '#ccd5ae',
+                    lineWidth: 1
+                  },
+                  {
+                    text: 'Our Models',
+                    fillStyle: '#d4a373',
+                    strokeStyle: '#000000',
+                    lineWidth: 2
+                  }
+                ];
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+  </div>
+</section>
+
+<section class="section", id="abstract">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Reasoning about images with rich text, such as charts and documents, is a critical application of vision-language models (VLMs). However, VLMs often struggle in these domains due to the scarcity of diverse text-rich vision-language data. To address this challenge, we present CoSyn, a framework that leverages the coding capabilities of text-only large language models (LLMs) to automatically create synthetic text-rich multimodal data. Given input text describing a target domain (e.g., "nutrition fact labels"), CoSyn prompts an LLM to generate code (Python, HTML, LaTeX, etc.) for rendering synthetic images. With the underlying code as textual representations of the synthetic images, CoSyn can generate high-quality instruction-tuning data, again relying on a text-only LLM. Using CoSyn, we constructed a dataset comprising 400K images and 2.7M rows of vision-language instruction-tuning data. Comprehensive experiments on seven benchmarks demonstrate that models trained on our synthetic data achieve state-of-the-art performance among competitive open-source models, including Llama 3.2, and surpass proprietary models such as GPT-4V and Gemini 1.5 Flash. Furthermore, CoSyn can produce synthetic pointing data, enabling VLMs to ground information within input images, showcasing its potential for developing multimodal agents capable of acting in real-world environments. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section", id="method">
+  <div class="container is-max-desktop">
+    <!--  Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Code Guided Synthetic Data Generation</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our <strong>Co</strong>de Guided <strong>Syn</strong>thetic data generation system (<strong>CoSyn</strong>) supports 20 generation pipelines based on 11 render tools. Given a user query, e.g., "book cover", CoSyn selects the appropriate pipelines and starts with generating diverse topics conditioned on personas, then synthesizes detailed data for code generation. The code renders the image and is also fed as context for an LLM to construct instruction-tuning data.
+          </p>
+        </div>
+
+        <video id="system" autoplay="" muted="" playsinline="" height="100%">
+          <source src="./static/videos/system.mp4" type="video/mp4">
+        </video>
+
+      </div>
+  </div>
+</section>
+
+
+<style>
+  .carousel img {
+      height: 200px; /* Same height for all images */
+      width: auto; /* Adjust width automatically */
+      object-fit: contain; /* Keeps image proportions */
+  }
+</style>
+
+<section class="section" id="example">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">CoSyn can Generate Diverse Text-rich Images</h2>
+        <div class="content has-text-justified">
+          <p>
+            CoSyn uses 11 rendering tools to build 20 pipelines that support the generation of charts, documents, diagrams, vector graphics, and many more ...
+          </p>
+        </div>
+        <br>
+        <div class="container">
+          <div id="post_images" class="carousel">
+            <div class="item-1 image-container">
+              <div class="caption">Geographic Plot</div>
+              <img src="./static/images/chart/geographic.png" alt="geographic" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Waterfall Chart</div>
+              <img src="./static/images/chart/waterfall.png" alt="waterfall" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Sunburst Plot</div>
+              <img src="./static/images/chart/sunburst.png" alt="sunburst" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Treemap</div>
+              <img src="./static/images/chart/treemap.png" alt="treemap" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Gauge Chart</div>
+              <img src="./static/images/chart/gauge.png" alt="gauge" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Ternary Plot</div>
+              <img src="./static/images/chart/ternary.png" alt="ternary" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Rose Chart</div>
+              <img src="./static/images/chart/rose.png" alt="rose" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Volcano Plot</div>
+              <img src="./static/images/chart/volcano.png" alt="volcano" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Isotype Chart</div>
+              <img src="./static/images/chart/isotype.png" alt="isotype" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Ridgeline Plot</div>
+              <img src="./static/images/chart/ridgeline.png" alt="ridgeline" class="zoomable">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <div class="container">
+          <div id="post_images" class="carousel">
+            <div class="item-1 image-container">
+              <div class="caption">Menu</div>
+              <img src="./static/images/document/menu.png" alt="menu" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Business Card</div>
+              <img src="./static/images/document/business.png" alt="business" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Table</div>
+              <img src="./static/images/document/table.png" alt="table" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Math Problem</div>
+              <img src="./static/images/document/math.png" alt="math" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Receipt</div>
+              <img src="./static/images/document/receipt.png" alt="receipt" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">GitHub Page</div>
+              <img src="./static/images/document/githubpage.png" alt="githubpage" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Résumé</div>
+              <img src="./static/images/document/resume.png" alt="resume" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Shipping Label</div>
+              <img src="./static/images/document/shipping.png" alt="shipping" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Infographic</div>
+              <img src="./static/images/document/infographic.png" alt="infographic" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Book Cover</div>
+              <img src="./static/images/document/book.png" alt="book" class="zoomable">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <div class="container">
+          <div id="post_images" class="carousel">
+            <div class="item-1 image-container">
+              <div class="caption">Booking Website</div>
+              <img src="./static/images/other/booking.png" alt="booking" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Phone Screen</div>
+              <img src="./static/images/other/phone.png" alt="phone" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Music Sheet</div>
+              <img src="./static/images/other/music.png" alt="music" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Chemical Structure</div>
+              <img src="./static/images/other/chemical.png" alt="chemical" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Solid Geometry</div>
+              <img src="./static/images/other/geometry.png" alt="geographic" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Electrical Circuit</div>
+              <img src="./static/images/other/circuit.png" alt="circuit" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Quadrant Chart</div>
+              <img src="./static/images/other/quadrant.png" alt="quadrant" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Terminal</div>
+              <img src="./static/images/other/terminal.png" alt="terminal" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">IQ Test</div>
+              <img src="./static/images/other/IQ.png" alt="IQ" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Flow Chart</div>
+              <img src="./static/images/other/flow.png" alt="flow" class="zoomable">
+            </div>
+            <div class="item-1 image-container">
+              <div class="caption">Sankey Diagram</div>
+              <img src="./static/images/other/sankey.png" alt="sankey" class="zoomable">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for zooming images -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    // Get the modal elements
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+    var closeBtn = document.querySelector(".close");
+
+    // Add click event to all zoomable images
+    document.querySelectorAll(".zoomable").forEach(img => {
+        img.addEventListener("click", function() {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+        });
+    });
+
+    // Close modal when clicking the close button
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close modal when clicking outside the image
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+  </script>
+</section>
+
+
+<section class="section", id="result_1">
+  <div class="container is-max-desktop">
+    <!--  Results 1. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Model Trained on CoSyn-400K Achieves SOTA Performance</h2>
+        <div class="content has-text-justified">
+          <p>
+            Comprehensive experiments on seven benchmarks demonstrate that models trained on our synthetic data achieve state-of-the-art performance among competitive open-source models, including Llama 3.2 V 11B, and surpass proprietary models such as GPT-4V, Gemini 1.5 Flash and Claude-3 Opus.
+          </p>
+        </div>
+
+        <img src="./static/images/main_results.png"
+                   class="interpolation-image"
+                   alt="Interpolate start reference image."
+                   width="100%"
+                   height="auto"
+          />
+        
+        <h2 class="subtitle has-text-justified" style="font-size: medium; text-align: right; margin-bottom: 10px; padding-bottom: 0;">
+          [The result of the best-performing open-source model is bold, and the second-best is underlined. Models with † stand for open data and code for multimodal training. Models with * are zero-shot models, which means the models are not trained on instances from any of the evaluation datasets]
+        </h2>
+
+      </div>
+  </div>
+</section>
+
+<section class="section", id="generalize">
+  <div class="container is-max-desktop">
+    <!--  generalize -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">CoSyn can Generate Targeted Data for Domain Generalization</h2>
+        <div class="content has-text-justified">
+          <p>
+            We identify a key limitation of open-source VLMs that they struggle to generalize to out-of-domain tasks they were not trained on. However, CoSyn enables controllable data generation, allowing task-specific fine-tuning to achieve strong generalization performance with significantly less data.
+          </p>
+        </div>
+
+        <video id="generalize" autoplay="" muted="" playsinline="" height="100%">
+          <source src="./static/videos/generalize.mp4" type="video/mp4">
+        </video>
+
+        <h2 class="subtitle" style="font-size: medium; text-align: right; margin-bottom: 10px; padding-bottom: 0;">
+          [Zero shot performance on NutritionQA. The x-axis denotes the number of training examples used for <br> the instruction-tuning stage. The models on the upper left side demonstrate better data efficiency.]
+        </h2>
+
+      </div>
+  </div>
+</section>
+
+<section class="section", id="pointing">
+  <div class="container is-max-desktop">
+    <!--  Pointing -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Synthetic Pointing Data for Agentic Tasks</h2>
+        <div class="content has-text-justified">
+          <p>
+            We synthesize pointing data by prompting an LLM to generate pointing questions and edit the code to draw the points explicitly. By extracting the pixel values of these points, we can obtain their exact coordinates. We show that the VLM trained on our synthetic pointing data can generalize to real GUI agentic tasks.
+          </p>
+        </div>
+
+        <video id="pointing" autoplay="" muted="" playsinline="" height="100%">
+          <source src="./static/videos/pointing.mp4" type="video/mp4">
+        </video>
+        
+        <br>
+        <br>
+
+        <p class="has-text-centered">
+          Our models achieve SOTA performance on <a href="https://huggingface.co/datasets/rootsautomation/ScreenSpot">ScreenSpot</a> Click Prediction Task.
+        </p>
+
+        <!-- Add the script for creating the second chart -->
+        <div style="width: 100%; margin: 10 auto;">
+          <canvas id="barChart2"></canvas>
+        </div>
+    
+        <h2 class="subtitle" style="font-size: medium; text-align: right; margin-bottom: 10px; padding-bottom: 0;">
+          [Click accuracy on ScreenSpot. Human stands for using the human-annotated data from <a href="https://huggingface.co/datasets/allenai/pixmo-points">PixMo-point</a>.]
+        </h2>
+    
+        <!-- Add the script for creating the second chart -->
+        <script>
+          const ctx2 = document.getElementById('barChart2').getContext('2d');
+          
+          // Define model categories
+          const previous = ['CogAgent', 'SeeClick', 'UGround'];
+          const ours2 = ['Ours (Synthetic)', 'Ours (Human)', 'Ours (Synthetic + Human)'];
+        
+          // Function to get color and border width based on model type
+          function getModelStyle2(modelName) {
+            if (ours2.includes(modelName)) {
+              return {
+                backgroundColor: '#d4a373',
+                borderColor: '#000000',
+                borderWidth: 2
+              };
+            } else {
+              return {
+                backgroundColor: '#e9edc9',
+                borderColor: '#e9edc9',
+                borderWidth: 1
+              };
+            }
+          }
+        
+          const labels2 = ['CogAgent', 'SeeClick', 'UGround', 'Ours (Synthetic)', 'Ours (Human)', 'Ours (Synthetic + Human)'];
+          const data2 = [47.4, 53.4, 73.3, 68.0, 68.5, 74.9];
+        
+          // Add this before the chart
+          const chartContainer2 = document.createElement('div');
+          chartContainer2.style.height = '200px'; // Adjust this value as needed
+          document.getElementById('barChart2').parentNode.insertBefore(chartContainer2, document.getElementById('barChart2'));
+          chartContainer2.appendChild(document.getElementById('barChart2'));
+        
+          new Chart(ctx2, {
+            type: 'bar',
+            data: {
+              labels: labels2,
+              datasets: [{
+                label: 'Performance',
+                data: data2,
+                backgroundColor: labels2.map(label => getModelStyle2(label).backgroundColor),
+                borderColor: labels2.map(label => getModelStyle2(label).borderColor),
+                borderWidth: labels2.map(label => getModelStyle2(label).borderWidth)
+              }]
+            },
+            options: {
+              indexAxis: 'y',
+              scales: {
+                x: {
+                  min: 45,
+                  max: 80,
+                  ticks: {
+                    stepSize: 5,
+                    font: {
+                      family: "'Crimson Text', sans-serif",
+                      size: 18
+                    }
+                  }
+                },
+                y: {
+                  ticks: {
+                    callback: function(value, index) {
+                      const label = this.getLabelForValue(index);
+                      if (ours2.includes(label)) {
+                        return `${label}`;
+                      }
+                      return label;
+                    },
+                    font: function(context) {
+                      const label = context.tick.label;
+                      if (ours2.includes(label)) {
+                        return {
+                          family: "'Crimson Text', sans-serif", size: 18, weight: 'bold'
+                        };
+                      }
+                      return {family: "'Crimson Text', sans-serif", size: 18};
+                    },
+                    autoSkip: false,
+                    maxRotation: 0,
+                    minRotation: 0
+                  }
+                }
+              },
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  display: false  // Legend is now hidden
+                }
+              }
+            }
+          });
+        </script>
+        
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre style="font-size: 16px;"><code>@article{yang2025code,
+      title={Scaling Text-Rich Image Understanding via Code-Guided Synthetic Multimodal Data Generation}, 
+      author={Yue Yang and Ajay Patel and Matt Deitke and Tanmay Gupta and Luca Weihs and Andrew Head and Mark Yatskar and Chris Callison-Burch and Ranjay Krishna and Aniruddha Kembhavi and Christopher Clark},
+      journal={arXiv preprint arXiv:2405.14839},
+      year={2024}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="../papers/cosyn.pdf" class="external-link" disabled>
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://arxiv.org/abs/2405.14839" class="external-link" disabled>
+        <i class="ai ai-arxiv"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/allenai/pixmo-docs" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+      <a class="icon-link" href="https://huggingface.co/datasets/allenai/pixmo-docs" class="external-link" disabled>
+        <i class="fa fa-database"></i>
+      </a>
+      <a class="icon-link" href="https://x.com/YueYangAI/status/1794031734775820432" class="external-link" disabled>
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content", style="text-align: center;">
+          <p>
+            This website was developed by referencing <a href="https://github.com/nerfies/nerfies.github.io">this</a>. Some of the icons are from <a href="https://www.flaticon.com/">flaticon.com</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
