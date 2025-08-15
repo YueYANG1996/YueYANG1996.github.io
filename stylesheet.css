@@ -13,8 +13,8 @@
     /* Unified font sizes */
     --font-large: 1.8rem;   /* Section titles */
     --font-medium: 1.15rem;  /* Subsection titles */
-    --font-normal: 1rem;     /* Body text */
-    --font-small: 0.9rem;    /* Secondary text, links */
+    --font-normal: 1.08rem;     /* Body text */
+    --font-small: 1rem;    /* Secondary text, links */
 }
 
 * {
@@ -217,7 +217,7 @@ body {
 .about-content p {
     margin-bottom: 1rem;
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: var(--text-primary); 
     font-size: var(--font-normal);
     font-family: var(--font-main);
 }
@@ -227,14 +227,31 @@ body {
     font-family: var(--font-main);
     font-size: var(--font-normal);
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: var(--text-primary);  
     margin-bottom: 1rem;
 }
 
-.research-aspect {
-    display: inline-flex;
-    align-items: baseline;
-    vertical-align: baseline;
+/* Research Areas */
+.research-text p {
+    color: var(--text-primary); 
+    margin: 0;
+    font-size: var(--font-normal);
+    display: inline;
+    font-family: var(--font-main);
+}
+
+/* Force darker text in About section */
+#about .about-content p {
+    color: var(--text-primary) !important;  /* Force dark color */
+}
+
+#about .research-focus-inline {
+    color: var(--text-primary) !important;  /* Force dark color */
+}
+
+/* Also update research items if they're still light */
+#about .research-text p {
+    color: var(--text-primary) !important;
 }
 
 .inline-research-icon {
