@@ -1,0 +1,278 @@
+{
+  "publications": [
+    {
+      "id": "cosyn",
+      "title": "CoSyn: Scaling Text-Rich Image Understanding via Code-Guided Synthetic Multimodal Data Generation",
+      "authors": ["Yue Yang*", "Ajay Patel*", "Matt Deitke", "Tanmay Gupta", "Luca Weihs", "Andrew Head", "Mark Yatskar", "Chris Callison-Burch", "Ranjay Krishna", "Aniruddha Kembhavi", "Christopher Clark"],
+      "venue": "ACL",
+      "year": "2025",
+      "award": "🏆 SAC Highlights Award",
+      "image": "images/cosyn.png",
+      "links": {
+        "paper": "papers/cosyn.pdf",
+        "arxiv": "https://arxiv.org/abs/2502.14846",
+        "website": "https://yueyang1996.github.io/cosyn/",
+        "data": "https://huggingface.co/datasets/allenai/CoSyn-400K",
+        "code": "https://github.com/allenai/pixmo-docs"
+      },
+      "selected": true,
+      "tldr": null
+    },
+    {
+      "id": "molmo",
+      "title": "Open Weights and Open Data for State-of-the-Art Multimodal Models",
+      "authors": ["Matt Deitke*", "Christopher Clark*", "Sangho Lee", "Rohun Tripathi", "Yue Yang", "Jae Sung Park", "Mohammadreza Salehi", "Niklas Muennighoff", "Kyle Lo", "et al. (51 authors in total)"],
+      "venue": "CVPR",
+      "year": "2025",
+      "award": "🏆 Best Paper Honorable Mention",
+      "image": "images/molmo.png",
+      "links": {
+        "blog": "https://molmo.allenai.org/blog",
+        "demo": "https://molmo.allenai.org",
+        "report": "https://arxiv.org/abs/2409.17146",
+        "models": "https://huggingface.co/collections/allenai/molmo-66f379e6fe3b8ef090a8ca19",
+        "data": "https://huggingface.co/collections/allenai/pixmo-674746ea613028006285687b",
+        "code": "https://github.com/allenai/molmo"
+      },
+      "selected": true,
+      "tldr": null
+    },
+    {
+      "id": "bacon",
+      "title": "BACON: Improving Clarity of Image Captions via Bag-of-Concept Graphs",
+      "authors": ["Zhantao Yang", "Ruili Feng", "Keyu Yan", "Huangji Wang", "Zhicai Wang", "Shangwen Zhu", "Han Zhang", "Jie Xiao", "Pingyu Wu", "...", "Yue Yang", "Hongyang Zhang", "Yu Liu", "Fan Cheng"],
+      "venue": "CVPR",
+      "year": "2025",
+      "image": "images/bacon.png",
+      "links": {
+        "arxiv": "https://arxiv.org/pdf/2410.13882",
+        "website": "https://ztyang23.github.io/bacon-page/",
+        "code": "https://github.com/ztyang23/BACON",
+        "model": "https://huggingface.co/ztyang196/bacon-captioner"
+      },
+      "selected": false,
+      "tldr": null
+    },
+    {
+      "id": "articulate",
+      "title": "Articulate-Anything: Automatic Modeling of Articulated Objects via a Vision-Language Foundation Model",
+      "authors": ["Long Le", "Jason Xie", "William Liang", "Hung-Ju Wang", "Yue Yang", "Yecheng Jason Ma", "Kyle Vedder", "Arjun Krishna", "Dinesh Jayaraman", "Eric Eaton"],
+      "venue": "ICLR",
+      "year": "2025",
+      "video": "https://articulate-anything.github.io/assets/hyperhuman_deemos/center_cropped_aug_video_rest_to_handle_joint_frontview%20copy%203%20(online-video-cutter.com).mp4",
+      "links": {
+        "paper": "papers/articulate.pdf",
+        "arxiv": "https://arxiv.org/pdf/2410.13882",
+        "website": "https://articulate-anything.github.io/",
+        "code": "https://github.com/vlongle/articulate-anything"
+      },
+      "selected": false,
+      "tldr": null
+    },
+    {
+      "id": "retina",
+      "title": "A Concept-based Interpretable Model for the Diagnosis of Choroid Neoplasias using Multimodal Data",
+      "authors": ["Yifan Wu", "Yang Liu", "Yue Yang", "Michael S. Yao", "Wenli Yang", "Xuehui Shi", "Lihong Yang", "Dongjun Li", "Yueming Liu", "James C. Gee", "Xuan Yang", "Wen-bin Wei", "Shi Gu"],
+      "venue": "Nature Communications",
+      "year": "2025",
+      "image": "images/retina-teaser.png",
+      "links": {
+        "paper": "https://www.nature.com/articles/s41467-025-58801-7",
+        "code": "https://github.com/brain-intelligence-lab/MMCBM"
+      },
+      "selected": false,
+      "tldr": null
+    },
+    {
+      "id": "knobo",
+      "title": "A Textbook Remedy for Domain Shifts: Knowledge Priors for Medical Image Analysis",
+      "authors": ["Yue Yang", "Mona Gandhi", "Yufei Wang", "Yifan Wu", "Michael S. Yao", "Chris Callison-Burch", "James C. Gee", "Mark Yatskar"],
+      "venue": "NeurIPS",
+      "year": "2024",
+      "award": "🏆 Spotlight",
+      "image": "images/knobo-teaser.png",
+      "links": {
+        "paper": "papers/knobo.pdf",
+        "arxiv": "https://arxiv.org/abs/2405.14839",
+        "website": "https://yueyang1996.github.io/knobo/",
+        "code": "https://github.com/YueYANG1996/KnoBo",
+        "press": "https://ai.seas.upenn.edu/news/training-medical-ai-with-knowledge-not-shortcuts/"
+      },
+      "selected": true,
+      "tldr": "We introduce Knowledge Bottlenecks (KnoBo) that incorporate priors from medical documents, such as PubMed, through inherently interpretable models. KnoBo is robust to domain shifts in medical images, e.g., data sampled from different hospitals or data confounded by demographic variables such as sex, race, etc."
+    },
+    {
+      "id": "miragenews",
+      "title": "MiRAGeNews: Multimodal Realistic AI-Generated News Detection",
+      "authors": ["Runsheng Huang", "Liam Dugan", "Yue Yang", "Chris Callison-Burch"],
+      "venue": "EMNLP",
+      "year": "2024",
+      "award": "Findings",
+      "image": "images/news.png",
+      "links": {
+        "paper": "papers/MiRAGeNews.pdf",
+        "arxiv": "https://arxiv.org/abs/2410.09045",
+        "dataset": "https://huggingface.co/datasets/anson-huang/mirage-news",
+        "code": "https://github.com/nosna/miragenews"
+      },
+      "selected": false,
+      "tldr": "A multimodal fake news dataset for detecting AI-generated content."
+    },
+    {
+      "id": "como",
+      "title": "CoMo: Controllable Motion Generation through Language Guided Pose Code Editing",
+      "authors": ["Yiming Huang", "Weilin Wan", "Yue Yang", "Chris Callison-Burch", "Mark Yatskar", "Lingjie Liu"],
+      "venue": "ECCV",
+      "year": "2024",
+      "video": "images/como_demo.mp4",
+      "links": {
+        "paper": "papers/como.pdf",
+        "arxiv": "https://arxiv.org/abs/2403.13900",
+        "website": "https://yh2371.github.io/como/"
+      },
+      "selected": false,
+      "tldr": "CoMo is a controllable human motion generation model that encodes motion into interpretable pose codes representing body part semantics. Leveraging pose codes as interpretable representations, an LLM can directly intervene in motion editing by adjusting the pose codes according to editing instructions."
+    },
+    {
+      "id": "holodeck",
+      "title": "Holodeck: Language Guided Generation of 3D Embodied AI Environments",
+      "authors": ["Yue Yang*", "Fan-Yun Sun*", "Luca Weihs*", "Eli VanderBilt", "Alvaro Herrasti", "Winson Han", "Jiajun Wu", "Nick Haber", "Ranjay Krishna", "Lingjie Liu", "Chris Callison-Burch", "Mark Yatskar", "Aniruddha Kembhavi", "Christopher Clark"],
+      "venue": "CVPR",
+      "year": "2024",
+      "video": "images/a_1b1b_apartment_of_a_researcher_who_has_a_cat_0_0_sunny_vondelpark_4k_1.0_100.0_360_16.0_30_10_CYCLES_video.mp4",
+      "videoCaption": "a 1b1b apartment of a researcher who has a cat",
+      "links": {
+        "paper": "papers/holodeck.pdf",
+        "arxiv": "https://arxiv.org/abs/2312.09067",
+        "website": "https://yueyang1996.github.io/holodeck/",
+        "code": "https://github.com/allenai/Holodeck",
+        "press": "https://ai.seas.upenn.edu/news/penn-engineers-recreate-star-treks-holodeck-using-chatgpt-and-video-game-assets/"
+      },
+      "selected": true,
+      "tldr": "Holodeck is an automated system for generating diverse 3D environments in Embodied AI, using a large language model (GPT-4) and a vast collection of 3D assets from Objaverse. It can create complex scenes based on user prompts, adjusting for styles and specific details."
+    },
+    {
+      "id": "metaphor",
+      "title": "I Spy a Metaphor: Large Language Models and Diffusion Models Co-Create Visual Metaphors",
+      "authors": ["Tuhin Chakrabarty", "Arkady Saakyan", "Olivia Winn", "Artemis Panagopoulou", "Yue Yang", "Marianna Apidianaki", "Smaranda Muresan"],
+      "venue": "ACL",
+      "year": "2023",
+      "award": "Findings",
+      "image": "images/metaphor.png",
+      "links": {
+        "arxiv": "https://arxiv.org/pdf/2305.14724",
+        "code": "https://github.com/tuhinjubcse/VisualMetaphors"
+      },
+      "selected": false,
+      "tldr": "We generate visual metaphors from linguistic metaphors using a collaboration between LLMs and Diffusion Models. We use GPT-3 with Chain-of-Thought prompting to generate text that represents a visual elaboration of the linguistic metaphor, which is then used as input to the diffusion-based text-to-image models to create 6,476 visual metaphors."
+    },
+    {
+      "id": "labo",
+      "title": "Language in a Bottle: Language Model Guided Concept Bottlenecks for Interpretable Image Classification",
+      "authors": ["Yue Yang", "Artemis Panagopoulou", "Shenghao Zhou", "Daniel Jin", "Chris Callison-Burch", "Mark Yatskar"],
+      "venue": "CVPR",
+      "year": "2023",
+      "image": "images/labo.png",
+      "links": {
+        "paper": "papers/labo.pdf",
+        "arxiv": "https://arxiv.org/abs/2211.11158",
+        "code": "https://github.com/YueYANG1996/LaBo"
+      },
+      "selected": true,
+      "tldr": "Concept Bottleneck Models are interpretable models that factor in human-readable concepts to explain model decisions. However, CBMs often under-perform their black box counterparts and require manual specification of concepts. Our method, LaBo, leverages large language models (GPT-3) to automatically construct bottlenecks for any image classification tasks."
+    },
+    {
+      "id": "crepe",
+      "title": "Causal Reasoning About Entities and Events in Procedural Texts",
+      "authors": ["Li Zhang", "Hainiu Xu", "Yue Yang", "Shuyan Zhou", "Weiqiu You", "Manni Arora", "Chris Callison-Burch"],
+      "venue": "EACL",
+      "year": "2023",
+      "award": "Findings",
+      "image": "images/crepe.png",
+      "links": {
+        "paper": "papers/crepe.pdf",
+        "arxiv": "https://arxiv.org/abs/2301.10896",
+        "code": "https://github.com/zharry29/causal_reasoning_of_entities_and_events"
+      },
+      "selected": false,
+      "tldr": "We introduces CREPE, a benchmark for causal reasoning about event plausibility based on entity states, it shows that current large language models including GPT-3 perform poorly on this task. To improve the performance, we inject the causal relations between entities and events through structured representations such as programming languages which results in a significant increase in performance."
+    },
+    {
+      "id": "zlavi",
+      "title": "Z-LaVI: Zero-Shot Language Solver Fueled by Visual Imagination",
+      "authors": ["Yue Yang", "Wenlin Yao", "Hongming Zhang", "Xiaoyang Wang", "Dong Yu", "Jianshu Chen"],
+      "venue": "EMNLP",
+      "year": "2022",
+      "image": "images/zlavi.png",
+      "links": {
+        "paper": "papers/Z-LaVI.pdf",
+        "arxiv": "https://arxiv.org/abs/2210.12261",
+        "code": "https://github.com/YueYANG1996/Z-LaVI"
+      },
+      "selected": false,
+      "tldr": "We develop a novel approach to endow language models with visual imagination capabilities. We leverage two complementary types of 'imaginations': (i) recalling existing images through retrieval and (ii) synthesizing nonexistent images via text-to-image generation. Jointly exploiting the language inputs and the imagination, a pretrained vision-language model (e.g., CLIP) eventually composes a zero-shot solution to the original language tasks."
+    },
+    {
+      "id": "property",
+      "title": "Visualizing the Obvious: A Concreteness-based Ensemble Model for Noun Property Prediction",
+      "authors": ["Yue Yang*", "Artemis Panagopoulou*", "Marianna Apidianaki", "Mark Yatskar", "Chris Callison-Burch"],
+      "venue": "EMNLP",
+      "year": "2022",
+      "image": "images/property.png",
+      "links": {
+        "paper": "papers/property.pdf",
+        "arxiv": "https://arxiv.org/abs/2210.12905",
+        "code": "https://github.com/artemisp/semantic-norms"
+      },
+      "selected": false,
+      "tldr": "We propose to extract properties of nouns from images, which can then be used to complement information from language models to mitigate the reporting bias problem. Results show that the proposed combination of text and images greatly improves noun property prediction compared to powerful language models."
+    },
+    {
+      "id": "hierarchy",
+      "title": "Show Me More Details: Discovering Hierarchies of Procedures from Semi-structured Web Data",
+      "authors": ["Shuyan Zhou", "Harry Li Zhang", "Yue Yang", "Veronica Qing Lyu", "Pengcheng Yin", "Chris Callison-Burch", "Graham Neubig"],
+      "venue": "ACL",
+      "year": "2022",
+      "image": "images/h.gif",
+      "links": {
+        "paper": "papers/hierarchy.pdf",
+        "arxiv": "https://arxiv.org/abs/2203.07264",
+        "code": "https://github.com/shuyanzhou/wikihow_hierarchy",
+        "website": "https://wikihow-hierarchy.github.io/?task_id=104796"
+      },
+      "selected": false,
+      "tldr": "Procedures are inherently hierarchical. To 'host a party', one may need to 'clean the house', which in turn may require 'putting away the clothes'. We develop an efficient method that links steps (e.g. 'clean the house') in an article to other articles with similar intents (e.g. 'how to deep clean your house')."
+    },
+    {
+      "id": "ier",
+      "title": "Induce, Edit, Retrieve: Language Grounded Multimodal Schema for Instructional Video Retrieval",
+      "authors": ["Yue Yang", "Joongwon Kim", "Artemis Panagopoulou", "Mark Yatskar", "Chris Callison-Burch"],
+      "venue": "ODRUM @ CVPR",
+      "year": "2022",
+      "award": "Spotlight Talk",
+      "image": "images/IER.png",
+      "links": {
+        "paper": "papers/IER.pdf",
+        "arxiv": "https://arxiv.org/abs/2111.09276"
+      },
+      "selected": false,
+      "tldr": "This work proposes a novel system that induces schemata from web videos and generalizes them to capture unseen tasks with the goal of improving video retrieval performance, and demonstrates that the schemata induced by the system are better than those generated by other models."
+    },
+    {
+      "id": "vgsi",
+      "title": "Visual Goal-Step Inference using wikiHow",
+      "authors": ["Yue Yang", "Artemis Panagopoulou", "Qing Lyu", "Li Zhang", "Mark Yatskar", "Chris Callison-Burch"],
+      "venue": "EMNLP",
+      "year": "2021",
+      "image": "images/VGSI.png",
+      "links": {
+        "paper": "papers/VGSI.pdf",
+        "arxiv": "https://arxiv.org/abs/2104.05845",
+        "talk": "https://www.youtube.com/watch?v=V3Y_56ykG54&t=11s",
+        "code": "https://github.com/YueYANG1996/wikiHow-VGSI"
+      },
+      "selected": false,
+      "tldr": "This work proposes the Visual Goal-Step Inference (VGSI) task where a model is given a textual goal and must choose a plausible step towards that goal from among four candidate images. We construct a VGSI dataset from wikiHow and show that SOTA multimodal models struggle on it."
+    }
+  ]
+}

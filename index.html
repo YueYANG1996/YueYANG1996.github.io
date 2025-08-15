@@ -1,882 +1,236 @@
-<!-- Template from Jon Barron -->
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Yue Yang 杨樾</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Yue Yang - Research Scientist at Allen Institute for AI">
+    <title>Yue Yang - AI Research</title>
+    
     <link rel="icon" href="images/icons/HoloDeckLogo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111341597-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-111341597-1');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-111341597-1');
     </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#publications">Publications</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+            </div>
+        </div>
+    </nav>
 
-    <style>
-      .container {
-          display: flex;
-          align-items: center;
-      }
-      .container img {
-          height: 40px; /* Adjust as needed */
-          margin-right: 10px; /* Space between text and image */
-      }
-      .text {
-          line-height: 20px; /* Adjust based on text size */
-      }
-      hr {
-          border: none;
-          height: 2px; /* You can change this to adjust the thickness */
-          background-color: rgba(0, 0, 0, 0.3); /* Adjust color and transparency */
-          /* rgba(0, 0, 0, 0.5) means black with 50% opacity. Change values to fit your needs */
-      }
-    </style>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header Section -->
+        <section class="header-section">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1 class="name">Yue Yang</h1>
+                    <!-- <p class="chinese-name">杨樾</p> -->
 
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Crimson+Text|Noto+Sans+SC"
-    rel="stylesheet">
+                    <div class="contact-info">
+                        <p>Research Scientist at <a href="https://prior.allenai.org/" class="highlight-link">PRIOR</a>, 
+                           <img src="images/icons/ai2-monogram.svg" alt="AI2" class="inline-logo">
+                           <a href="https://allenai.org/" class="ai2-link">Ai2</a>
+                        </p>
+                        <p>3800 Latona Ave NE, Suite 300<br>Seattle, WA 98105</p>
+                        <p>Email: yueyang2333 [at] gmail.com</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/citations?user=uvyYzagAAAAJ&hl=en&authuser=1" title="Google Scholar">
+                            <img src="images/icons/google-scholar.svg" alt="Google Scholar">
+                        </a>
+                        <a href="https://www.semanticscholar.org/author/Yue-Yang/2109409802" title="Semantic Scholar">
+                            <img src="images/icons/semantic-scholar.svg" alt="Semantic Scholar">
+                        </a>
+                        <a href="https://github.com/YueYANG1996" title="GitHub">
+                            <img src="images/icons/github.svg" alt="GitHub">
+                        </a>
+                        <a href="https://x.com/YueYangAI" title="X (Twitter)">
+                            <img src="images/icons/x.svg" alt="X">
+                        </a>
+                        <a href="https://www.linkedin.com/in/yue-yang-4b2075174" title="LinkedIn">
+                            <img src="images/icons/linkedin.svg" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCRV7M6KW5BZptw_aP0A-JuA" title="YouTube">
+                            <img src="images/icons/youtube.svg" alt="YouTube">
+                        </a>
+                        <a href="https://www.pixiv.net/users/14283763" title="Pixiv">
+                            <img src="images/icons/pixiv.svg" alt="Pixiv">
+                        </a>
+                        <a href="cv.pdf" title="CV" class="cv-link">
+                            <img src="images/icons/curriculum-vitae.svg" alt="CV">
+                        </a>
+                    </div>
+                </div>
+                <div class="header-image">
+                    <img src="images/cancun.png" alt="Yue Yang">
+                </div>
+            </div>
+        </section>
 
-    <script>
-      function toggleLists() {
-        var shortList = document.getElementById("shortList");
-        var fullList = document.getElementById("fullList");
+        <!-- About Section -->
+        <section id="about" class="section">
+            <!-- <h2 class="section-title">About Me</h2> -->
+            <div class="about-content">
+                <p>
+                    Hi! My name is Yue Yang. I am a research scientist at <a href="https://prior.allenai.org/">PRIOR</a> of 
+                    <span class="inline-institution">
+                        <img src="images/icons/ai2-monogram.svg" alt="AI2" class="inline-logo">
+                        <a href="https://allenai.org/" class="ai2-link">Ai2</a>
+                    </span>. 
+                    I obtained my Ph.D. in Computer and Information Science at the University of Pennsylvania, 
+                    advised by <a href="https://www.cis.upenn.edu/~myatskar/">Mark Yatskar</a> and 
+                    <a href="https://www.cis.upenn.edu/~ccb/">Chris Callison-Burch</a>. 
+                    I am interested in the intersection area of Natural Language Processing (NLP) and Computer Vision (CV).
+                </p>
+                
+                <p class="research-focus-inline">
+                My current research focuses on applying the knowledge priors of large language models (LLMs) 
+                to various domains (images, videos, healthcare, Embodied AI, etc) to improve the 
+                <span class="research-aspect">
+                    <img src="images/interpretability.png" alt="Interpretability" class="inline-research-icon">
+                    <strong>Interpretability</strong>
+                </span>, 
+                <span class="research-aspect">
+                    <img src="images/robustness.png" alt="Robustness" class="inline-research-icon">
+                    <strong>Robustness</strong>
+                </span>, and 
+                <span class="research-aspect">
+                    <img src="images/creativity.png" alt="Data Efficiency" class="inline-research-icon">
+                    <strong>Data Efficiency</strong>
+                </span> 
+                of AI systems.
+            </p>
+            </div>
+        </section>
 
-        if (shortList.style.display === "none") {
-            shortList.style.display = "block";
-            fullList.style.display = "none";
-        } else {
-            shortList.style.display = "none";
-            fullList.style.display = "block";
-        }
-      }
-      function showFullList() {
-          document.getElementById("shortList").style.display = "none";
-          document.getElementById("fullList").style.display = "block";
-      }
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Publications</h2>
+                <div class="view-toggle">
+                    <button id="selectedBtn" class="active">Selected</button>
+                    <button id="allBtn">All Publications</button>
+                </div>
+            </div>
+            <div id="publicationsList" class="publications-list">
+                <!-- Publications will be loaded here dynamically -->
+            </div>
+        </section>
 
-      function showShortList() {
-          document.getElementById("fullList").style.display = "none";
-          document.getElementById("shortList").style.display = "block";
-      }
-    </script>
-  </head>
-  <body>
-    <!-- <div class="sidebar">
-      <a href="#about">About Me</a>
-      <a href="#shortList">Publications</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-    </div> -->
-
-    <!-- Right Sidebar -->
-    <!-- <div class="right-sidebar"></div> -->
-
-    <table width="930" border="0" align="center" cellspacing="0" cellpadding="0">
-      <tr>
-        <td>
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="70%" valign="middle">
-              <name>Yue Yang</name><br>
-              pronounced as <i>yoo-eh</i><br><br>
-              3317 Chestnut St, Amy Gutmann Hall<br>Philadelphia, PA 19104, USA<br>
-              Email: yueyang1 [at] seas.upenn.edu<br><br>
-              <a href="https://scholar.google.com/citations?user=uvyYzagAAAAJ&hl=en&authuser=1">
-                <img src="images/icons/google-scholar.svg" alt="Google Scholar Icon">
-              </a>
-              <a href="https://www.semanticscholar.org/author/Yue-Yang/2109409802">
-                <img src="images/icons/semantic-scholar.svg" alt="Semantic Scholar Icon">
-              </a>
-              <a href="https://github.com/YueYANG1996">
-                <img src="images/icons/github.svg" alt="GitHub Icon">
-              </a>
-              <a href="https://twitter.com/YueYangAI">
-                <img src="images/icons/twitter.svg" alt="Twitter Icon">
-              </a>
-              <a href="https://www.linkedin.com/in/yue-yang-4b2075174">
-                <img src="images/icons/linkedin.svg" alt="LinkedIn Icon">
-              </a>
-              <a href="https://www.youtube.com/channel/UCRV7M6KW5BZptw_aP0A-JuA">
-                <img src="images/icons/youtube.svg" alt="Youtube Icon">
-              </a>
-              <a href="https://www.pixiv.net/users/14283763">
-                <img src="images/icons/pixiv.svg" alt="Pixiv Icon">
-              </a>
-              <a href="cv.pdf">
-                <img src="images/icons/curriculum-vitae.svg" alt="CV">
-              </a>
-            </td>
-
-            <td width="30%">
-              <img src="images/cancun.png" width="100%">
-            </td>
-          </tr>
-          </table>
-
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <hr>
-          <!-- About me -->
-          <tr>
-            <td width="100%" valign="middle">
-              <heading id="about">About me</heading>
-                <div class="text" align="justify">
-                  <p class="light">
-                    Hi! My name is Yue Yang (<span style="font-family: 'Pacifico', cursive; font-size: 1.1em;">杨樾</span>). I am an incoming research scientist at <a href="https://prior.allenai.org/">PRIOR</a> of 
-                    <span style="display: inline-flex; align-items: baseline;">
-                      <img src="images/icons/ai2-monogram.svg" alt="AI2 Logo" style="height: 0.8em; vertical-align: baseline; margin-left: 4px;">
-                      <a href="https://allenai.org/" style="display: inline; vertical-align: baseline; color: #e9428e;">Ai2</a>
-                    </span>. I obtained my Ph.D. in Computer and Information Science at the University of Pennsylvania, advised by <a href="https://www.cis.upenn.edu/~myatskar/">Prof. Mark Yatskar</a> and <a href="https://www.cis.upenn.edu/~ccb/">Prof. Chris Callison-Burch</a>. I am interested in the intersection area of Natural Language Processing (NLP) and Computer Vision (CV).
-                  </p>
-                </div>
-                <div class="text" align="justify">
-                  <p>
-                    My current research focuses on applying the knowledge priors of large language models (LLMs) to various domains (images, videos, healthcare, Embodied AI, etc) to improve different aspects of AI systems, including:
-                  </p>
-                </div>
-                <div class="container">
-                  <img src="images/interpretability.png">
-                  <div class="text" align="justify">
-                      <span><strong>Interpretability.</strong> LLMs aid in constructing human-readable intermediate representations, such as concept bottlenecks, enabling the design of inherently interpretable models, thereby mitigating the black-box nature of deep learning.</span><br>
-                  </div>
-                </div>
-                <br>
-                <div class="container">
-                  <img src="images/robustness.png">
-                  <div class="text" align="justify">
-                      <span><strong>Robustness.</strong> By utilizing sparse natural language representations as input, models are less prone to overfitting on the spurious cues of in-domain training data, enhancing their robustness and out-of-domain generalization.</span><br>
-                  </div>
-                </div>
-                <br>
-                <div class="container">
-                  <img src="images/creativity.png">
-                  <div class="text" align="justify">
-                      <span><strong>Data Efficiency.</strong> Leveraging the world knowledge and coding ability of text-only LLMs to create synthetic data to improve embodied agents and multimodal language models.</span><br>
-                  </div>
-                </div>
-                <br>
-            </td>
-          </tr>
-          </table>
-
-          <hr>
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" id="shortList">
-            <!-- Your selected publications rows here -->
-            <tr>
-              <td width="30%" valign="middle">
-                <heading>Selected Works</heading>
-              </td>
-              <td width="70%" valign="right">
-                <div align="right">
-                  <a href="javascript:void(0);" onclick="showFullList()">Full List of Publications</a>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/cosyn.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/cosyn.pdf"><b>CoSyn: Scaling Text-Rich Image Understanding via Code-Guided Synthetic Multimodal Data Generation</b></a>
-                </div>
-                <div class="authors">
-                  <strong>Yue Yang</strong>*, Ajay Patel*, Matt Deitke, Tanmay Gupta, Luca Weihs, Andrew Head, Mark Yatskar, Chris Callison-Burch, Ranjay Krishna, Aniruddha Kembhavi, Christopher Clark
-                </div>
-                <div class="venue">
-                  <b>ACL</b> 2025 <b style="color: #ac530f">(SAC Highlights Award)</b>
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2502.14846">arxiv</a> /
-                  <a href="https://yueyang1996.github.io/cosyn/">website</a> /
-                  <a href="https://huggingface.co/datasets/allenai/CoSyn-400K">data</a> /
-                  <a href="https://github.com/allenai/pixmo-docs">code</a>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/molmo.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="https://molmo.allenai.org/blog"><b>Open Weights and Open Data for State-of-the-Art Multimodal Models</b></a>
-                </div>
-                <div class="authors">
-                  Matt Deitke*, Christopher Clark*, Sangho Lee, Rohun Tripathi, <strong>Yue Yang</strong>, Jae Sung Park, Mohammadreza Salehi, Niklas Muennighoff, Kyle Lo, et al. (51 authors in total)
-                </div>
-                <div class="venue">
-                  <b>CVPR</b> 2025 <b style="color: #ac530f">(Best Paper Honorable Mention)</b>
-                </div>
-                <div class="tags">
-                  <a href="https://molmo.allenai.org/blog">blog</a> /
-                  <a href="https://molmo.allenai.org">demo</a> /
-                  <a href="https://arxiv.org/abs/2409.17146">report</a> /
-                  <a href="https://huggingface.co/collections/allenai/molmo-66f379e6fe3b8ef090a8ca19">models</a> /
-                  <a href="https://huggingface.co/collections/allenai/pixmo-674746ea613028006285687b">data</a> /
-                  <a href="https://github.com/allenai/molmo">code</a>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/knobo-teaser.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/knobo.pdf"><b>A Textbook Remedy for Domain Shifts: Knowledge Priors for Medical Image Analysis</b></a>
-                </div>
-                <div class="authors">
-                  <strong>Yue Yang</strong>, Mona Gandhi, Yufei Wang, Yifan Wu, Michael S. Yao, Chris Callison-Burch, James C. Gee, Mark Yatskar
-                </div>
-                <div class="venue">
-                  <b>NeurIPS</b> 2024 <b style="color: #ac530f">(Spotlight)</b>
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2405.14839">arxiv</a> /
-                  <a href="https://yueyang1996.github.io/knobo/">website</a> /
-                  <a href="https://github.com/YueYANG1996/KnoBo">code</a> /
-                  <a href="https://ai.seas.upenn.edu/news/training-medical-ai-with-knowledge-not-shortcuts/">press</a>
-                </div>
-                <div align="justify">
-                  TL;DR: We introduce Knowledge Bottlenecks (KnoBo) that incorporate priors from medical documents, such as PubMed, through inherently interpretable models. KnoBo is robust to domain shifts in medical images, e.g., data sampled from different hospitals or data confounded by demographic variables such as sex, race, etc. Overall, our work demonstrates that a key missing ingredient for robustness to distribution shift in medical imaging models is a prior rooted in knowledge.
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <div class="caption" style="font-size: 12px;">
-                  <center>
-                    a 1b1b apartment of a researcher who has a cat
-                  </center>  
-                </div>
-                <video poster="" autoplay="" muted loop="" style="pointer-events: none; width: 220px;">
-                  <source src="images/a_1b1b_apartment_of_a_researcher_who_has_a_cat_0_0_sunny_vondelpark_4k_1.0_100.0_360_16.0_30_10_CYCLES_video.mp4" type="video/mp4">
-                </video>
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/holodeck.pdf"><b><span class="small-caps">Holodeck</span>: Language Guided Generation of 3D Embodied AI Environments</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>*, Fan-Yun Sun*, Luca Weihs*, Eli VanderBilt, Alvaro Herrasti, Winson Han, Jiajun Wu, Nick Haber, Ranjay Krishna, Lingjie Liu, Chris Callison-Burch, Mark Yatskar, Aniruddha Kembhavi, Christopher Clark
-                </div>
-                <div class="venue">
-                    <b>CVPR</b> 2024
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2312.09067">arxiv</a> / <a href="https://yueyang1996.github.io/holodeck/">website</a> / <a href="https://github.com/allenai/Holodeck">code</a> / <a href="https://ai.seas.upenn.edu/news/penn-engineers-recreate-star-treks-holodeck-using-chatgpt-and-video-game-assets/">press</a>
-                </div>
-                <div align="justify">
-                  TL;DR: <span class="small-caps">Holodeck</span> is an automated system for generating diverse 3D environments in Embodied AI, using a large language model (GPT-4) and a vast collection of 3D assets from Objaverse. It can create complex scenes based on user prompts, adjusting for styles and specific details, like "a 1b1b apartment of a researcher who has a cat".
-                </div>
-              </td>
-            </tr>
-            
-            <tr>
-              <td width="30%">
-                <img src="images/labo.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/labo.pdf"><b>Language in a Bottle: Language Model Guided Concept Bottlenecks for Interpretable Image Classification</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>, Artemis Panagopoulou, Shenghao Zhou, Daniel Jin, Chris Callison-Burch, Mark Yatskar
-                </div>
-                <div class="venue">
-                   <b>CVPR</b> 2023
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2211.11158">arxiv</a> /
-                  <a href="https://github.com/YueYANG1996/LaBo">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: Concept Bottleneck Models are interpretable models that factor in human-readable concepts to explain model decisions. However, CBMs often under-perform their black box counterparts and require manual specification of concepts. Our method, LaBo, leverages large language models (GPT-3) to automatically construct bottlenecks for any image classification tasks.
-                </div>
-              </td>
-            </tr>
-          </table>          
-
-          <!-- Full List (initially hidden) -->
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" id="fullList" style="display: none;">
-            <!-- Your full list of publications rows here -->
-            <tr>
-              <td width="30%" valign="middle">
-                <heading>Publications</heading> <br>
-              </td>
-
-              <td width="70%" valign="right">
-                <div align="right">
-                  <a href="javascript:void(0);" onclick="showShortList()">Selected Publications</a>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/cosyn.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/cosyn.pdf"><b>CoSyn: Scaling Text-Rich Image Understanding via Code-Guided Synthetic Multimodal Data Generation</b></a>
-                </div>
-                <div class="authors">
-                  <strong>Yue Yang</strong>*, Ajay Patel*, Matt Deitke, Tanmay Gupta, Luca Weihs, Andrew Head, Mark Yatskar, Chris Callison-Burch, Ranjay Krishna, Aniruddha Kembhavi, Christopher Clark
-                </div>
-                <div class="venue">
-                  <b>ACL</b> 2025 <b style="color: #ac530f">(SAC Highlights Award)</b>
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2502.14846">arxiv</a> /
-                  <a href="https://yueyang1996.github.io/cosyn/">website</a> /
-                  <a href="https://huggingface.co/datasets/allenai/CoSyn-400K">data</a> /
-                  <a href="https://github.com/allenai/pixmo-docs">code</a>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/molmo.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="https://molmo.allenai.org/blog"><b>Open Weights and Open Data for State-of-the-Art Multimodal Models</b></a>
-                </div>
-                <div class="authors">
-                  Matt Deitke*, Christopher Clark*, Sangho Lee, Rohun Tripathi, <strong>Yue Yang</strong>, Jae Sung Park, Mohammadreza Salehi, Niklas Muennighoff, Kyle Lo, et al. (51 authors in total)
-                </div>
-                <div class="venue">
-                  <b>CVPR</b> 2025 <b style="color: #ac530f">(Best Paper Honorable Mention)</b>
-                </div>
-                <div class="tags">
-                  <a href="https://molmo.allenai.org/blog">blog</a> /
-                  <a href="https://molmo.allenai.org">demo</a> /
-                  <a href="https://arxiv.org/abs/2409.17146">report</a> /
-                  <a href="https://huggingface.co/collections/allenai/molmo-66f379e6fe3b8ef090a8ca19">models</a> /
-                  <a href="https://huggingface.co/collections/allenai/pixmo-674746ea613028006285687b">data</a> /
-                  <a href="https://github.com/allenai/molmo">code</a>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/bacon.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="https://arxiv.org/pdf/2407.03314"><b>BACON: Improving Clarity of Image Captions via Bag-of-Concept Graphs</b></a>
-                </div>
-                <div class="authors">
-                  Zhantao Yang, Ruili Feng, Keyu Yan, Huangji Wang, Zhicai Wang, Shangwen Zhu, Han Zhang, Jie Xiao, Pingyu Wu, ..., <b>Yue Yang</b>, Hongyang Zhang, Yu Liu, Fan Cheng
-                </div>
-                <div class="venue">
-                  <b>CVPR</b> 2025
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/pdf/2410.13882">arxiv</a> /
-                  <a href="https://ztyang23.github.io/bacon-page/">website</a> /
-                  <a href="https://github.com/ztyang23/BACON">code</a>
-                  <a href="https://huggingface.co/ztyang196/bacon-captioner">model</a>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <video poster="" autoplay="" muted loop="" style="pointer-events: none; width: 220px;">
-                  <source src="https://articulate-anything.github.io/assets/hyperhuman_deemos/center_cropped_aug_video_rest_to_handle_joint_frontview%20copy%203%20(online-video-cutter.com).mp4" type="video/mp4">
-                </video>
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/articulate.pdf"><b>Articulate-Anything: Automatic Modeling of Articulated Objects via a Vision-Language Foundation Model</b></a>
-                </div>
-                <div class="authors">
-                  Long Le, Jason Xie, William Liang, Hung-Ju Wang, <b>Yue Yang</b>, Yecheng Jason Ma, Kyle Vedder, Arjun Krishna, Dinesh Jayaraman, Eric Eaton
-                </div>
-                <div class="venue">
-                  <b>ICLR</b> 2025
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/pdf/2410.13882">arxiv</a> /
-                  <a href="https://articulate-anything.github.io/">website</a> /
-                  <a href="https://github.com/vlongle/articulate-anything">code</a>
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-list">
+                <div class="education-item">
+                    <img src="images/penn-logo.png" alt="UPenn" class="institution-logo">
+                    <div class="education-details">
+                        <h3>University of Pennsylvania</h3>
+                        <p class="location">Philadelphia, PA, USA</p>
+                        <ul>
+                            <li>Ph.D. in Computer and Information Science (2020 - 2025)</li>
+                            <li>M.S. in Robotics (2018 - 2020)</li>
+                        </ul>
+                    </div>
                 </div>
                 
-              </td>
-            </tr>
+                <div class="education-item">
+                    <img src="images/zju-logo.png" alt="ZJU" class="institution-logo">
+                    <div class="education-details">
+                        <h3>Zhejiang University</h3>
+                        <p class="location">Hangzhou, China</p>
+                        <ul>
+                            <li>B.E. in Mechanical Engineering (2014 - 2018)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <tr>
-              <td width="30%">
-                <img src="images/retina-teaser.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/retina.pdf"><b>A Concept-based Interpretable Model for the Diagnosis of Choroid Neoplasias using Multimodal Data</b></a>
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <img src="images/Ai2_logo_pink_RGB.png" alt="AI2" class="company-logo">
+                    <div class="experience-details">
+                        <h3><a href="https://prior.allenai.org">Allen Institute for AI</a></h3>
+                        <p class="location">Seattle, WA, USA</p>
+                        <p class="position">Research Scientist <span class="date">(08/2025 - Present)</span></p>
+                        <p class="position">Research Intern <span class="date">(05/2023 - 08/2023, 05/2024 - 08/2024)</span></p>
+                        <p class="award">🏆 Outstanding Intern of the Year Award (2023)</p>
+                    </div>
                 </div>
-                <div class="authors">
-                  Yifan Wu, Yang Liu, <strong>Yue Yang</strong>, Michael S. Yao, Wenli Yang, Xuehui Shi, Lihong Yang, Dongjun Li, Yueming Liu, James C. Gee, Xuan Yang, Wen-bin Wei, Shi Gu
+                
+                <div class="experience-item">
+                    <img src="images/tencent-logo.webp" alt="Tencent" class="company-logo">
+                    <div class="experience-details">
+                        <h3><a href="https://ai.tencent.com/ailab/nlp/en/index.html">Tencent AI Lab</a></h3>
+                        <p class="location">Seattle, WA, USA</p>
+                        <p class="position">Research Scientist Intern <span class="date">(05/2022 - 08/2022)</span></p>
+                    </div>
                 </div>
-                <div class="venue">
-                  <b>Nature Communications</b> 2025
-                </div>
-                <div class="tags">
-                  <a href="https://www.nature.com/articles/s41467-025-58801-7">paper</a> /
-                  <a href="https://github.com/brain-intelligence-lab/MMCBM">code</a>
-                </div>
-              </td>
-            </tr>
+            </div>
+        </section>
 
+        <!-- Service Section -->
+        <section id="service" class="section">
+            <h2 class="section-title">Academic Service</h2>
+            <div class="service-content">
+                <h3>Reviewer</h3>
+                <ul class="service-list">
+                    <li><strong>Computer Vision:</strong> CVPR, ECCV, SIGGRAPH Asia</li>
+                    <li><strong>Natural Language Processing:</strong> ACL, EMNLP, NAACL, EACL, COLM</li>
+                    <li><strong>Machine Learning:</strong> NeurIPS, ICLR, ICML, TMLR</li>
+                </ul>
+            </div>
+        </section>
 
-            <tr>
-              <td width="30%">
-                <img src="images/knobo-teaser.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/knobo.pdf"><b>A Textbook Remedy for Domain Shifts: Knowledge Priors for Medical Image Analysis</b></a>
+        <!-- Talks Section -->
+        <section id="talks" class="section">
+            <h2 class="section-title">Talks</h2>
+            <div class="talks-list">
+                <div class="talk-item">
+                    <h3>Ai2 Job Talk</h3>
+                    <p class="talk-venue">Allen Institute for Artificial Intelligence, Seattle, WA, USA</p>
+                    <p class="talk-title"><em>Language Priors for Visual Intelligence</em>, Jan 22, 2025</p>
+                    <a href="https://www.youtube.com/watch?v=FOhGPWInO-U&ab_channel=Ai2" class="talk-link">Video →</a>
                 </div>
-                <div class="authors">
-                  <strong>Yue Yang</strong>, Mona Gandhi, Yufei Wang, Yifan Wu, Michael S. Yao, Chris Callison-Burch, James C. Gee, Mark Yatskar
+                
+                <div class="talk-item">
+                    <h3>WPE-II Presentation</h3>
+                    <p class="talk-venue">University of Pennsylvania, Philadelphia, PA, USA</p>
+                    <p class="talk-title"><em>Language Guided Concept Bottlenecks for Interpretable and Robust Image Classification</em>, April 29, 2024</p>
+                    <a href="slides/bottleneck_wpe.pdf" class="talk-link">Slides →</a>
                 </div>
-                <div class="venue">
-                  <b>NeurIPS</b> 2024 <b style="color: #ac530f">(Spotlight)</b>
+                
+                <div class="talk-item">
+                    <h3>CLUNCH</h3>
+                    <p class="talk-venue">University of Pennsylvania, Philadelphia, PA, USA</p>
+                    <p class="talk-title"><em>Investigate Procedural Events in a Multimodal Fashion</em>, November 22, 2021</p>
+                    <a href="slides/CLUNCH_talk.pdf" class="talk-link">Slides →</a>
                 </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2405.14839">arxiv</a> /
-                  <a href="https://yueyang1996.github.io/knobo/">website</a> /
-                  <a href="https://github.com/YueYANG1996/KnoBo">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: We introduce Knowledge Bottlenecks (KnoBo) that incorporate priors from medical documents, such as PubMed, through inherently interpretable models. KnoBo is robust to domain shifts in medical images, e.g., data sampled from different hospitals or data confounded by demographic variables such as sex, race, etc. Overall, our work demonstrates that a key missing ingredient for robustness to distribution shift in medical imaging models is a prior rooted in knowledge.
-                </div>
-              </td>
-            </tr>
+            </div>
+        </section>
+    </div>
 
-            <tr>
-              <td width="30%">
-                <img src="images/news.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/MiRAGeNews.pdf"><b>MiRAGeNews: Multimodal Realistic AI-Generated News Detection</b></a>
-                </div>
-                <div class="authors">
-                  Runsheng Huang, Liam Dugan, <strong>Yue Yang</strong>, Chris Callison-Burch.
-                </div>
-                <div class="venue">
-                  <b>EMNLP</b> (Findings) 2024
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2410.09045">arxiv</a> /
-                  <a href="https://huggingface.co/datasets/anson-huang/mirage-news">dataset</a> /
-                  <a href="https://github.com/nosna/miragenews">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: We propose a multimodal fake news dataset for detecting AI-generated content.
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <video poster="" autoplay="" muted loop="" style="pointer-events: none; width: 220px;">
-                  <source src="images/como_demo.mp4" type="video/mp4">
-                </video>
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/como.pdf"><b>CoMo: Controllable Motion Generation through Language Guided Pose Code Editing</b></a>
-                </div>
-                <div class="authors">
-                  Yiming Huang, Weilin Wan, <strong>Yue Yang</strong>, Chris Callison-Burch, Mark Yatskar, Lingjie Liu
-                </div>
-                <div class="venue">
-                  <b>ECCV</b> 2024
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2403.13900">arxiv</a> /
-                  <a href="https://yh2371.github.io/como/">website</a>
-                </div>
-                <div align="justify">
-                  TL;DR: CoMo is a controllable human motion generation model that encodes motion into interpretable pose codes representing body part semantics. Leveraging pose codes as interpretable representations, an LLM can directly intervene in motion editing by adjusting the pose codes according to editing instructions.
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <div class="caption" style="font-size: 12px;">
-                  <center>
-                    a 1b1b apartment of a researcher who has a cat
-                  </center>  
-                </div>
-                <video poster="" autoplay="" muted loop="" style="pointer-events: none; width: 220px;">
-                  <source src="images/a_1b1b_apartment_of_a_researcher_who_has_a_cat_0_0_sunny_vondelpark_4k_1.0_100.0_360_16.0_30_10_CYCLES_video.mp4" type="video/mp4">
-                </video>
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/holodeck.pdf"><b><span class="small-caps">Holodeck</span>: Language Guided Generation of 3D Embodied AI Environments</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>*, Fan-Yun Sun*, Luca Weihs*, Eli VanderBilt, Alvaro Herrasti, Winson Han, Jiajun Wu, Nick Haber, Ranjay Krishna, Lingjie Liu, Chris Callison-Burch, Mark Yatskar, Aniruddha Kembhavi, Christopher Clark
-                </div>
-                <div class="venue">
-                    <b>CVPR</b> 2024
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2312.09067">arxiv</a> / <a href="https://yueyang1996.github.io/holodeck/">website</a> / <a href="https://github.com/allenai/Holodeck">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: <span class="small-caps">Holodeck</span> is an automated system for generating diverse 3D environments in Embodied AI, using a large language model (GPT-4) and a vast collection of 3D assets from Objaverse. It can create complex scenes based on user prompts, adjusting for styles and specific details, like "a 1b1b apartment of a researcher who has a cat".
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%" style="text-align:center;">
-                <img src="images/metaphor.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="https://arxiv.org/pdf/2305.14724.pdf"><b>I Spy a Metaphor: Large Language Models and Diffusion Models Co-Create Visual Metaphors</b></a>
-                </div>
-                <div class="authors">
-                    Tuhin Chakrabarty, Arkady Saakyan, Olivia Winn, Artemis Panagopoulou, <strong>Yue Yang</strong>, Marianna Apidianaki, Smaranda Muresan
-                </div>
-                <div class="venue">
-                   <b>ACL</b> (Findings) 2023
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/pdf/2305.14724">arxiv</a> /
-                  <a href="https://github.com/tuhinjubcse/VisualMetaphors">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: We generate visual metaphors from linguistic metaphors using a collaboration between LLMs and Diffusion Models. We use GPT-3 with Chain-of-Thought prompting to generate text that represents a visual elaboration of the linguistic metaphor, which is then used as input to the diffusion-based text-to-image models to create 6,476 visual metaphors.
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/labo.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/labo.pdf"><b>Language in a Bottle: Language Model Guided Concept Bottlenecks for Interpretable Image Classification</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>, Artemis Panagopoulou, Shenghao Zhou, Daniel Jin, Chris Callison-Burch, Mark Yatskar
-                </div>
-                <div class="venue">
-                   <b>CVPR</b> 2023
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2211.11158">arxiv</a> /
-                  <a href="https://github.com/YueYANG1996/LaBo">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: Concept Bottleneck Models are interpretable models that factor in human-readable concepts to explain model decisions. However, CBMs often under-perform their black box counterparts and require manual specification of concepts. Our method, LaBo, leverages large language models (GPT-3) to automatically construct bottlenecks for any image classification tasks.
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%" style="text-align:center;">
-                <img src="images/crepe.png" width="80%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/crepe.pdf"><b>Causal Reasoning About Entities and Events in Procedural Texts</b></a>
-                </div>
-                <div class="authors">
-                    Li Zhang, Hainiu Xu, <strong>Yue Yang</strong>, Shuyan Zhou, Weiqiu You, Manni Arora, Chris Callison-Burch
-                </div>
-                <div class="venue">
-                   <b>EACL</b> (Findings) 2023
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2301.10896">arxiv</a> /
-                  <a href="https://github.com/zharry29/causal_reasoning_of_entities_and_events">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: We introduces CREPE, a benchmark for causal reasoning about event plausibility based on entity states, it shows that current large language models including GPT-3 perform poorly on this task. To improve the performance, we inject the causal relations between entities and events through structured representations such as programming languages which results in a significant increase in performance.
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/zlavi.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/Z-LaVI.pdf"><b>Z-LaVI: Zero-Shot Language Solver Fueled by Visual Imagination</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>, Wenlin Yao, Hongming Zhang, Xiaoyang Wang, Dong Yu, Jianshu Chen
-                </div>
-                <div class="venue">
-                  <b>EMNLP</b> 2022
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2210.12261">arxiv</a> /
-                  <a href="https://github.com/YueYANG1996/Z-LaVI">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: We develop a novel approach to endow language models with visual imagination capabilities. We leverage two complementary types of "imaginations": (I) recalling existing images through retrieval and (ii) synthesizing nonexistent images via text-to-image generation. Jointly exploiting the language inputs and the imagination, a pretrained vision-language model (e.g., CLIP) eventually composes a zero-shot solution to the original language tasks.
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/property.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/property.pdf"><b>Visualizing the Obvious: A Concreteness-based Ensemble Model for Noun Property Prediction</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>*, Artemis Panagopoulou*, Marianna Apidianaki, Mark Yatskar, Chris Callison-Burch (*equal contribution)
-                </div>
-                <div class="venue">
-                   <b>EMNLP</b> 2022
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2210.12905">arxiv</a> /
-                  <a href="https://github.com/artemisp/semantic-norms">code</a>
-                </div>
-                <div align="justify">
-                  TL;DR: We propose to extract properties of nouns from images, which can then be used to complement information from language models to mitigate the reporting bias problem. Results show that the proposed combination of text and images greatly improves noun property prediction compared to powerful language models. 
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/h.gif" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/hierarchy.pdf"><b>Show Me More Details: Discovering Hierarchies of Procedures from Semi-structured Web Data</b></a>
-                </div>
-                <div class="authors">
-                    Shuyan Zhou, Harry Li Zhang, <strong>Yue Yang</strong>, Veronica Qing Lyu, Pengcheng Yin, Chris Callison-Burch, Graham Neubig
-                </div>
-                <div class="venue">
-                   <b>ACL</b> 2022
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2203.07264">arxiv</a> /
-                  <a href="https://github.com/shuyanzhou/wikihow_hierarchy">github</a> /
-                  <!-- <a href="bib/yang2021induce.bib">bibtex</a> -->
-                  <a href="https://wikihow-hierarchy.github.io/?task_id=104796">website</a>
-                </div>
-                <div align="justify">
-                  TL;DR: Procedures are inherently hierarchical. To "host a party", one may need to "clean the house", which in turn may require "putting away the clothes". We develop an efficient method that links steps (e.g. "clean the house") in an article to other articles with similar intents (e.g. "how to deep lean your house"), which proceeds recursively to form the KB. 
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/IER.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/IER.pdf"><b>Induce, Edit, Retrieve: Language Grounded Multimodal Schema for Instructional Video Retrieval</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>, Joongwon Kim, Artemis Panagopoulou, Mark Yatskar and Chris Callison-Burch
-                </div>
-                <div class="venue">
-                  ODRUM @ CVPR 2022 (spotlight talk)
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2111.09276">arxiv</a> /
-                  <a href="bib/yang2021induce.bib">bibtex</a>
-                </div>
-                <div align="justify">
-                  TL;DR: This work proposes a novel system that induces schemata from web videos and generalizes them to capture unseen tasks with the goal of improving video retrieval performance, and demonstrates that the schemata induced by the system are better than those generated by other models.
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="30%">
-                <img src="images/VGSI.png" width="100%">
-              </td>
-              <td width="70%" valign="middle">
-                <div class="title">
-                  <a href="papers/VGSI.pdf"><b>Visual Goal-Step Inference using wikiHow</b></a>
-                </div>
-                <div class="authors">
-                    <strong>Yue Yang</strong>, Artemis Panagopoulou, Qing Lyu, Li Zhang, Mark Yatskar and Chris Callison-Burch
-                </div>
-                <div class="venue">
-                  <b>EMNLP</b> 2021
-                </div>
-                <div class="tags">
-                  <a href="https://arxiv.org/abs/2104.05845">arxiv</a> / 
-                  <a href="bib/yang2021visual.bib">bibtex</a> /
-                  <a href="https://www.youtube.com/watch?v=V3Y_56ykG54&t=11s">talk</a> /
-                  <a href="https://github.com/YueYANG1996/wikiHow-VGSI">github</a>
-                </div>
-                <div align="justify">
-                  TL;DR: This work proposes the Visual Goal-Step Inference (VGSI) task where a model is given a textual goal and must choose a plausible step towards that goal from among four candidate images. We construct a VGSI dataset from wikiHow and show that SOTA multimodal models struggle on it. 
-                </div>
-              </td>
-            </tr>
-          </table>
-
-          <hr>
-
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="100%" valign="middle">
-              <heading id="education">Education</heading>
-              <table>
-                <tr>
-                  <td width="25%">
-                    <img src="images/penn-logo.png" height=60px style="display: flex; justify-content: center;">
-                  </td>
-                  <td width="75%">
-                    <b>University of Pennsylvania</b>, Philadelphia, PA, USA<br>
-                    <li> Ph.D. in Computer and Information Science (2020 - 2025)</li>
-                    <li> M.S. in Robotics (2018 - 2020)</li>
-                  </td>
-                  
-                </tr>
-                <tr>
-                  <td width="25%" style="padding-left: 5px;">
-                    <img src="images/zju-logo.png" height=60px style="display: flex; justify-content: center;">
-                  </td>
-                  <td width="75%">
-                    <b>Zhejiang University</b>, Hangzhou, China<br>
-                    <li> B.E. in Mechanical Engineering (2014 - 2018)</li>
-                  </td>
-                  
-                </tr>
-              </table>
-            </td>
-          </tr>
-          </table>
-
-          <hr>
-
-          <!-- Experience -->
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="100%" valign="middle">
-              <heading id="experience">Experiences</heading>
-              <table>
-                <tr>
-                  <td width="25%">
-                    <img src="images/Ai2_logo_pink_RGB.png" height=35px style="display: flex; justify-content: center;">
-                  </td>
-                  <td width="75%">
-                    <a href="https://prior.allenai.org"><b>Allen Institute for AI</b></a>, Seattle, WA, USA<br>
-                    <i>Research Scientist</i> (Aug. 2025 to Present)<br>
-                    <i>Research Intern</i> (May. 2023 to Sept. 2023, May. 2024 to Sept. 2024)<br>
-                    <b style="color: #ac530f">Outstanding Intern of the Year Award (2023)</b> <br>
-                  </td>  
-                </tr>
-
-                <tr>
-                  <td width="25%">
-                    <img src="images/tencent-logo.webp" height=40px style="display: flex; justify-content: center;">
-                  </td>
-                  <td width="75%">
-                    <a href="https://ai.tencent.com/ailab/nlp/en/index.html"><b>Tencent AI Lab</b></a>, Seattle, WA, USA<br>
-                    <i>Research Scientist Intern</i> (May. 2022 to Sept. 2022)
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          </table>
-          
-          <hr>
-
-          <!-- Teaching -->
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="100%" valign="middle">
-              <heading>Teaching</heading><br><br>
-              <strong>Head Teaching Assistant</strong>, <a href="https://artificial-intelligence-class.org/">CIS-521 Artificial Intelligence</a>, University of Pennsylvania<br>
-              Fall2019; Fall 2020; Summer 2021; Fall 2021; Spring 2022 <br> <br>
-              <strong>Teaching Assistant</strong>, <a href="http://markyatskar.com/cis530_sp2021/">CIS-530 Computational Linguistics</a>, University of Pennsylvania<br>
-              Spring 2021 <br>
-            </td>
-          </tr>
-          </table>
-
-          <hr>
-
-          <!-- Academic Service -->
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tr>
-              <td width="100%" valign="middle">
-                <heading>Academic Service</heading><br><br>
-                <strong>Reviewer</strong>: <br>
-                Computer Vision: CVPR, ECCV, SIGGRAPH Asia. <br>
-                Natural Language Processing: ACL, EMNLP, NAACL, EACL, COLM. <br>
-                Machine Learning: NeurIPS, ICLR, ICML, TMLR. <br>
-              </td>
-            </tr>
-            </table>
-          
-          <hr>
-          
-          <!-- Talks -->
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="100%" valign="middle">
-              <heading>Talks</heading>
-              <table>
-                <tr>
-                  <td width="100%">
-                    <b>Ai2 Job Talk</b>, Allen Institute for Artificial Intelligence, Seattle, WA, USA<br>
-                    <i>Language Priors for Visual Intelligence</i>, Jan 22, 2025. <a href="https://www.youtube.com/watch?v=FOhGPWInO-U&ab_channel=Ai2">video</a> 
-                  </td>
-                </tr>
-                <tr>
-                  <td width="100%">
-                    <b>WPE-II Presentation</b>, University of Pennsylvania, Philadelphia, PA, USA<br>
-                    <i>Language Guided Concept Bottlenecks for Interpretable and Robust Image Classification</i>, April 29, 2024. <a href="slides/bottleneck_wpe.pdf">slides</a> 
-                  </td>
-                </tr>
-                <tr>
-                  <td width="100%">
-                    <a href="https://nlp.cis.upenn.edu/clunch.html"><b>CLUNCH</b></a>, University of Pennsylvania, Philadelphia, PA, USA<br>
-                    <i>Investigate Procedural Events in a Multimodal Fashion</i>, November 22, 2021. <a href="slides/CLUNCH_talk.pdf">slides</a> 
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          </table>
-
-          <!-- Acknowledgements -->
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-              <td><br>
-              <p align="right">
-              <font size="2">
-              Website source from <a href="https://jonbarron.info">Jon Barron</a>.
-          </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=QLmiHQflxIRMm2ULgewSTH1RI_kP-_LEhBP5p6IrxxE&cl=ffffff&w=300"></script>
-  </body>
-<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh-oh'},{'server':'p3plzcpnl472835'},{'id':'7914943'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script></html>
+    <script src="script.js"></script>
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=QLmiHQflxIRMm2ULgewSTH1RI_kP-_LEhBP5p6IrxxE&cl=ffffff&w=300"></script>
+</body>
+</html>
