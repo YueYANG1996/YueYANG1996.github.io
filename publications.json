@@ -1,6 +1,22 @@
 {
   "publications": [
     {
+      "id": "divscene",
+      "title": "DivScene: Benchmarking LVLMs for Object Navigation with Diverse Scenes and Objects",
+      "authors": ["Zhaowei Wang", "Hongming Zhang", "Tianqing Fang", "Ye Tian", "Yue Yang", "Kaixin Ma", "Xiaoman Pan", "Yangqiu Song", "Dong Yu"],
+      "venue": "EMNLP",
+      "year": "2025",
+      "award": "Findings",
+      "video": "images/divscene.mp4",
+      "links": {
+        "paper": "papers/divscene.pdf",
+        "arxiv": "https://arxiv.org/abs/2410.02730",
+        "code": "https://github.com/zhaowei-wang-nlp/DivScene"
+      },
+      "selected": false,
+      "tldr": null
+    },
+    {
       "id": "cosyn",
       "title": "CoSyn: Scaling Text-Rich Image Understanding via Code-Guided Synthetic Multimodal Data Generation",
       "authors": ["Yue Yang*", "Ajay Patel*", "Matt Deitke", "Tanmay Gupta", "Luca Weihs", "Andrew Head", "Mark Yatskar", "Chris Callison-Burch", "Ranjay Krishna", "Aniruddha Kembhavi", "Christopher Clark"],
