@@ -1,0 +1,76 @@
+{
+  "media": [
+    {
+      "id": "molmo2-coverage",
+      "title": "Ai2's Molmo 2 shows open-source models can rival proprietary giants in video understanding",
+      "year": "2025",
+      "image": "",
+      "video": "https://youtube.com/watch?v=Wf4gD2B0Jf4",
+      "links": [
+        { "name": "VentureBeat", "url": "https://venturebeat.com/infrastructure/ai2s-molmo-2-shows-open-source-models-can-rival-proprietary-giants-in-video", "logo": "images/logos/VentureBeat_VB_Logo.png" },
+        { "name": "GeekWire", "url": "https://www.geekwire.com/2025/allen-institute-for-ai-rivals-google-meta-and-openai-with-open-source-video-analysis-model/", "logo": "images/logos/GeekWire-logo.png" }
+      ]
+    },
+    {
+      "id": "thesis",
+      "title": "PhD Thesis Defense: Language Priors for Visual Intelligence",
+      "year": "2025",
+      "image": "",
+      "video": "https://www.youtube.com/watch?v=warLnIwAH4A",
+      "links": [
+        { "name": "Dissertation", "url": "https://repository.upenn.edu/entities/publication/b848845d-b4b2-4450-bf89-f1646cd54470", "logo": "images/logos/scholarly.png" }
+      ]
+    },
+    {
+      "id": "cosyn-coverage",
+      "title": "AI Vision, Reinvented: The Power of Synthetic Data",
+      "year": "2025",
+      "image": "",
+      "video": "https://youtu.be/gx7UHC25tIo",
+      "links": [
+        { "name": "VentureBeat", "url": "https://venturebeat.com/business/cosyn-the-open-source-tool-thats-making-gpt-4v-level-vision-ai-accessible-to-everyone/", "logo": "images/logos/VentureBeat_VB_Logo.png" },
+        { "name": "Penn Engineering", "url": "https://blog.seas.upenn.edu/ai-vision-reinvented-the-power-of-synthetic-data/", "logo": "images/logos/PennSEASLogo.png" },
+        { "name": "MarkTechPost", "url": "https://www.marktechpost.com/2025/02/25/cosyn-an-ai-framework-that-leverages-the-coding-capabilities-of-text-only-large-language-models-llms-to-automatically-create-synthetic-text-rich-multimodal-data/", "logo": "images/logos/MarkTechPost.png" }
+      ]
+    },
+    {
+      "id": "knobo-coverage",
+      "title": "Training Medical AI with Knowledge, Not Shortcuts",
+      "year": "2024",
+      "image": "images/knobo-coverage.jpg",
+      "video": "",
+      "links": [
+        { "name": "Penn Engineering", "url": "https://ai.seas.upenn.edu/news/training-medical-ai-with-knowledge-not-shortcuts/", "logo": "images/logos/PennSEASLogo.png" },
+        { "name": "Penn Today", "url": "https://penntoday.upenn.edu/news/penn-engineering-training-medical-ai-knowledge-not-shortcuts", "logo": "images/logos/penntoday.png" },
+        { "name": "Medical News Bulletin", "url": "https://medicalnewsbulletin.com/knowledge-enhanced-bottlenecks-ai-radiology/", "logo": "images/logos/MNB-Retina-Logo.png" },
+        { "name": "Medical Xpress", "url": "https://medicalxpress.com/news/2024-10-medical-image-analysis-ai-knowledge.html", "logo": "images/logos/medicalxpress.png" }
+      ]
+    },
+    {
+      "id": "molmo-coverage",
+      "title": "Ai2's Molmo shows open source can meet, and beat, closed multimodal models",
+      "year": "2024",
+      "image": "",
+      "video": "https://youtube.com/watch?v=spBxYa3eAlA",
+      "links": [
+        { "name": "TechCrunch", "url": "https://techcrunch.com/2024/09/25/ai2s-molmo-shows-open-source-can-meet-and-beat-closed-multimodal-models/", "logo": "images/logos/TechCrunch-Logo-2011.png" },
+        { "name": "WIRED", "url": "https://www.wired.com/story/molmo-open-source-multimodal-ai-model-allen-institute-agents/", "logo": "images/logos/Wired_logo.svg.png" },
+        { "name": "MIT Technology Review", "url": "https://www.technologyreview.com/2024/10/01/1104744/why-bigger-is-not-always-better-in-ai/", "logo": "images/logos/Technology_Review_logo.png" },
+        { "name": "VentureBeat", "url": "https://venturebeat.com/ai/ai2s-new-molmo-open-source-ai-models-beat-gpt-4o-claude-on-some-benchmarks/", "logo": "images/logos/VentureBeat_VB_Logo.png" }
+      ]
+    },
+    {
+      "id": "holodeck-coverage",
+      "title": "Penn Engineers Recreate Star Trek's Holodeck Using ChatGPT and Video Game Assets",
+      "year": "2024",
+      "image": "https://www.giantfreakinrobot.com/wp-content/uploads/2024/04/star-trek-holodeck.jpg",
+      "video": "",
+      "links": [
+        { "name": "Penn Engineering", "url": "https://ai.seas.upenn.edu/news/penn-engineers-recreate-star-treks-holodeck-using-chatgpt-and-video-game-assets/", "logo": "images/logos/PennSEASLogo.png" },
+        { "name": "Tech Xplore", "url": "https://techxplore.com/news/2024-04-recreate-star-trek-holodeck-chatgpt.html", "logo": "images/logos/tech-xplore-vector-logo.png" },
+        { "name": "Tech Times", "url": "https://www.techtimes.com/articles/303527/20240412/engineers-use-chatgpt-video-game-assets-recreate-star-treks-holodeck.html", "logo": "images/logos/techtimes.png" },
+        { "name": "Tech Briefs", "url": "https://www.techbriefs.com/component/content/article/50943-recreating-star-trek-virtual-environments", "logo": "images/logos/TB-Logo.png" }
+      ]
+    }
+  ]
+}

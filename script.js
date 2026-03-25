@@ -291,9 +291,63 @@ function createPublicationHTML(pub) {
     `;
 }
 
+// Load media coverage from JSON
+async function loadMedia() {
+    try {
+        const response = await fetch('media.json');
+        const data = await response.json();
+        const container = document.getElementById('mediaGrid');
+        if (!container) return;
+        container.innerHTML = data.media.map(createMediaCardHTML).join('');
+    } catch (error) {
+        console.error('Error loading media:', error);
+    }
+}
+
+function getYouTubeId(url) {
+    if (!url) return null;
+    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|watch\?v=))([a-zA-Z0-9_-]{11})/);
+    return match ? match[1] : null;
+}
+
+function createMediaCardHTML(item) {
+    let visualHtml = '';
+    const ytId = getYouTubeId(item.video);
+    if (ytId) {
+        visualHtml = `<div class="media-card-visual media-video-embed">
+            <iframe src="https://www.youtube.com/embed/${ytId}" title="${item.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>`;
+    } else if (item.image) {
+        visualHtml = `<div class="media-card-visual">
+            <img src="${item.image}" alt="${item.title}" loading="lazy">
+        </div>`;
+    }
+
+    const linksHtml = (item.links || [])
+        .map(link => {
+            if (link.logo) {
+                return `<a href="${link.url}" target="_blank" title="${link.name}"><img src="${link.logo}" class="media-outlet-logo" alt="${link.name}"></a>`;
+            }
+            return `<a href="${link.url}" target="_blank">${link.name}</a>`;
+        })
+        .join('');
+
+    return `
+        <div class="media-card">
+            ${visualHtml}
+            <div class="media-card-body">
+                <h3 class="media-card-title">${item.title}</h3>
+                <p class="media-card-year">${item.year}</p>
+                <div class="media-card-links">${linksHtml}</div>
+            </div>
+        </div>
+    `;
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     loadPublications();
+    loadMedia();
 });
 
 // Smooth scroll with offset for sticky nav

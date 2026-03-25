@@ -17,7 +17,7 @@
         "code": "https://github.com/allenai/molmoweb"
       },
       "tags": ["highlight", "vlm", "syndata", "agent"],
-      "tldr": null
+      "tldr": "An open visual web agent built on Molmo 2 that autonomously navigates websites by interpreting screenshots and executing browser actions like clicking, typing, and scrolling without needing structured page data."
     },
     {
       "id": "molmopoint",
@@ -36,7 +36,22 @@
         "code": "https://github.com/allenai/MolmoPoint-GUISyn"
       },
       "tags": ["highlight", "vlm", "syndata"],
-      "tldr": null
+      "tldr": "A VLM architecture that replaces text-based coordinate generation with a token-based pointing mechanism, allowing the model to point by directly selecting parts of its input features for more natural and efficient visual grounding."
+    },
+    {
+      "id": "STTS",
+      "title": "Video Token Pruning for VLMs",
+      "fullTitle": "Unified Spatio-Temporal Token Scoring for Efficient Video VLMs",
+      "authors": ["Jianrui Zhang", "Yue Yang", "Rohun Tripathi", "Winson Han", "Ranjay Krishna", "Christopher Clark", "Yong Jae Lee", "Sangho Lee"],
+      "venue": "Arxiv",
+      "year": "2026",
+      "image": "images/stts.png",
+      "links": {
+        "arxiv": "https://arxiv.org/pdf/2603.18004",
+        "code": "https://github.com/allenai/STTS"
+      },
+      "tags": ["vlm"],
+      "tldr": "A token pruning method for video VLMs that scores both spatial and temporal tokens to efficiently reduce input size while maintaining performance, enabling faster training/inference on long videos."
     },
     {
       "id": "molmo2",
@@ -55,7 +70,7 @@
         "code": "https://github.com/allenai/molmo2"
       },
       "tags": ["highlight", "vlm", "syndata"],
-      "tldr": null
+      "tldr": "A family of open-weight VLMs with state-of-the-art video understanding, pointing, and tracking capabilities, extending multimodal AI to analyze videos and multiple images with grounded spatial-temporal outputs."
     },
     {
       "id": "divscene",
@@ -72,7 +87,7 @@
         "code": "https://github.com/zhaowei-wang-nlp/DivScene"
       },
       "tags": ["embodied"],
-      "tldr": null
+      "tldr": "A large-scale dataset of 4,614 houses across 81 scene types for open-vocabulary 3D object navigation, showing that fine-tuned VLMs can surpass GPT-4o by over 20% in navigation success rates."
     },
     {
       "id": "molmo",
@@ -92,7 +107,7 @@
         "code": "https://github.com/allenai/molmo"
       },
       "tags": ["highlight", "vlm", "syndata"],
-      "tldr": null
+      "tldr": "A family of open-weight VLMs trained on PixMo, a collection of novel datasets including highly detailed image captions collected without relying on proprietary VLMs, achieving performance competitive with leading proprietary models."
     },
     {
       "id": "cosyn",
@@ -111,7 +126,7 @@
         "code": "https://github.com/allenai/pixmo-docs"
       },
       "tags": ["highlight", "vlm", "syndata"],
-      "tldr": null
+      "tldr": "A framework that uses text-only LMs to programmatically generate synthetic text-rich images and instruction-tuning data, achieving state-of-the-art text-rich image understanding that surpasses GPT-4V and Gemini 1.5 Flash."
     },
     {
       "id": "bacon",

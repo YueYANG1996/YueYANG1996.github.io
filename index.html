@@ -28,6 +28,7 @@
                 <a href="#about">About</a>
                 <a href="#publications">Publications</a>
                 <a href="#journey">Journey</a>
+                <a href="#media">Press</a>
             </div>
         </div>
     </nav>
@@ -35,7 +36,7 @@
     <!-- Main Container -->
     <div class="container">
         <!-- Header Section -->
-        <section class="header-section">
+        <section id="about" class="header-section">
             <div class="header-content">
                 <div class="header-text">
                     <h1 class="name">Yue Yang</h1>
@@ -83,39 +84,35 @@
                     <img src="images/ai2_profile.jpeg" alt="Yue Yang">
                 </div>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <!-- <h2 class="section-title">About Me</h2> -->
-            <div class="about-content">
-                <p style="text-align: justify;">
-                    Hi! My name is Yue Yang. I am a research scientist at <a href="https://prior.allenai.org/" class="highlight-link">PRIOR</a> of 
-                    <span class="inline-institution">
-                        <a href="https://allenai.org/" class="ai2-link" style="display: inline-flex; align-items: center;">
-                            <img src="images/icons/ai2-monogram.svg" alt="AI2" class="inline-logo" style="margin-right: 2px;">
-                            Ai2
-                        </a>
-                    </span>. 
-                    I obtained my Ph.D. in Computer and Information Science at the University of Pennsylvania, 
-                    advised by <a href="https://www.cis.upenn.edu/~myatskar/" class="highlight-link">Mark Yatskar</a> and 
-                    <a href="https://www.cis.upenn.edu/~ccb/" class="highlight-link">Chris Callison-Burch</a>. My current research focuses on building multimodal intelligence that can interact with both
-                <span class="research-aspect">
-                    <svg class="inline-research-icon" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                        <line x1="12" y1="22.08" x2="12" y2="12"/>
-                    </svg><strong style="color: #059669;">physical</strong></span> and
-                <span class="research-aspect">
-                    <svg class="inline-research-icon" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="3" width="20" height="14" rx="2"/>
-                        <path d="M8 21h8"/>
-                        <path d="M12 17v4"/>
-                        <path d="M7 8l3 3-3 3"/>
-                        <line x1="13" y1="14" x2="17" y2="14"/>
-                    </svg><strong style="color: #7c3aed;">digital</strong></span> world.
-                </p>
-            </div>
+            <br>
+            
+            <p style="text-align: justify;">
+                Hi! My name is Yue Yang. I am a research scientist at <a href="https://prior.allenai.org/" class="highlight-link">PRIOR</a> of
+                <span class="inline-institution">
+                    <a href="https://allenai.org/" class="ai2-link" style="display: inline-flex; align-items: center;">
+                        <img src="images/icons/ai2-monogram.svg" alt="AI2" class="inline-logo" style="margin-right: 2px;">
+                        Ai2
+                    </a>
+                </span>.
+                I obtained my Ph.D. in Computer and Information Science at the University of Pennsylvania,
+                advised by <a href="https://www.cis.upenn.edu/~myatskar/" class="highlight-link">Mark Yatskar</a> and
+                <a href="https://www.cis.upenn.edu/~ccb/" class="highlight-link">Chris Callison-Burch</a>.
+                My current research focuses on building multimodal intelligence that can interact with both
+            <span class="research-aspect">
+                <svg class="inline-research-icon" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg><strong style="color: #059669;">physical</strong></span> and
+            <span class="research-aspect">
+                <svg class="inline-research-icon" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                    <path d="M8 21h8"/>
+                    <path d="M12 17v4"/>
+                    <path d="M7 8l3 3-3 3"/>
+                    <line x1="13" y1="14" x2="17" y2="14"/>
+                </svg><strong style="color: #7c3aed;">digital</strong></span> world.
+            </p>
         </section>
 
         <!-- Publications Section -->
@@ -192,6 +189,14 @@
             </div>
         </section>
 
+        <!-- Media Coverage Section -->
+        <section id="media" class="section">
+            <h2 class="section-title">Press</h2>
+            <div id="mediaGrid" class="media-grid">
+                <!-- Media items will be loaded here dynamically -->
+            </div>
+        </section>
+
         <!-- Service Section -->
         <!-- <section id="service" class="section">
             <h2 class="section-title">Academic Service</h2>
@@ -206,7 +211,7 @@
         <!-- </section> -->
 
         <!-- Talks Section -->
-        <section id="talks" class="section">
+        <!-- <section id="talks" class="section">
             <h2 class="section-title">Talks</h2>
             <div class="talks-list">
                 <div class="talk-item talk-featured">
@@ -233,11 +238,11 @@
                     <p class="talk-title"><em>Investigate Procedural Events in a Multimodal Fashion</em>, November 22, 2021</p>
                     <a href="slides/CLUNCH_talk.pdf" class="talk-link">Slides →</a>
                 </div>
-            </div>
-        </section>
+            </div> -->
+        <!-- </section> -->
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
     <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=QLmiHQflxIRMm2ULgewSTH1RI_kP-_LEhBP5p6IrxxE&cl=ffffff&w=300"></script>
 </body>
 </html>
