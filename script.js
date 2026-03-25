@@ -62,7 +62,7 @@ function displayPublications() {
 
     function onAllLoaded() {
         layoutMasonry();
-        // Set up hover behaviors
+        // Set up hover and click behaviors
         cards.forEach(card => {
             const video = card.querySelector('video');
             if (video) {
@@ -72,6 +72,14 @@ function displayPublications() {
                     video.currentTime = 0;
                 });
             }
+
+            // Click card to open primary link (but not if clicking a link inside details)
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('.pub-links a')) return; // let detail links work normally
+                const href = card.dataset.href;
+                if (href && href !== '#') window.open(href, '_blank');
+            });
         });
     }
 
@@ -102,9 +110,9 @@ function layoutMasonry() {
     const containerWidth = container.offsetWidth;
 
     // Determine column count based on width
-    let cols = 4;
-    if (containerWidth < 768) cols = 1;
-    else if (containerWidth < 1100) cols = 3;
+    let cols = 3;
+    if (containerWidth < 500) cols = 1;
+    else if (containerWidth < 700) cols = 2;
 
     const colWidth = (containerWidth - gap * (cols - 1)) / cols;
     const colHeights = new Array(cols).fill(0);
@@ -259,8 +267,12 @@ function createPublicationHTML(pub) {
     // TL;DR
     const tldrHtml = pub.tldr ? `<div class="pub-tldr"><strong>TL;DR:</strong> ${pub.tldr}</div>` : '';
 
+    // Primary link: website > blog > paper > arxiv > first link
+    const links = pub.links || {};
+    const primaryLink = links.website || links.blog || links.paper || links.arxiv || links.report || Object.values(links)[0] || '#';
+
     return `
-        <div class="pub-card${pub.tags && pub.tags.includes('highlight') ? ' is-highlight' : ''}" data-id="${pub.id}">
+        <div class="pub-card${pub.tags && pub.tags.includes('highlight') ? ' is-highlight' : ''}" data-id="${pub.id}" data-href="${primaryLink}">
             ${mediaHtml}
             <div class="pub-summary">
                 <div class="pub-title">${pub.title}</div>

@@ -396,13 +396,10 @@ body {
     z-index: 10;
 }
 
-/* Grid breaks out of container but stays centered */
+/* Grid stays within normal container width */
 .pub-grid {
     position: relative;
-    width: calc(100vw - 4rem);
-    max-width: 1200px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
 }
 
 /* Publication Card */
@@ -997,6 +994,9 @@ body {
     /* On mobile, use simple stacked layout */
     .pub-grid {
         position: static;
+        left: auto;
+        transform: none;
+        width: 100%;
     }
 
     .pub-card {
