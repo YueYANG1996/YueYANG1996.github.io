@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Yue Yang - Research Scientist at Allen Institute for AI">
-    <title>Yue Yang - AI Research</title>
+    <title>Yue Yang - Multimodal AI</title>
     
     <link rel="icon" href="images/icons/HoloDeckLogo.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
@@ -100,40 +100,20 @@
                     </span>. 
                     I obtained my Ph.D. in Computer and Information Science at the University of Pennsylvania, 
                     advised by <a href="https://www.cis.upenn.edu/~myatskar/" class="highlight-link">Mark Yatskar</a> and 
-                    <a href="https://www.cis.upenn.edu/~ccb/" class="highlight-link">Chris Callison-Burch</a>. 
-                    I am interested in the intersection area of Natural Language Processing (NLP) and Computer Vision (CV).
+                    <a href="https://www.cis.upenn.edu/~ccb/" class="highlight-link">Chris Callison-Burch</a>. My current research focuses on building multimodal intelligence that can interact with both physical and digital world.
                 </p>
-                
-                <p class="research-focus-inline" style="text-align: justify;">
-                My current research focuses on applying the knowledge priors of large language models (LLMs) 
-                to various domains (images, videos, healthcare, Embodied AI, etc) to improve the 
-                <span class="research-aspect">
-                    <img src="images/interpretability.png" alt="Interpretability" class="inline-research-icon">
-                    <strong>Interpretability</strong>
-                </span>, 
-                <span class="research-aspect">
-                    <img src="images/robustness.png" alt="Robustness" class="inline-research-icon">
-                    <strong>Robustness</strong>
-                </span>, and 
-                <span class="research-aspect">
-                    <img src="images/creativity.png" alt="Data Efficiency" class="inline-research-icon">
-                    <strong>Data Efficiency</strong>
-                </span> 
-                of AI.
-            </p>
             </div>
         </section>
 
         <!-- Publications Section -->
         <section id="publications" class="section">
-            <div class="section-header">
+            <div class="pub-header">
                 <h2 class="section-title">Publications</h2>
-                <div class="view-toggle">
-                    <button id="selectedBtn" class="active">Selected</button>
-                    <button id="allBtn">All Publications</button>
+                <div id="tagFilters" class="tag-filters">
+                    <!-- Tag filter buttons rendered by JS -->
                 </div>
             </div>
-            <div id="publicationsList" class="publications-list">
+            <div id="publicationsList" class="pub-grid">
                 <!-- Publications will be loaded here dynamically -->
             </div>
         </section>
