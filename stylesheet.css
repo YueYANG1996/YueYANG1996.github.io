@@ -10,11 +10,12 @@
     --max-width: 880px;
     --font-main: 'EB Garamond', 'Crimson Text', Georgia, serif;
 
-    /* Unified font sizes */
-    --font-large: 1.8rem;
-    --font-medium: 1.15rem;
-    --font-normal: 1.08rem;
-    --font-small: 1rem;
+    /* Unified font sizes — 5 tiers only */
+    --font-large: 1.8rem;     /* Section titles */
+    --font-medium: 1.1rem;    /* Card titles, h3 */
+    --font-normal: 1rem;      /* Body text */
+    --font-small: 0.88rem;    /* Secondary text, tags, meta */
+    --font-xs: 0.75rem;       /* Tiny labels, tag pills on cards */
 }
 
 * {
@@ -253,10 +254,9 @@ body {
 .inline-research-icon {
     width: 18px;
     height: 18px;
-    margin-right: 3px;
-    margin-bottom: -2px;
+    margin-right: 2px;
     display: inline-block;
-    vertical-align: text-bottom;
+    vertical-align: -0.15em;
 }
 
 .research-aspect strong {
@@ -326,12 +326,12 @@ body {
     --tag-interpretability: #7c3aed;
     --tag-embodied: #059669;
     --tag-medical: #dc2626;
+    --tag-agent: #ea580c;
 }
 
-/* Keep title + filters at normal page width */
+/* Title + filters stay at normal page width */
 .pub-header {
-    max-width: var(--max-width);
-    margin: 0 auto 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .tag-filters {
@@ -346,7 +346,7 @@ body {
     background: var(--bg-primary);
     border-radius: 20px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: var(--font-small);
     font-weight: 500;
     font-family: var(--font-main);
     color: var(--text-secondary);
@@ -386,21 +386,23 @@ body {
 .tag-btn[data-tag="medical"]:hover { background: var(--tag-medical); color: #fff; }
 .tag-btn[data-tag="medical"].active { background: var(--tag-medical); color: #fff; border-color: var(--tag-medical); }
 
-/* Publications section breaks out of narrow container */
+.tag-btn[data-tag="agent"] { border-color: var(--tag-agent); color: var(--tag-agent); }
+.tag-btn[data-tag="agent"]:hover { background: var(--tag-agent); color: #fff; }
+.tag-btn[data-tag="agent"].active { background: var(--tag-agent); color: #fff; border-color: var(--tag-agent); }
+
+/* Publications section stays in normal container flow */
 #publications {
-    width: 100vw;
-    max-width: 1200px;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
     position: relative;
     z-index: 10;
 }
 
-/* Masonry container — JS positions children absolutely */
+/* Grid breaks out of container but stays centered */
 .pub-grid {
     position: relative;
+    width: calc(100vw - 4rem);
+    max-width: 1200px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Publication Card */
@@ -464,7 +466,7 @@ body {
 }
 
 .pub-title {
-    font-size: 0.9rem;
+    font-size: var(--font-small);
     font-weight: 600;
     color: var(--text-primary);
     line-height: 1.35;
@@ -481,7 +483,7 @@ body {
 }
 
 .pub-venue-text {
-    font-size: 0.82rem;
+    font-size: var(--font-small);
     color: var(--text-secondary);
     font-family: var(--font-main);
     font-weight: 500;
@@ -489,7 +491,7 @@ body {
 
 .pub-award {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: var(--font-xs);
     font-weight: 600;
     color: #fff;
     background: #dc2626;
@@ -508,7 +510,7 @@ body {
 
 /* Colored tag pills on cards */
 .pub-tag {
-    font-size: 0.75rem;
+    font-size: var(--font-xs);
     padding: 0.05rem 0.45rem;
     border-radius: 8px;
     font-family: var(--font-main);
@@ -521,6 +523,7 @@ body {
 .pub-tag[data-tag="interpretability"] { background: rgba(124, 58, 237, 0.1); color: var(--tag-interpretability); }
 .pub-tag[data-tag="embodied"]         { background: rgba(5, 150, 105, 0.1);  color: var(--tag-embodied); }
 .pub-tag[data-tag="medical"]          { background: rgba(220, 38, 38, 0.1);  color: var(--tag-medical); }
+.pub-tag[data-tag="agent"]            { background: rgba(234, 88, 12, 0.1);  color: var(--tag-agent); }
 
 /* Details — overlay dropdown, animates in */
 .pub-details {
@@ -548,7 +551,7 @@ body {
 
 
 .pub-authors {
-    font-size: 0.78rem;
+    font-size: var(--font-small);
     color: var(--text-secondary);
     line-height: 1.45;
     margin-bottom: 0.35rem;
@@ -576,7 +579,7 @@ body {
     border-radius: 14px;
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 0.75rem;
+    font-size: var(--font-xs);
     font-weight: 500;
     font-family: var(--font-main);
     transition: all 0.2s ease;
@@ -631,7 +634,7 @@ body {
 }
 
 .pub-tldr {
-    font-size: 0.78rem;
+    font-size: var(--font-small);
     color: var(--text-secondary);
     line-height: 1.45;
     padding: 0.4rem 0.55rem;
@@ -643,7 +646,7 @@ body {
 
 .pub-tldr strong {
     color: var(--text-primary);
-    font-size: 0.78rem;
+    font-size: var(--font-small);
 }
 
 /* ==========================================
@@ -653,78 +656,169 @@ body {
 /* Mid-size screens handled by JS column count */
 
 /* Sections after publications need lower z-index so overlays show on top */
-#education,
-#experience,
+#journey,
 #service,
 #talks {
     position: relative;
     z-index: 1;
 }
 
-/* Education & Experience */
-.education-item,
-.experience-item {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1.25rem;
-    padding: 1rem;
-    background: var(--bg-secondary);
-    border-radius: 6px;
+/* ==========================================
+   HORIZONTAL TIMELINE
+   ========================================== */
+
+.timeline-h {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
 }
 
-.institution-logo,
-.company-logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
+.timeline-h-track {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    min-width: max-content;
+    padding-top: 1rem;
+}
+
+/* Horizontal line */
+.timeline-h-line {
+    position: absolute;
+    top: calc(1rem + 5px);
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 2px;
+    background: var(--border-color);
+}
+
+.timeline-h-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 180px;
+    position: relative;
+}
+
+/* Dot */
+.timeline-h-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    border: 2.5px solid var(--bg-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--primary-color);
+    z-index: 2;
     flex-shrink: 0;
 }
 
-.education-details h3,
-.experience-details h3 {
-    font-size: var(--font-medium);
-    font-weight: 600;
-    margin-bottom: 0.2rem;
-    font-family: var(--font-main);
+/* Card below dot */
+.timeline-h-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.4rem;
+    padding: 0.75rem 0.75rem;
+    margin-top: 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.2s;
+    width: 160px;
 }
 
-.education-details h3 a,
-.experience-details h3 a {
+.timeline-h-card:hover {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.timeline-content {
+    text-align: center;
+}
+
+.timeline-content h3 {
+    font-size: var(--font-medium);
+    font-weight: 600;
+    font-family: var(--font-main);
+    margin-bottom: 0.1rem;
+    color: var(--text-primary);
+}
+
+.timeline-content h3 a {
     color: var(--text-primary);
     text-decoration: none;
 }
 
-.education-details h3 a:hover,
-.experience-details h3 a:hover {
+.timeline-content h3 a:hover {
     color: var(--primary-color);
 }
 
-.location {
-    color: var(--text-secondary);
-    font-size: var(--font-normal);
-    margin-bottom: 0.5rem;
-    font-family: var(--font-main);
-}
-
-.education-details li,
-.experience-details li,
-.position {
-    font-size: var(--font-normal);
-    font-family: var(--font-main);
-    color: var(--text-secondary);
-}
-
-.date {
-    color: var(--text-secondary);
+.timeline-role {
     font-size: var(--font-small);
     font-family: var(--font-main);
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
-.award {
-    color: #dc2626;
-    font-weight: 600;
-    font-size: var(--font-normal);
+.timeline-loc {
+    font-size: var(--font-small);
     font-family: var(--font-main);
+    color: var(--text-secondary);
+}
+
+.timeline-note {
+    font-size: var(--font-small);
+    font-family: var(--font-main);
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Active/present dot */
+.timeline-h-dot.active {
+    background: var(--secondary-color);
+    box-shadow: 0 0 0 2px var(--secondary-color);
+}
+
+/* Date below card */
+.timeline-h-date {
+    margin-top: 0.5rem;
+    font-size: var(--font-small);
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: var(--font-main);
+}
+
+/* ==========================================
+   END TIMELINE
+   ========================================== */
+
+/* Featured talk with embedded video */
+.talk-featured {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.talk-featured .talk-info {
+    flex: 1;
+}
+
+.talk-video {
+    flex-shrink: 0;
+    width: 320px;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.talk-video iframe {
+    width: 100%;
+    height: 100%;
 }
 
 /* Teaching */
@@ -832,9 +926,10 @@ body {
 @media (max-width: 768px) {
     :root {
         --font-large: 1.5rem;
-        --font-medium: 1.1rem;
-        --font-normal: 1rem;
-        --font-small: 0.9rem;
+        --font-medium: 1rem;
+        --font-normal: 0.95rem;
+        --font-small: 0.85rem;
+        --font-xs: 0.72rem;
     }
 
     body {
@@ -941,18 +1036,23 @@ body {
         margin: 0;
     }
 
-    .education-item,
-    .experience-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1.25rem;
+    /* Timeline scrolls horizontally on mobile */
+    .timeline-h-item {
+        min-width: 150px;
     }
 
-    .education-details ul,
-    .experience-details ul {
-        text-align: left;
-        max-width: 100%;
+    .timeline-h-card {
+        width: 140px;
+        padding: 0.6rem;
+    }
+
+    /* Talk: stack video below text on mobile */
+    .talk-featured {
+        flex-direction: column;
+    }
+
+    .talk-video {
+        width: 100%;
     }
 
     .teaching-list,
@@ -973,9 +1073,10 @@ body {
 @media (max-width: 480px) {
     :root {
         --font-large: 1.4rem;
-        --font-medium: 1.05rem;
-        --font-normal: 0.95rem;
-        --font-small: 0.85rem;
+        --font-medium: 0.95rem;
+        --font-normal: 0.9rem;
+        --font-small: 0.8rem;
+        --font-xs: 0.68rem;
     }
 
     body {

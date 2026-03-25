@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join us in celebrating the wedding of Yue & Chenyu on September 14, 2025 in Central Park, NYC">
+    <meta name="theme-color" content="#9b7e5a">
+    <title>Yue & Chenyu - Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            /* Refined color palette */
+            --primary-color: #9b7e5a;
+            --secondary-color: #faf8f5;
+            --text-dark: #2c2c2c;
+            --text-light: #6b6b6b;
+            --white: #ffffff;
+            --accent: #f0e9e0;
+            --gold: #d4af37;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background: var(--secondary-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(180deg, 
+                        rgba(250, 248, 245, 0.9) 0%, 
+                        rgba(240, 233, 224, 0.6) 50%, 
+                        var(--secondary-color) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 40px 20px;
+        }
+
+        .couple-illustration {
+            width: 280px;
+            height: auto;
+            margin-bottom: 40px;
+            opacity: 0.85;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 0.85; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(4rem, 10vw, 7rem);
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            line-height: 1;
+            animation: fadeInUp 1.5s ease-in 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero .ampersand {
+            font-size: 0.6em;
+            margin: 0 20px;
+            font-weight: 400;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .wedding-details {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-top: 20px;
+            animation: fadeInUp 1.5s ease-in 0.6s both;
+        }
+
+        .wedding-details .date {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .wedding-details .location {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--text-light);
+            letter-spacing: 0.5px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .divider {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 25px auto;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--secondary-color);
+            padding-top: 80px;
+        }
+
+        /* Gallery with rotation effect */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding: 0 20px;
+            min-height: 600px;
+            position: relative;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 1;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: galleryFadeIn 1.5s ease forwards;
+            opacity: 0;
+            background: var(--white);
+        }
+
+        @keyframes galleryFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .gallery-item.fade-out {
+            animation: galleryFadeOut 1s ease forwards;
+        }
+
+        @keyframes galleryFadeOut {
+            to {
+                opacity: 0;
+                transform: scale(0.9) translateY(10px);
+            }
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px 15px 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        .gallery-item:hover .caption {
+            transform: translateY(0);
+        }
+
+        /* Gallery Controls */
+        .gallery-controls {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .gallery-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            touch-action: manipulation;
+        }
+
+        .gallery-btn:hover {
+            background: #8a6f4f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(155, 126, 90, 0.3);
+        }
+
+        .gallery-btn:active {
+            transform: translateY(0);
+        }
+
+        .gallery-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-btn:hover svg {
+            transform: rotate(180deg);
+        }
+
+        .gallery-indicator {
+            text-align: center;
+            margin-top: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            color: var(--text-light);
+            opacity: 0.6;
+            letter-spacing: 0.5px;
+        }
+
+        /* RSVP Form Section */
+        .rsvp {
+            background: linear-gradient(180deg, var(--secondary-color) 0%, var(--accent) 100%);
+            padding: 100px 20px;
+        }
+
+        .rsvp-form {
+            max-width: 650px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 15px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 15px;
+            font-family: 'Cormorant Garamond', serif;
+            transition: all 0.3s;
+            background: var(--secondary-color);
+            -webkit-appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(155, 126, 90, 0.1);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 30px;
+            margin-top: 12px;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .radio-label:hover {
+            color: var(--primary-color);
+        }
+
+        .radio-label input[type="radio"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 4px;  /* Square with rounded corners instead of circle */
+            margin-right: 10px;
+            cursor: pointer;
+            position: relative;
+            background: white;
+            flex-shrink: 0;
+        }
+
+        .radio-label input[type="radio"]:checked {
+            background: var(--primary-color);
+        }
+
+        .radio-label input[type="radio"]:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Make it slightly bigger on mobile */
+        @media (max-width: 768px) {
+            .radio-label input[type="radio"] {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 16px 45px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 30px;
+            text-transform: uppercase;
+            touch-action: manipulation;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: #8a6f4f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(155, 126, 90, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--accent);
+            border-top: 1px solid rgba(155, 126, 90, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        footer p:first-child {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-family: 'Dancing Script', cursive;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+        }
+
+        footer p:last-child {
+            font-size: 13px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            color: var(--text-light);
+        }
+
+        /* Lightbox for Gallery */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            font-weight: 300;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 15px;
+            }
+
+            .hero {
+                min-height: 100vh;
+                padding: 30px 15px;
+            }
+
+            .couple-illustration {
+                width: 220px;
+                margin-bottom: 30px;
+            }
+
+            .hero h1 {
+                font-size: clamp(3.5rem, 14vw, 5rem);
+            }
+
+            .hero .ampersand {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .gallery {
+                padding-top: 60px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                padding: 0 10px;
+                min-height: auto;
+            }
+
+            .gallery-item .caption {
+                font-size: 11px;
+                padding: 15px 10px 10px;
+            }
+
+            .gallery-controls {
+                margin-top: 30px;
+            }
+
+            .gallery-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .rsvp-form {
+                padding: 30px 20px;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .submit-btn {
+                padding: 14px 30px;
+                font-size: 14px;
+            }
+
+            .lightbox-close {
+                right: 15px;
+                top: 15px;
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: clamp(3rem, 16vw, 4rem);
+            }
+
+            .wedding-details .date {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+
+            .wedding-details .location {
+                font-size: 1.1rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .form-group label {
+                font-size: 14px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+
+        /* Tablet specific adjustments */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* Loading state */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Print styles */
+        @media print {
+            .gallery-controls,
+            .lightbox,
+            .rsvp {
+                display: none;
+            }
+        }
+
+        /* Map Modal Styles */
+        .map-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .map-modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .map-modal .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .map-modal .modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .map-modal .modal-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            font-weight: 300;
+            z-index: 1002;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-modal .modal-close:hover {
+            transform: scale(1.2);
+        }
+
+        /* Dress Code Card */
+        .dress-code-card {
+            max-width: 650px;
+            margin: 0 auto 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,248,245,0.95));
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            text-align: center;
+            border: 1px solid rgba(155, 126, 90, 0.1);
+        }
+
+        .dress-code-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            animation: gentle-bounce 3s infinite;
+        }
+
+        @keyframes gentle-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .dress-code-card h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .dress-code-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .dress-code-desc {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .dress-code-details {
+            display: grid;
+            gap: 15px;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .dress-code-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: var(--text-dark);
+            padding: 10px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .dress-code-item:hover {
+            background: rgba(255,255,255,0.8);
+            transform: translateX(5px);
+        }
+
+        .dress-code-item .icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .dress-code-card {
+                padding: 25px 20px;
+                margin-bottom: 30px;
+            }
+            
+            .dress-code-icon {
+                font-size: 36px;
+            }
+            
+            .dress-code-card h3 {
+                font-size: 1.8rem;
+            }
+            
+            .dress-code-title {
+                font-size: 0.95rem;
+            }
+            
+            .dress-code-desc {
+                font-size: 1.1rem;
+            }
+            
+            .dress-code-item {
+                font-size: 0.95rem;
+                padding: 8px;
+            }
+            
+            .dress-code-item .icon {
+                font-size: 20px;
+            }
+        }
+
+        /* Timeline Section */
+        .timeline {
+            background: linear-gradient(180deg, var(--secondary-color) 0%, var(--accent) 50%, var(--secondary-color) 100%);
+            padding: 100px 20px;
+        }
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 120px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background: linear-gradient(180deg, transparent, var(--gold), var(--gold), transparent);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            position: relative;
+            animation: fadeInUp 0.8s ease both;
+        }
+
+        .timeline-item:nth-child(2) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.5s; }
+
+        .timeline-time {
+            width: 100px;
+            text-align: right;
+            padding-right: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary-color);
+            letter-spacing: 0.5px;
+            padding-top: 5px;
+        }
+
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background: var(--white);
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+            position: absolute;
+            left: 112px;
+            top: 8px;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-dot.special {
+            width: 20px;
+            height: 20px;
+            left: 110px;
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.3);
+            box-shadow: 0 0 0 8px rgba(155, 126, 90, 0.1);
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-left: 40px;
+            padding-top: 0;
+        }
+
+        .timeline-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .timeline-content h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .timeline-content p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: var(--text-light);
+            letter-spacing: 0.3px;
+        }
+
+        /* Split timeline for parallel activities */
+        .split-content {
+            display: flex;
+            gap: 40px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            border: 1px solid rgba(155, 126, 90, 0.1);
+        }
+
+        .guest-activity,
+        .couple-activity {
+            flex: 1;
+        }
+
+        .guest-activity {
+            padding-right: 20px;
+            border-right: 1px solid rgba(155, 126, 90, 0.2);
+        }
+
+        .couple-activity {
+            padding-left: 20px;
+        }
+
+        /* Add decorative elements */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 120px;
+            top: 16px;
+            width: 30px;
+            height: 1px;
+            background: rgba(155, 126, 90, 0.2);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .timeline-container {
+                padding-left: 40px;
+            }
+            
+            .timeline-line {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                margin-bottom: 40px;
+            }
+            
+            .timeline-time {
+                width: auto;
+                text-align: left;
+                padding: 0 0 10px 40px;
+                font-size: 13px;
+            }
+            
+            .timeline-dot {
+                left: 12px;
+                top: 0;
+            }
+            
+            .timeline-dot.special {
+                left: 10px;
+            }
+            
+            .timeline-content {
+                padding-left: 40px;
+                padding-top: 0;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .timeline-content h4 {
+                font-size: 1.1rem;
+            }
+            
+            .split-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .guest-activity {
+                padding-right: 0;
+                border-right: none;
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(155, 126, 90, 0.2);
+            }
+            
+            .couple-activity {
+                padding-left: 0;
+            }
+            
+            .timeline-item::before {
+                left: 20px;
+                width: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .timeline {
+                padding: 70px 15px;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-content p {
+                font-size: 13px;
+            }
+        }
+        
+        /* Location links in timeline */
+        .location-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary-color);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .location-link:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+
+        .location-link::after {
+            content: '📍';
+            font-size: 12px;
+            margin-left: 4px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .location-link:hover::after {
+            transform: translateY(-2px);
+        }
+
+        /* Add to existing map-modal styles */
+        .location-caption {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            border-radius: 0 0 8px 8px;
+            margin-top: -4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/drawing.png" alt="Yue and Chenyu illustration" class="couple-illustration">
+        
+        <h1>
+            Yue 
+            <span class="ampersand">and</span>
+            Chenyu
+        </h1>
+        
+        <div class="divider"></div>
+        
+        <div class="wedding-details">
+            <div class="date">4:30 PM, September 14, 2025</div>
+            <div class="location">
+                <span style="display: inline-flex; align-items: center;">
+                    Summerhouse at the Dene
+                    <a href="#" onclick="openMapModal(event)" title="View Map" style="display: inline-flex; align-items: center; margin-left: 6px; cursor: pointer;">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                            <path d="M10 2C6.686 2 4 4.686 4 8c0 4.418 5.25 9.54 5.472 9.75a1 1 0 0 0 1.056 0C10.75 17.54 16 12.418 16 8c0-3.314-2.686-6-6-6zm0 14.438C8.188 14.062 6 10.938 6 8a4 4 0 1 1 8 0c0 2.938-2.188 6.062-4 8.438z" fill="#9b7e5a"/>
+                            <circle cx="10" cy="8" r="2" fill="#9b7e5a"/>
+                        </svg>
+                    </a>
+                </span>
+                <br>
+                Central Park<br>
+                New York City
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">Our Story</h2>
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Photos will be dynamically loaded here -->
+        </div>
+        <div class="gallery-controls">
+            <button class="gallery-btn" onclick="refreshGallery()" aria-label="Refresh gallery">
+                <span>See More Memories</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 4v6h6M23 20v-6h-6M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close" aria-label="Close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- Map Modal -->
+    <div class="map-modal" id="mapModal" onclick="closeLocationModal(event)">
+        <span class="modal-close" aria-label="Close">&times;</span>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="location-img" src="" alt="">
+            <div class="location-caption" id="location-caption"></div>
+        </div>
+    </div>
+
+    <!-- Add this Timeline Section right before the RSVP Section -->
+    <section class="timeline" id="timeline">
+        <h2 class="section-title">Wedding Day Timeline</h2>
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item">
+                <div class="timeline-time">4:30 PM</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Guest Arrival</h3>
+                    <p>Welcome to <a href="#" onclick="openLocationModal(event, 'images/summerhouse.png', 'Summerhouse at the Dene')" class="location-link">Summerhouse at the Dene</a></p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-time">5:00 PM</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Ceremony</h3>
+                    <p>Exchange of vows in the garden</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-time">5:30 PM</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Group Photos</h3>
+                    <p>Capture memories with everyone</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item split">
+                <div class="timeline-time">6:00 PM</div>
+                <div class="timeline-dot special"></div>
+                <div class="timeline-content">
+                    <div class="split-content">
+                        <div class="guest-activity">
+                            <h4>Cocktail Hour</h4>
+                            <p>Drinks at <a href="#" onclick="openLocationModal(event, 'images/JoJo.png', 'JoJo by Jean-Georges')" class="location-link">JoJo by Jean-Georges</a></p>
+                        </div>
+                        <div class="couple-activity">
+                            <h4>Couple's Portrait Session</h4>
+                            <p>Private photo session</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-time">7:00 PM</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Reception Dinner</h3>
+                    <p>Celebration feast at <a href="#" onclick="openLocationModal(event, 'images/JoJo.png', 'JoJo by Jean-Georges')" class="location-link">JoJo</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="rsvp" id="rsvp">
+        <h2 class="section-title">RSVP</h2>
+        <!-- Add Dress Code Card here -->
+        <div class="dress-code-card">
+            <div class="dress-code-icon">👗 👔</div>
+            <h3>Dress Code</h3>
+            <p class="dress-code-title">Semi-Formal / Dressy Casual</p>
+            <p class="dress-code-desc">Garden Party Attire</p>
+        </div>
+
+        <form class="rsvp-form" id="rsvpForm" onsubmit="handleSubmit(event)">
+            <div class="success-message" id="successMessage">
+                Thank you for your RSVP! We have received your response.
+            </div>
+
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+
+            <div class="form-group">
+                <label for="guests">Number of Guests (including yourself)</label>
+                <select id="guests" name="guests">
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Will you join us for dinner?* (<a href="#" onclick="event.preventDefault(); openJojoMapModal();" style="color: inherit; text-decoration: underline; font-weight: 500;">JoJo by Jean-Georges</a> at 6:00 PM)
+                </label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="dinner" value="yes" required>
+                        Yes, I'll be there
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="dinner" value="no" required>
+                        Unable to attend
+                    </label>
+                </div>
+            </div>
+
+            <!-- JoJo Map Modal -->
+            <div class="map-modal" id="jojoMapModal" onclick="closeJojoMapModal(event)">
+                <span class="modal-close" aria-label="Close">&times;</span>
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <img src="images/JoJo.png" alt="JoJo by Jean-Georges Map">
+                </div>
+            </div>
+            <script>
+                // JoJo Map Modal Functions
+                function openJojoMapModal() {
+                    const modal = document.getElementById('jojoMapModal');
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeJojoMapModal(event) {
+                    if (event.target.id === 'jojoMapModal' || event.target.className.includes('modal-close')) {
+                        const modal = document.getElementById('jojoMapModal');
+                        modal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                }
+            </script>
+
+            <div class="form-group">
+                <label for="dietary">Dietary Restrictions</label>
+                <textarea id="dietary" name="dietary" rows="3" 
+                          placeholder="Please let us know if you have any dietary restrictions or allergies..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send RSVP</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>We can't wait to celebrate with you! 💕</p>
+            <p>Yue & Chenyu • September 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Gallery configuration
+        const allPhotos = [
+            { src: 'images/propose.jpeg', caption: 'Proposal, Royal Caribbean, 2025' },
+            { src: 'images/birthday_yue.jpeg', caption: "Yue's 28th Birthday, NYC, 2023" },
+            { src: 'images/cherry_philly.jpeg', caption: 'Cherry Blossoms, Philadelphia, 2023' },
+            { src: 'images/whale.jpeg', caption: 'Whale Watching, San Juan, 2023' },
+            { src: 'images/love_philly.jpeg', caption: 'LOVE Sign, Philadelphia, 2023' },
+            { src: 'images/birthday_chenyu.jpeg', caption: "Chenyu's 28th Birthday, NYC, 2023" },
+            { src: 'images/graduate.jpeg', caption: "Yue's PhD Graduation, Philadelphia, 2025" },
+            { src: 'images/defense.jpeg', caption: "Yue's PhD Defense, Philadelphia, 2025" },
+            { src: 'images/chicago.jpeg', caption: 'Chicago Trip, 2024' },
+            { src: 'images/olympic.jpeg', caption: 'Olympic Park, Seattle, 2024' },
+            { src: 'images/hongkong.jpeg', caption: 'Elope, Hong Kong, 2023' },
+            { src: 'images/gaoyou.jpeg', caption: 'First time visiting Gaoyou, 2023' },
+            { src: 'images/cenote_cancun.jpeg', caption: 'Cenote Exploration, Cancun, 2024' },
+            { src: 'images/longwood.jpeg', caption: 'Longwood Garden, Kennett Square, 2022' },
+            { src: 'images/ski.jpeg', caption: 'Ski Trip, Salt Lake City, 2021' },
+            { src: 'images/nassau.jpeg', caption: 'Exhausted in Nassau, Bahamas, 2025' },
+            { src: 'images/horse.jpeg', caption: 'Horse riding, Lake George, 2022' },
+            { src: 'images/rafting.jpeg', caption: 'Rafting, Lake George, 2022' },
+            { src: 'images/dubai.jpeg', caption: 'Yue looks unhappy because he got COVID, Dubai, 2022' },
+            { src: 'images/love_philly_2.jpeg', caption: 'LOVE Sign, Philadelphia, 2022' },
+            { src: 'images/blackpink.jpeg', caption: 'BLACKPINK Concert, New Jersey, 2023' },
+        ];
+
+        // Gallery state
+        let photosPerView = window.innerWidth <= 768 ? 4 : 6;
+        let autoRotateInterval = null;
+        let isHovering = false;
+        let displayedPhotos = [];
+        let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        // Update photos per view on resize
+        window.addEventListener('resize', () => {
+            const newPhotosPerView = window.innerWidth <= 768 ? 4 : 6;
+            if (newPhotosPerView !== photosPerView) {
+                photosPerView = newPhotosPerView;
+                refreshGallery();
+            }
+        });
+
+        // Fisher-Yates shuffle algorithm
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // Get random photos without immediate repeats
+        function getRandomPhotos() {
+            const availablePhotos = allPhotos.filter(photo => 
+                !displayedPhotos.some(displayed => displayed.src === photo.src)
+            );
+            
+            if (availablePhotos.length < photosPerView) {
+                displayedPhotos = [];
+                return shuffleArray(allPhotos).slice(0, photosPerView);
+            }
+            
+            return shuffleArray(availablePhotos).slice(0, photosPerView);
+        }
+
+        // Display photos with animation
+        function displayPhotos(photos) {
+            const gallery = document.getElementById('galleryGrid');
+            const existingItems = gallery.querySelectorAll('.gallery-item');
+            
+            displayedPhotos = photos;
+            
+            // Fade out existing photos
+            existingItems.forEach(item => {
+                item.classList.add('fade-out');
+            });
+            
+            // Replace photos after fade out
+            setTimeout(() => {
+                gallery.innerHTML = '';
+                photos.forEach((photo, index) => {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item';
+                    item.style.animationDelay = `${index * 0.15}s`;
+                    
+                    // Touch events for mobile
+                    if (isMobile) {
+                        item.onclick = function(e) {
+                            e.stopPropagation();
+                            openLightbox(this);
+                        };
+                    } else {
+                        item.onclick = function() { openLightbox(this); };
+                        item.onmouseenter = function() { 
+                            isHovering = true;
+                            stopAutoRotate(); 
+                        };
+                        item.onmouseleave = function() { 
+                            isHovering = false;
+                            setTimeout(() => {
+                                if (!isHovering) {
+                                    startAutoRotate();
+                                }
+                            }, 100);
+                        };
+                    }
+                    
+                    item.innerHTML = `
+                        <img src="${photo.src}" alt="${photo.caption}" loading="lazy">
+                        <span class="caption">${photo.caption}</span>
+                    `;
+                    gallery.appendChild(item);
+                });
+            }, existingItems.length > 0 ? 800 : 0);
+        }
+
+        // Manual refresh
+        function refreshGallery() {
+            stopAutoRotate();
+            const randomPhotos = getRandomPhotos();
+            displayPhotos(randomPhotos);
+            
+            if (!isHovering && !isMobile) {
+                startAutoRotate();
+            }
+        }
+
+        // Auto-rotate functionality
+        function startAutoRotate() {
+            stopAutoRotate();
+            
+            if (!isHovering && !isMobile) {
+                autoRotateInterval = setInterval(() => {
+                    if (!isHovering) {
+                        const randomPhotos = getRandomPhotos();
+                        displayPhotos(randomPhotos);
+                    }
+                }, 8000);
+            }
+        }
+
+        function stopAutoRotate() {
+            if (autoRotateInterval) {
+                clearInterval(autoRotateInterval);
+                autoRotateInterval = null;
+            }
+        }
+
+        // Lightbox functions
+        function openLightbox(element) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const img = element.querySelector('img');
+            
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.className === 'lightbox-close') {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const submitBtn = event.target.querySelector('.submit-btn');
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="loading"></span> Sending...';
+            
+            fetch('https://formspree.io/f/mwpqrdzk', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('successMessage').style.display = 'block';
+                    event.target.reset();
+                    document.getElementById('successMessage').scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                    
+                    setTimeout(() => {
+                        document.getElementById('successMessage').style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            }).catch(error => {
+                alert('There was a problem submitting your RSVP. Please try again or contact us directly.');
+                console.error('Error:', error);
+            }).finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send RSVP';
+            });
+        }
+
+        // Initialize gallery
+        function initGallery() {
+            const initialPhotos = getRandomPhotos();
+            displayPhotos(initialPhotos);
+            
+            if (!isMobile) {
+                setTimeout(() => {
+                    if (!isHovering) {
+                        startAutoRotate();
+                    }
+                }, 2000);
+            }
+        }
+
+        // DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            initGallery();
+            
+            // Desktop hover detection
+            if (!isMobile) {
+                const gallerySection = document.querySelector('.gallery');
+                
+                gallerySection.addEventListener('mouseenter', () => {
+                    isHovering = true;
+                    stopAutoRotate();
+                });
+                
+                gallerySection.addEventListener('mouseleave', () => {
+                    isHovering = false;
+                    setTimeout(() => {
+                        if (!isHovering) {
+                            startAutoRotate();
+                        }
+                    }, 500);
+                });
+            }
+            
+            // Stop rotation when RSVP is visible
+            const rsvpSection = document.querySelector('.rsvp');
+            const rsvpObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        stopAutoRotate();
+                    } else if (!isHovering && !isMobile) {
+                        startAutoRotate();
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            rsvpObserver.observe(rsvpSection);
+
+            // Escape key to close lightbox and map modal
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    // Close lightbox
+                    const lightbox = document.getElementById('lightbox');
+                    if (lightbox.classList.contains('active')) {
+                        lightbox.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                    
+                    // Close map modal
+                    const mapModal = document.getElementById('mapModal');
+                    if (mapModal && mapModal.classList.contains('active')) {
+                        mapModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                }
+            });
+        });
+
+        // Map Modal Functions
+        function openMapModal(event) {
+            event.preventDefault();
+            openLocationModal(event, 'images/summerhouse.png', 'Summerhouse at the Dene');
+        }
+
+        // New generic location modal function
+        function openLocationModal(event, imageSrc, locationName) {
+            event.preventDefault();
+            const modal = document.getElementById('mapModal');
+            const img = document.getElementById('location-img');
+            const caption = document.getElementById('location-caption');
+            
+            img.src = imageSrc;
+            img.alt = locationName;
+            caption.textContent = locationName;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLocationModal(event) {
+            if (event.target.id === 'mapModal' || event.target.className.includes('modal-close')) {
+                const modal = document.getElementById('mapModal');
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Update the existing closeMapModal to use the new name
+        const closeMapModal = closeLocationModal;
+    </script>
+</body>
+</html>

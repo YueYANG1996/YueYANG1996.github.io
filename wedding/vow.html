@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Vows Booklet - Yue & Chenyu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Print-optimized styles for landscape booklet */
+        @page {
+            size: 11in 8.5in; /* Landscape orientation */
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #9b7e5a;
+            --secondary-color: #faf8f5;
+            --text-dark: #2c2c2c;
+            --text-light: #6b6b6b;
+            --white: #ffffff;
+            --accent: #f0e9e0;
+            --gold: #d4af37;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: white;
+            color: var(--text-dark);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Booklet page layout - landscape with vertical fold */
+        .vow-booklet {
+            width: 11in;
+            height: 8.5in;
+            position: relative;
+            display: flex;
+            background: linear-gradient(135deg, 
+                        var(--secondary-color) 0%, 
+                        var(--white) 50%, 
+                        var(--accent) 100%);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+            page-break-after: always;
+        }
+
+        .vow-booklet:last-child {
+            page-break-after: avoid;
+        }
+
+        /* Left half - Back cover (when folded) */
+        .back-cover {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 30px;
+            position: relative;
+            border-right: 1px dashed rgba(155, 126, 90, 0.3);
+        }
+
+        /* Right half - Front cover */
+        .front-cover {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 30px;
+            position: relative;
+        }
+
+        /* Decorative borders for each half */
+        .back-cover::before,
+        .front-cover::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+        }
+
+        .back-cover::after,
+        .front-cover::after {
+            content: '';
+            position: absolute;
+            top: 28px;
+            left: 28px;
+            right: 28px;
+            bottom: 28px;
+            border: 1px solid var(--gold);
+            border-radius: 6px;
+            opacity: 0.6;
+        }
+
+        /* Corner decorations */
+        .corner-decoration {
+            position: absolute;
+            font-size: 24px;
+            color: var(--primary-color);
+            opacity: 0.7;
+            z-index: 2;
+        }
+
+        .corner-decoration.top-left { top: 35px; left: 35px; }
+        .corner-decoration.top-right { top: 35px; right: 35px; transform: rotate(90deg); }
+        .corner-decoration.bottom-left { bottom: 35px; left: 35px; transform: rotate(-90deg); }
+        .corner-decoration.bottom-right { bottom: 35px; right: 35px; transform: rotate(180deg); }
+
+        /* Back cover content */
+        .back-content {
+            position: relative;
+            z-index: 2;
+            max-width: 320px;
+        }
+
+        .couple-illustration {
+            width: 220px; /* Increased from 100px */
+            height: auto;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .couple-names {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem; /* Increased from 1.8rem */
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+
+        .ampersand {
+            font-size: 0.7em;
+            margin: 0 10px;
+            font-weight: 400;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .wedding-date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem; /* Increased from 0.75rem */
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .wedding-location {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem; /* Increased from 0.85rem */
+            color: var(--text-light);
+            line-height: 1.6;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        /* Front cover content */
+        .front-content {
+            position: relative;
+            z-index: 2;
+            max-width: 320px;
+        }
+
+        .vow-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem; /* Increased from 2.2rem */
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+        }
+
+        .recipient-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.8rem; /* Increased from 2.8rem */
+            color: var(--primary-color);
+            margin-top: 20px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* Dividers */
+        .divider {
+            width: 80px; /* Increased from 60px */
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 20px auto; /* Increased spacing */
+        }
+
+        .small-divider {
+            width: 50px; /* Increased from 40px */
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            margin: 12px auto;
+            opacity: 0.6;
+        }
+
+        /* Decorative flourish */
+        .flourish {
+            font-size: 1.8rem; /* Increased from 1.3rem */
+            color: var(--gold);
+            margin: 15px 0; /* Increased spacing */
+            opacity: 0.8;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white !important;
+            }
+            
+            .vow-booklet {
+                background: linear-gradient(135deg, 
+                            #faf8f5 0%, 
+                            #ffffff 50%, 
+                            #f0e9e0 100%) !important;
+            }
+        }
+
+        /* Screen preview styles */
+        @media screen {
+            body {
+                background: #f5f5f5;
+                padding: 20px;
+            }
+            
+            .vow-booklet {
+                margin: 0 auto 40px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            }
+        }
+
+        .booklet-label {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            color: var(--text-light);
+            opacity: 0.5;
+            z-index: 3;
+        }
+
+        .fold-indicator {
+            position: absolute;
+            left: 50%;
+            top: 10px;
+            bottom: 10px;
+            width: 1px;
+            background: rgba(155, 126, 90, 0.2);
+            z-index: 1;
+        }
+
+        .fold-text {
+            position: absolute;
+            left: 50%;
+            bottom: 5px;
+            transform: translateX(-50%);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 8px;
+            color: var(--text-light);
+            opacity: 0.4;
+            z-index: 3;
+        }
+
+        @media print {
+            .booklet-label,
+            .fold-indicator,
+            .fold-text {
+                display: none;
+            }
+            
+            /* Add this to hide the print button */
+            button {
+                display: none !important;
+            }
+        }
+
+        @media print {
+            .booklet-label,
+            .fold-indicator,
+            .fold-text,
+            .print-btn {
+                display: none !important;
+            }
+            
+            /* Add these for high resolution */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .couple-illustration {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+                image-rendering: pixelated;
+                width: 280px !important;
+                height: auto !important;
+            }
+            
+            .vow-booklet {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+
+        /* Add this for better image quality */
+        .couple-illustration {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            max-width: 280px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Yue's Vow Booklet -->
+    <div class="vow-booklet">
+        <div class="booklet-label">Yue's Vows (Fold vertically along center line)</div>
+        <div class="fold-indicator"></div>
+        <div class="fold-text">FOLD HERE</div>
+        
+        <!-- Left Half - Back Cover -->
+        <div class="back-cover">
+            <div class="corner-decoration top-left">❦</div>
+            <div class="corner-decoration top-right">❦</div>
+            <div class="corner-decoration bottom-left">❦</div>
+            <div class="corner-decoration bottom-right">❦</div>
+            
+            <div class="back-content">
+                <img src="images/drawing.png" alt="Yue and Chenyu illustration" class="couple-illustration">
+                
+                <div class="couple-names">
+                    Yue <span class="ampersand">&</span> Chenyu
+                </div>
+                
+                <div class="small-divider"></div>
+                
+                <div class="flourish">❦</div>
+                
+                <div class="wedding-date">September 14, 2025</div>
+                
+                <div class="wedding-location">
+                    Central Park<br>
+                    New York City
+                </div>
+                
+                <div class="small-divider"></div>
+                
+                <div class="flourish" style="font-size: 1.4rem;">♡</div>
+            </div>
+        </div>
+
+        <!-- Right Half - Front Cover -->
+        <div class="front-cover">
+            <div class="corner-decoration top-left">❦</div>
+            <div class="corner-decoration top-right">❦</div>
+            <div class="corner-decoration bottom-left">❦</div>
+            <div class="corner-decoration bottom-right">❦</div>
+            
+            <div class="front-content">
+                <div class="vow-title">My Vows to</div>
+                
+                <div class="divider"></div>
+                
+                <div class="flourish">❦</div>
+                
+                <div class="recipient-name">Chenyu</div>
+                
+                <div class="flourish">❦</div>
+                
+                <div class="divider"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chenyu's Vow Booklet -->
+    <div class="vow-booklet">
+        <div class="booklet-label">Chenyu's Vows (Fold vertically along center line)</div>
+        <div class="fold-indicator"></div>
+        <div class="fold-text">FOLD HERE</div>
+        
+        <!-- Left Half - Back Cover -->
+        <div class="back-cover">
+            <div class="corner-decoration top-left">❦</div>
+            <div class="corner-decoration top-right">❦</div>
+            <div class="corner-decoration bottom-left">❦</div>
+            <div class="corner-decoration bottom-right">❦</div>
+            
+            <div class="back-content">
+                <img src="images/drawing.png" alt="Yue and Chenyu illustration" class="couple-illustration">
+                
+                <div class="couple-names">
+                    Yue <span class="ampersand">&</span> Chenyu
+                </div>
+                
+                <div class="small-divider"></div>
+                
+                <div class="flourish">❦</div>
+                
+                <div class="wedding-date">September 14, 2025</div>
+                
+                <div class="wedding-location">
+                    Central Park<br>
+                    New York City
+                </div>
+                
+                <div class="small-divider"></div>
+                
+                <div class="flourish" style="font-size: 1.4rem;">♡</div>
+            </div>
+        </div>
+
+        <!-- Right Half - Front Cover -->
+        <div class="front-cover">
+            <div class="corner-decoration top-left">❦</div>
+            <div class="corner-decoration top-right">❦</div>
+            <div class="corner-decoration bottom-left">❦</div>
+            <div class="corner-decoration bottom-right">❦</div>
+            
+            <div class="front-content">
+                <div class="vow-title">My Vows to</div>
+                
+                <div class="divider"></div>
+                
+                <div class="flourish">❦</div>
+                
+                <div class="recipient-name">Yue</div>
+                
+                <div class="flourish">❦</div>
+                
+                <div class="divider"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Print functionality
+        function printVows() {
+            window.print();
+        }
+
+        // Add print button for screen viewing
+        if (!window.matchMedia('print').matches) {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = 'Print Vow Booklets';
+            printBtn.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 12px 24px;
+                background: #9b7e5a;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 14px;
+                z-index: 1000;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                transition: all 0.3s ease;
+            `;
+            printBtn.onmouseover = () => {
+                printBtn.style.background = '#8a6f4f';
+                printBtn.style.transform = 'translateY(-2px)';
+            };
+            printBtn.onmouseout = () => {
+                printBtn.style.background = '#9b7e5a';
+                printBtn.style.transform = 'translateY(0)';
+            };
+            printBtn.onclick = printVows;
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>
