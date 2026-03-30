@@ -117,7 +117,7 @@
       "venue": "ACL",
       "year": "2025",
       "award": "SAC Highlights Award",
-      "image": "images/cosyn-2.png",
+      "video": "cosyn/static/videos/dataset.mp4",
       "links": {
         "paper": "papers/cosyn.pdf",
         "arxiv": "https://arxiv.org/abs/2502.14846",

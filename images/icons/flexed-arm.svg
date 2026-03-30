@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Outer arm: from wrist up to fist -->
+  <path d="M50 58 C50 48 51 38 50 30 C49 22 46 16 42 11 C39 7.5 36 5 34 4 L31 3 C29.5 2.5 28 3 28 5 L28 9 C28 10.5 29 11.5 30.5 11.5"/>
+  <!-- Fist curl -->
+  <path d="M30.5 11.5 C32 11 33 10 32.5 8.5"/>
+  <!-- Inner arm with bicep bulge -->
+  <path d="M28 13 C29 18 33 24 31 30 C29.5 34 25 37 21 37"/>
+  <!-- Elbow wave lines -->
+  <path d="M12 33 C14 32 17 33 20 34.5"/>
+  <path d="M10 38 C12 37 15 37.5 18 38.5"/>
+  <!-- Lower inner arm -->
+  <path d="M20 40 C22 44 24 50 26 58"/>
+</svg>
