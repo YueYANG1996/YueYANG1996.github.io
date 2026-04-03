@@ -438,7 +438,13 @@ body {
 .pub-media video {
     width: 100%;
     display: block;
-    transition: transform 0.4s;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.4s;
+}
+
+.pub-media img.loaded,
+.pub-media video.loaded {
+    opacity: 1;
 }
 
 /* Cap tall square/portrait media */

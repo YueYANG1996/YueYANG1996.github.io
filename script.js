@@ -54,50 +54,69 @@ function displayPublications() {
 
     container.innerHTML = publications.map(pub => createPublicationHTML(pub)).join('');
 
-    // Wait for images/videos to load, then run masonry layout
     const cards = container.querySelectorAll('.pub-card');
-    const mediaElements = container.querySelectorAll('.pub-media img, .pub-media video');
-    let loaded = 0;
-    const total = mediaElements.length;
 
-    function onAllLoaded() {
-        layoutMasonry();
-        // Set up hover and click behaviors
-        cards.forEach(card => {
-            const video = card.querySelector('video');
-            if (video) {
-                card.addEventListener('mouseenter', () => video.play());
-                card.addEventListener('mouseleave', () => {
-                    video.pause();
-                    video.currentTime = 0;
-                });
-            }
+    // 1. Run masonry layout immediately on text-only cards (media is hidden via CSS opacity:0)
+    layoutMasonry();
 
-            // Click card to open primary link (but not if clicking a link inside details)
-            card.style.cursor = 'pointer';
-            card.addEventListener('click', (e) => {
-                if (e.target.closest('.pub-links a')) return; // let detail links work normally
-                const href = card.dataset.href;
-                if (href && href !== '#') window.open(href, '_blank');
+    // 2. Set up hover and click behaviors right away
+    cards.forEach(card => {
+        const video = card.querySelector('video');
+        if (video) {
+            card.addEventListener('mouseenter', () => video.play());
+            card.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
             });
+        }
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.pub-links a')) return;
+            const href = card.dataset.href;
+            if (href && href !== '#') window.open(href, '_blank');
         });
+    });
+
+    // 3. Lazy-load media: set real src from data-src, fade in each as it loads
+    const mediaElements = container.querySelectorAll('.pub-media img, .pub-media video');
+    let relayoutScheduled = false;
+
+    function scheduleRelayout() {
+        if (!relayoutScheduled) {
+            relayoutScheduled = true;
+            requestAnimationFrame(() => {
+                layoutMasonry();
+                relayoutScheduled = false;
+            });
+        }
     }
 
-    if (total === 0) {
-        onAllLoaded();
-    } else {
-        mediaElements.forEach(el => {
-            if (el.tagName === 'VIDEO') {
-                if (el.readyState >= 1) { loaded++; if (loaded >= total) onAllLoaded(); }
-                else el.addEventListener('loadedmetadata', () => { loaded++; if (loaded >= total) onAllLoaded(); });
-            } else {
-                if (el.complete) { loaded++; if (loaded >= total) onAllLoaded(); }
-                else el.addEventListener('load', () => { loaded++; if (loaded >= total) onAllLoaded(); });
+    mediaElements.forEach(el => {
+        function onReady() {
+            el.classList.add('loaded');
+            scheduleRelayout();
+        }
+
+        if (el.tagName === 'VIDEO') {
+            const source = el.querySelector('source');
+            if (source && source.dataset.src) {
+                source.src = source.dataset.src;
+                el.load();
             }
-        });
-        // Fallback in case some media fails to load
-        setTimeout(onAllLoaded, 3000);
-    }
+            if (el.readyState >= 1) onReady();
+            else {
+                el.addEventListener('loadedmetadata', onReady);
+                el.addEventListener('error', onReady);
+            }
+        } else {
+            if (el.dataset.src) el.src = el.dataset.src;
+            if (el.complete && el.naturalWidth > 0) onReady();
+            else {
+                el.addEventListener('load', onReady);
+                el.addEventListener('error', onReady);
+            }
+        }
+    });
 }
 
 // JS masonry layout — positions cards absolutely in columns
@@ -244,12 +263,12 @@ function createPublicationHTML(pub) {
     if (pub.video) {
         mediaHtml = `<div class="pub-media">
             <video muted loop playsinline preload="metadata">
-                <source src="${pub.video}" type="video/mp4">
+                <source data-src="${pub.video}" type="video/mp4">
             </video>
         </div>`;
     } else if (pub.image) {
         mediaHtml = `<div class="pub-media">
-            <img src="${pub.image}" alt="${pub.title}" loading="lazy">
+            <img data-src="${pub.image}" alt="${pub.title}">
         </div>`;
     }
 
