@@ -61,6 +61,7 @@
       "venue": "CVPR",
       "year": "2026",
       "image": "images/molmo2.jpeg",
+      "award": "Oral",
       "links": {
         "blog": "https://allenai.org/blog/molmo2",
         "demo": "https://playground.allenai.org/?model=molmo2-8b",
@@ -77,9 +78,8 @@
       "title": "DivScene: VLMs for Object Navigation",
       "fullTitle": "DivScene: Benchmarking LVLMs for Object Navigation with Diverse Scenes and Objects",
       "authors": ["Zhaowei Wang", "Hongming Zhang", "Tianqing Fang", "Ye Tian", "Yue Yang", "Kaixin Ma", "Xiaoman Pan", "Yangqiu Song", "Dong Yu"],
-      "venue": "EMNLP",
+      "venue": "EMNLP Findings",
       "year": "2025",
-      "award": "Findings",
       "video": "images/divscene.mp4",
       "links": {
         "paper": "papers/divscene.pdf",
@@ -220,9 +220,8 @@
       "title": "MiRAGeNews: Fake News Detection",
       "fullTitle": "MiRAGeNews: Multimodal Realistic AI-Generated News Detection",
       "authors": ["Runsheng Huang", "Liam Dugan", "Yue Yang", "Chris Callison-Burch"],
-      "venue": "EMNLP",
+      "venue": "EMNLP Findings",
       "year": "2024",
-      "award": "Findings",
       "image": "images/news.png",
       "links": {
         "paper": "papers/MiRAGeNews.pdf",
@@ -254,9 +253,8 @@
       "title": "Visual Metaphors via GenAI",
       "fullTitle": "I Spy a Metaphor: Large Language Models and Diffusion Models Co-Create Visual Metaphors",
       "authors": ["Tuhin Chakrabarty", "Arkady Saakyan", "Olivia Winn", "Artemis Panagopoulou", "Yue Yang", "Marianna Apidianaki", "Smaranda Muresan"],
-      "venue": "ACL",
+      "venue": "ACL Findings",
       "year": "2023",
-      "award": "Findings",
       "image": "images/metaphor.png",
       "links": {
         "arxiv": "https://arxiv.org/pdf/2305.14724",
@@ -286,9 +284,8 @@
       "title": "CREPE: Causal Reasoning in Procedures",
       "fullTitle": "Causal Reasoning About Entities and Events in Procedural Texts",
       "authors": ["Li Zhang", "Hainiu Xu", "Yue Yang", "Shuyan Zhou", "Weiqiu You", "Manni Arora", "Chris Callison-Burch"],
-      "venue": "EACL",
+      "venue": "EACL Findings",
       "year": "2023",
-      "award": "Findings",
       "image": "images/crepe.png",
       "links": {
         "paper": "papers/crepe.pdf",
