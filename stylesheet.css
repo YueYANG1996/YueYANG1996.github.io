@@ -772,11 +772,13 @@ body {
 @media (max-width: 768px) {
     .media-grid { grid-template-columns: repeat(2, 1fr); }
     .pub-grid { grid-template-columns: repeat(2, 1fr); }
+    .visitor-counter { width: calc((100% - 1rem) / 2); }
 }
 
 @media (max-width: 480px) {
     .media-grid { grid-template-columns: 1fr; }
     .pub-grid { grid-template-columns: 1fr; }
+    .visitor-counter { width: 100%; }
 }
 
 /* ==========================================
@@ -1063,17 +1065,32 @@ body {
 }
 
 .visitor-counter {
-    max-width: var(--max-width);
+    width: calc((100% - 2rem) / 3);
     margin: 1rem auto 2rem;
-    padding: 0 2rem;
+    padding: 0;
     text-align: center;
     line-height: 0;
+    overflow: visible;
 }
 
 .visitor-counter img,
 .visitor-counter canvas,
-.visitor-counter iframe {
+.visitor-counter iframe,
+.visitor-counter svg {
     max-width: 100%;
+    height: auto;
+}
+
+.visitor-counter .mapmyvisitors-map-container {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.visitor-counter .mapmyvisitors-visitors,
+.visitor-counter .mapmyvisitors-date {
+    color: var(--text-primary) !important;
+    font-family: var(--font-main) !important;
 }
 
 /* ==========================================
