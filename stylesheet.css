@@ -396,15 +396,20 @@ body {
     z-index: 10;
 }
 
-/* Grid stays within normal container width */
+/* Regular grid — same organized layout as the Press section */
 .pub-grid {
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: stretch;
     width: 100%;
 }
 
-/* Publication Card */
+/* Publication Card — uniform height, aligned in rows */
 .pub-card {
-    position: absolute;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     border-radius: 6px;
     overflow: visible;
     background: var(--bg-primary);
@@ -427,17 +432,26 @@ body {
     border-radius: 6px 6px 0 0;
 }
 
-/* Media — natural aspect ratio */
+/* Media — natural ratio, capped so very tall assets do not stretch a row */
 .pub-media {
+    --pub-media-max-height: 150px;
     width: 100%;
+    max-height: var(--pub-media-max-height);
     overflow: hidden;
     line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
 }
 
 .pub-media img,
 .pub-media video {
     width: 100%;
+    max-height: var(--pub-media-max-height);
+    height: auto;
     display: block;
+    object-fit: contain;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.4s;
 }
@@ -447,17 +461,6 @@ body {
     opacity: 1;
 }
 
-/* Cap tall square/portrait media */
-.pub-card[data-id="holodeck"] .pub-media {
-    max-height: 150px;
-    overflow: hidden;
-}
-
-.pub-card[data-id="holodeck"] .pub-media video {
-    object-fit: cover;
-    height: 150px;
-}
-
 .pub-card:hover .pub-media img,
 .pub-card:hover .pub-media video {
     transform: scale(1.03);
@@ -465,6 +468,7 @@ body {
 
 /* Summary (always visible) */
 .pub-summary {
+    flex: 1 1 auto;
     padding: 0.5rem 0.6rem;
 }
 
@@ -767,10 +771,12 @@ body {
 
 @media (max-width: 768px) {
     .media-grid { grid-template-columns: repeat(2, 1fr); }
+    .pub-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px) {
     .media-grid { grid-template-columns: 1fr; }
+    .pub-grid { grid-template-columns: 1fr; }
 }
 
 /* ==========================================
@@ -788,137 +794,150 @@ body {
 }
 
 /* ==========================================
-   HORIZONTAL TIMELINE
+   JOURNEY TIMELINE — vertical, scales to any length
    ========================================== */
 
-.timeline-h {
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
+.journey {
+    --journey-item-y-padding: 0.55rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.timeline-h-track {
+.journey-item {
     display: flex;
-    align-items: flex-start;
-    position: relative;
-    min-width: max-content;
-    padding-top: 1rem;
-}
-
-/* Horizontal line */
-.timeline-h-line {
-    position: absolute;
-    top: calc(1rem + 5px);
-    left: 1.5rem;
-    right: 1.5rem;
-    height: 2px;
-    background: var(--border-color);
-}
-
-.timeline-h-item {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    flex: 1;
-    min-width: 180px;
+    gap: 1rem;
+    padding: var(--journey-item-y-padding) 0;
     position: relative;
 }
 
-/* Dot */
-.timeline-h-dot {
-    width: 12px;
-    height: 12px;
-    background: var(--primary-color);
-    border: 2.5px solid var(--bg-primary);
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px var(--primary-color);
-    z-index: 2;
+/* Marker column draws the connecting vertical line + holds the dot */
+.journey-marker {
+    position: relative;
+    align-self: stretch;
+    width: 18px;
     flex-shrink: 0;
-}
-
-/* Card below dot */
-.timeline-h-card {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    gap: 0.4rem;
-    padding: 0.75rem 0.75rem;
-    margin-top: 0.75rem;
-    background: var(--bg-secondary);
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    transition: box-shadow 0.2s;
-    width: 160px;
+    justify-content: center;
 }
 
-.timeline-h-card:hover {
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+.journey-marker::before {
+    content: '';
+    position: absolute;
+    top: calc(var(--journey-item-y-padding) * -1);
+    bottom: calc(var(--journey-item-y-padding) * -1);
+    left: 50%;
+    width: 2px;
+    background: color-mix(in srgb, var(--accent, var(--border-color)) 45%, transparent);
+    transform: translateX(-50%);
 }
 
-.timeline-logo {
-    width: 40px;
-    height: 40px;
+/* First item: line starts at the dot (no segment above) */
+.journey-item:first-child .journey-marker::before {
+    top: 50%;
+}
+
+/* Last item: line ends at the dot (no segment below) */
+.journey-item:last-child .journey-marker::before {
+    bottom: 50%;
+}
+
+.journey-dot {
+    position: relative;
+    z-index: 1;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--accent, var(--primary-color));
+    box-shadow: 0 0 0 4px var(--bg-primary);
+    transition: transform 0.2s;
+}
+
+.journey-item.is-current .journey-dot {
+    background: var(--accent);
+    box-shadow:
+        0 0 0 4px var(--bg-primary),
+        0 0 0 8px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.journey-item:hover .journey-dot {
+    transform: scale(1.15);
+}
+
+.journey-logo {
+    width: 44px;
+    height: 44px;
     object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.2s;
 }
 
-.timeline-content {
-    text-align: center;
+.journey-item:hover .journey-logo {
+    transform: translateY(-1px);
 }
 
-.timeline-content h3 {
-    font-size: var(--font-medium);
-    font-weight: 600;
+/* Single-line text row: institution · role  ……………  date */
+.journey-line-text {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
     font-family: var(--font-main);
-    margin-bottom: 0.1rem;
+    font-size: var(--font-normal);
+}
+
+.journey-place {
+    font-weight: 600;
     color: var(--text-primary);
 }
 
-.timeline-content h3 a {
-    color: var(--text-primary);
+.journey-place a {
+    color: inherit;
     text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
 }
 
-.timeline-content h3 a:hover {
-    color: var(--primary-color);
+.journey-place a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
 }
 
-.timeline-role {
-    font-size: var(--font-small);
-    font-family: var(--font-main);
-    color: var(--text-primary);
-    font-weight: 500;
-}
-
-.timeline-loc {
-    font-size: var(--font-small);
-    font-family: var(--font-main);
+/* Bullet separator before role only (date sits on the right, no separator) */
+.journey-role {
     color: var(--text-secondary);
+    position: relative;
+    padding-left: 0.7rem;
 }
 
-.timeline-note {
-    font-size: var(--font-small);
-    font-family: var(--font-main);
+.journey-role::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     color: var(--text-secondary);
-    font-style: italic;
+    opacity: 0.45;
 }
 
-/* Active/present dot */
-.timeline-h-dot.active {
-    background: var(--secondary-color);
-    box-shadow: 0 0 0 2px var(--secondary-color);
+.journey-date {
+    color: var(--text-secondary);
+    margin-left: auto;
+    padding-left: 1rem;
 }
 
-/* Date below card */
-.timeline-h-date {
-    margin-top: 0.5rem;
-    font-size: var(--font-small);
+.journey-item.is-current .journey-date {
+    color: var(--accent);
     font-weight: 600;
-    color: var(--primary-color);
-    font-family: var(--font-main);
 }
 
 /* ==========================================
-   END TIMELINE
+   END JOURNEY
    ========================================== */
 
 /* Featured talk with embedded video */
@@ -1163,14 +1182,23 @@ body {
         margin: 0;
     }
 
-    /* Timeline scrolls horizontally on mobile */
-    .timeline-h-item {
-        min-width: 150px;
+    /* Journey: tighter spacing on mobile */
+    .journey {
+        --journey-item-y-padding: 0.5rem;
     }
 
-    .timeline-h-card {
-        width: 140px;
-        padding: 0.6rem;
+    .journey-item {
+        gap: 0.75rem;
+    }
+
+    .journey-logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .journey-line-text {
+        gap: 0.5rem;
+        font-size: var(--font-small);
     }
 
     /* Talk: stack video below text on mobile */

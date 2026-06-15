@@ -119,37 +119,10 @@ function displayPublications() {
     });
 }
 
-// JS masonry layout — positions cards absolutely in columns
+// Layout is handled by the CSS grid (.pub-grid) — cards align in uniform
+// rows like the Press section, so no JS positioning is needed.
 function layoutMasonry() {
-    const container = document.getElementById('publicationsList');
-    const cards = Array.from(container.querySelectorAll('.pub-card'));
-    if (cards.length === 0) return;
-
-    const gap = 16; // 1rem
-    const containerWidth = container.offsetWidth;
-
-    // Determine column count based on width
-    let cols = 3;
-    if (containerWidth < 500) cols = 1;
-    else if (containerWidth < 700) cols = 2;
-
-    const colWidth = (containerWidth - gap * (cols - 1)) / cols;
-    const colHeights = new Array(cols).fill(0);
-
-    cards.forEach(card => {
-        // Find the shortest column
-        const minHeight = Math.min(...colHeights);
-        const colIndex = colHeights.indexOf(minHeight);
-
-        card.style.width = colWidth + 'px';
-        card.style.left = colIndex * (colWidth + gap) + 'px';
-        card.style.top = colHeights[colIndex] + 'px';
-
-        colHeights[colIndex] += card.offsetHeight + gap;
-    });
-
-    // Set container height
-    container.style.height = Math.max(...colHeights) + 'px';
+    /* no-op: retained so existing callers (render + lazy-load) stay valid */
 }
 
 // Re-layout on resize
