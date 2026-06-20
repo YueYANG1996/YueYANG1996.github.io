@@ -5,7 +5,7 @@
       "title": "MolmoWeb: Open Agent for the Web",
       "fullTitle": "MolmoWeb: Open Multimodal Action Policy for the Open Web.",
       "authors": ["Tanmay Gupta*", "Piper Wolters*", "Zixian Ma*", "Peter Sushko*", "Rock Yuren Pang*", "Diego Llanes*", "Yue Yang*", "Taira Anderson", "Boyuan Zheng", "Zhongzheng Ren", "Harsh Trivedi", "Taylor Blanton", "Caleb Ouellette", "Winson Han", "Ali Farhadi", "Ranjay Krishna"],        
-      "venue": "Ai2 Tech Report",
+      "venue": "ECCV",
       "year": "2026",
       "image": "images/molmoweb.jpeg",
       "links": {
@@ -24,7 +24,7 @@
       "title": "Molmo-Point: Better Grounding VLMs",
       "fullTitle": "Better Pointing for VLMs with Grounding Tokens.",
       "authors": ["Christopher Clark*", "Yue Yang*", "Jae Sung Park*", "Zixian Ma", "Jieyu Zhang", "Mohammadreza Salehi", "Rohun Tripathi", "Sangho Lee", "Ranjay Krishna"],
-      "venue": "Ai2 Tech Report",
+      "venue": "ECCV",
       "year": "2026",
       "video": "images/molmopoint.mp4",
       "links": {
